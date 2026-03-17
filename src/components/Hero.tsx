@@ -20,10 +20,18 @@ const ACTIVITY = Array.from({ length: 52 * 7 }, () =>
 );
 
 const STAT_PILLS = [
-  { n: '44+', label: 'Repos',    href: 'https://github.com/yusufdupsc1?tab=repositories' },
-  { n: '87',  label: 'Stars',    href: 'https://github.com/yusufdupsc1' },
-  { n: '5+',  label: 'Yrs exp',  href: null },
-  { n: '6',   label: 'Live apps',href: 'https://stripe-dev.vercel.app' },
+  { n: '45', label: 'Repos', href: 'https://github.com/yusufdupsc1?tab=repositories' },
+  { n: '4', label: 'Followers', href: 'https://github.com/yusufdupsc1' },
+  { n: '5+', label: 'Yrs exp', href: null },
+  { n: '8', label: 'Live apps', href: 'https://stripe-dev.vercel.app' },
+];
+
+// SSO Debug Carousel Cards
+const DEBUG_CARDS = [
+  { icon: '↩️', title: 'REDIRECT ISSUES', desc: 'Fixed OAuth redirect URI mismatches' },
+  { icon: '🍪', title: 'SAMESITE COOKIES', desc: 'Resolved cross-domain cookie blocking' },
+  { icon: '🐛', title: 'ADAPTER BUGS', desc: 'Patched Keycloak adapter incompatibilities' },
+  { icon: '✅', title: 'OIDC SUCCESS', desc: 'Full OIDC flow working perfectly' },
 ];
 
 export default function Hero() {
@@ -152,27 +160,33 @@ export default function Hero() {
               Available for work · Rajshahi, Bangladesh 🇧🇩
             </div>
 
-            {/* ── Name block ── */}
+            {/* ── Animated Debug Cards Carousel ── */}
             <div className="animate-fade-up" style={delay(80)}>
               <p className="text-white/30 font-mono text-xs tracking-[.25em] uppercase mb-3">
-                Full-Stack + DevOps Engineer
+                KEYCLOAK SSO FIXED!
               </p>
-              {/* Big name with split layout */}
-              <div className="relative">
-                <h1 className="text-[clamp(3.5rem,8vw,6rem)] font-bold tracking-tight leading-[.97] select-none">
-                  <span className="text-white">Yusuf</span>
-                  {/* ── Decorative line accent behind last name ── */}
-                  <span className="relative block">
-                    <span className="absolute -left-3 top-1/2 -translate-y-1/2 w-1 h-[70%] rounded-full bg-gradient-to-b from-violet-500 to-cyan-400 hidden lg:block" />
-                    <span className="text-shimmer pl-0 lg:pl-4">Ali</span>
-                  </span>
-                </h1>
-                {/* Floating tag — "stripe specialist" */}
-                <span className="absolute -right-2 top-2 lg:top-4 hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0e0e14] border border-violet-500/25 text-violet-400 text-[11px] font-mono shadow-xl shadow-violet-900/20 rotate-2 hover:rotate-0 transition-transform">
-                  <svg viewBox="0 0 24 24" className="w-3 h-3 fill-current text-violet-400" aria-hidden><path d="M2 7h9l2 5 3-8 2 6h4"/><path d="M2 7v10h20V7"/></svg>
-                  stripe specialist
-                </span>
+              {/* Carousel cards */}
+              <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
+                {DEBUG_CARDS.map((card, i) => (
+                  <div 
+                    key={i}
+                    className="flex-shrink-0 w-40 sm:w-48 p-3 rounded-lg bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border border-violet-500/20 snap-start hover:border-violet-400/40 transition-colors"
+                  >
+                    <div className="text-2xl mb-2">{card.icon}</div>
+                    <h3 className="text-[10px] font-bold text-violet-300 tracking-wider">{card.title}</h3>
+                    <p className="text-[9px] text-white/50 mt-1">{card.desc}</p>
+                  </div>
+                ))}
               </div>
+              <a 
+                href="https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-3 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+              >
+                <span>github.com/yusufdupsc1/wagtail-keycloak-sso-lab</span>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+              </a>
             </div>
 
             {/* ── Typewriter ── */}
