@@ -222,12 +222,12 @@ export default function Hero() {
             </p>
 
             {/* ── Stat pills ── */}
-            <div className="animate-fade-up flex flex-wrap gap-3" style={delay(280)}>
+            <div className="animate-fade-up flex flex-wrap gap-2 sm:gap-3" style={delay(280)}>
               {STAT_PILLS.map((s, i) => {
                 const inner = (
                   <>
-                    <span className="font-bold text-violet-400 font-mono text-lg leading-none">{s.n}</span>
-                    <span className="text-white/40 text-xs">{s.label}</span>
+                    <span className="font-bold text-violet-400 font-mono text-base sm:text-lg leading-none">{s.n}</span>
+                    <span className="text-white/40 text-[10px] sm:text-xs">{s.label}</span>
                   </>
                 );
                 return s.href ? (
@@ -236,7 +236,7 @@ export default function Hero() {
                     href={s.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col items-center px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.07] hover:border-violet-500/35 hover:bg-violet-500/6 transition-all duration-200 animate-fade-up"
+                    className="flex flex-col items-center px-3 sm:px-4 py-2 sm:py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.07] hover:border-violet-500/35 hover:bg-violet-500/6 transition-all duration-200 animate-fade-up min-w-[70px] sm:min-w-auto"
                     style={{ animationDelay: `${300 + i * 50}ms` }}
                   >
                     {inner}
