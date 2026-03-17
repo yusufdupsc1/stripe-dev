@@ -47,15 +47,18 @@ export default function Navbar() {
         <div className={`absolute inset-0 transition-all duration-500 ${scrolled ? 'bg-[#050508]/92 backdrop-blur-xl border-b border-white/[0.06]' : ''}`} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - Terminal Style */}
           <button
             onClick={() => scrollTo('home')}
             className="flex items-center gap-2.5 group focus-visible:outline-none"
             aria-label="Go to top"
           >
-            <span className="w-8 h-8 rounded-lg bg-violet-600 flex items-center justify-center text-white font-bold text-sm font-mono select-none shadow-lg shadow-violet-500/25">
-              Y
-            </span>
+            <div className="w-8 h-8 rounded-lg bg-[#0d0d12] border border-violet-500/40 flex items-center justify-center overflow-hidden shadow-lg shadow-violet-500/20">
+              <div className="flex flex-col items-center gap-0.5">
+                <span className="text-[6px] text-emerald-400 font-mono leading-none">▸</span>
+                <span className="text-[5px] text-cyan-400 font-mono leading-none">_</span>
+              </div>
+            </div>
             <span className="font-semibold text-white/90 group-hover:text-white transition-colors hidden sm:block">
               yusuf<span className="text-violet-400">.dev</span>
             </span>
