@@ -167,20 +167,20 @@ export default function Hero() {
             </div>
 
             {/* ── Animated Debug Cards Carousel ── */}
-            <div className="animate-fade-up" style={delay(80)}>
+            <div className="animate-fade-up w-full" style={delay(80)}>
               <p className="text-white/30 font-mono text-xs tracking-[.25em] uppercase mb-3">
                 KEYCLOAK SSO FIXED!
               </p>
-              {/* Carousel cards */}
-              <div className="flex gap-3 overflow-x-auto pb-2 snap-x">
+              {/* Carousel cards - responsive */}
+              <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 px-1 snap-x scrollbar-hide">
                 {DEBUG_CARDS.map((card, i) => (
                   <div 
                     key={i}
-                    className="flex-shrink-0 w-40 sm:w-48 p-3 rounded-lg bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border border-violet-500/20 snap-start hover:border-violet-400/40 transition-colors"
+                    className="flex-shrink-0 w-32 sm:w-44 p-2.5 sm:p-3 rounded-lg bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border border-violet-500/20 snap-start hover:border-violet-400/40 transition-all"
                   >
-                    <div className="text-2xl mb-2">{card.icon}</div>
-                    <h3 className="text-[10px] font-bold text-violet-300 tracking-wider">{card.title}</h3>
-                    <p className="text-[9px] text-white/50 mt-1">{card.desc}</p>
+                    <div className="text-xl sm:text-2xl mb-1.5">{card.icon}</div>
+                    <h3 className="text-[9px] sm:text-[10px] font-bold text-violet-300 tracking-wider">{card.title}</h3>
+                    <p className="text-[8px] sm:text-[9px] text-white/50 mt-1 leading-tight">{card.desc}</p>
                   </div>
                 ))}
               </div>
@@ -190,7 +190,7 @@ export default function Hero() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-3 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
               >
-                <span>github.com/yusufdupsc1/wagtail-keycloak-sso-lab</span>
+                <span className="text-xs sm:text-sm">github.com/yusufdupsc1/wagtail-keycloak-sso-lab</span>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>
