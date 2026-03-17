@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-[#0d0d12] border border-violet-500/30 flex items-center justify-center">
-            <span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-cyan-400" style="font-family: 'Brush Script MT', cursive;">Y</span>
+            <span className="text-base font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-cyan-400" style={{ fontFamily: "'Brush Script MT', cursive" }}>Y</span>
           </div>
           <span className="text-white/40 text-sm">{PROFILE.name} · Backend & Payments Engineer</span>
         </div>

@@ -54,7 +54,7 @@ export default function Navbar() {
             aria-label="Go to top"
           >
             <div className="w-9 h-9 rounded-lg bg-[#0d0d12] border border-violet-500/40 flex items-center justify-center overflow-hidden shadow-lg shadow-violet-500/20">
-              <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-cyan-400" style="font-family: 'Brush Script MT', cursive;">Y</span>
+              <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-cyan-400" style={{ fontFamily: "'Brush Script MT', cursive" }}>Y</span>
             </div>
           </button>
 
