@@ -72,6 +72,7 @@ const PROJECTS = [
     tagline: 'SSO debugging lab',
     desc: 'Wagtail CMS with Keycloak SSO integration - debugging and troubleshooting lab.',
     tags: ['Python', 'Django', 'Keycloak', 'SSO'],
+    live: 'https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab',
     repo: 'https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab',
     featured: false,
     color: 'emerald',
