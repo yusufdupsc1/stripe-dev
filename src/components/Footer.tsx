@@ -3,7 +3,7 @@ import { PROFILE } from '../data/profile';
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="border-t border-white/[0.06] py-10 pb-20 md:pb-10">
+    <footer className="border-t border-white/[0.06] py-6 sm:py-8">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2">
           <div className="w-7 h-7 rounded-lg bg-[#0d0d12] border border-violet-500/30 flex items-center justify-center overflow-hidden">

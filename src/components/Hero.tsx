@@ -143,7 +143,7 @@ export default function Hero() {
       {/* ── Top gradient line ── */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 sm:pb-28 w-full overflow-x-hidden">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 w-full overflow-x-hidden">
 
         {/* ════ Main two-column layout ════ */}
         <div className="grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-14 items-center">
