@@ -1,8 +1,7 @@
 import { useInView } from '../hooks/useInView';
-import { PROJECTS } from '../data/profile';
 
-// Use PROJECTS from profile data
-// Projects are now dynamically defined in src/data/profile.ts
+const PROJECTS = [
+  {
     name: 'stripe-dev',
     tagline: 'Stripe integration & webhook reliability platform',
     desc: 'Production-ready Stripe integration with PaymentIntents, Checkout sessions, webhook signature verification, idempotency handling, and retry queues. Deployed live at stripe-dev.vercel.app.',

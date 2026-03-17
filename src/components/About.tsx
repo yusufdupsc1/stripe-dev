@@ -1,5 +1,11 @@
 import { useInView } from '../hooks/useInView';
-import { TIMELINE, PROFILE } from '../data/profile';
+
+const TIMELINE = [
+  { year: '2024–now', title: 'Stripe & Payments Specialist', co: 'ali.Inc · Freelance', desc: 'Building Stripe-native payment flows, webhook handlers, retry logic, and idempotent API integrations for SaaS clients worldwide.' },
+  { year: '2022–2024', title: 'Full-Stack Engineer', co: 'Contract / Remote', desc: 'Delivered 40+ production apps with Django REST, Node/Express, and Next.js frontends. Migrated monoliths to Docker + AWS ECS.' },
+  { year: '2019–2022', title: 'PHP/Laravel Developer', co: 'Local startups · BD', desc: 'E-commerce and CMS platforms with Laravel. Introduced automated test suites and CI/CD pipelines that cut deploy time by 70%.' },
+  { year: '2018', title: 'Started coding', co: 'Self-taught', desc: 'First line of code in PHP. Never stopped.' },
+];
 
 export default function About() {
   const { ref, visible } = useInView();
