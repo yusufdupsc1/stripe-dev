@@ -12,10 +12,10 @@ const CATS: Cat[] = [
   {
     id: 'payments', title: 'Payments & Webhooks', icon: '💳', accent: 'violet',
     skills: [
-      { name: 'Stripe API — PaymentIntents, Checkout, Connect', level: 95, proof: { label: 'stripe-dev.vercel.app', href: 'https://stripe-dev.vercel.app' } },
+      { name: 'Stripe API - PaymentIntents, Checkout, Connect', level: 95, proof: { label: 'stripe-dev.vercel.app', href: 'https://stripe-dev.vercel.app' } },
       { name: 'Webhook signature verification & retry queues',  level: 95, proof: { label: 'ecommerce repo', href: 'https://github.com/yusufdupsc1/ecommerce' } },
       { name: 'Idempotency keys & error recovery',              level: 92, proof: { label: 'ecommerce repo', href: 'https://github.com/yusufdupsc1/ecommerce' } },
-      { name: 'REST API design — OpenAPI / Swagger',            level: 91, proof: { label: 'book_store repo', href: 'https://github.com/yusufdupsc1/book_store' } },
+      { name: 'REST API design - OpenAPI / Swagger',            level: 91, proof: { label: 'book_store repo', href: 'https://github.com/yusufdupsc1/book_store' } },
       { name: 'GraphQL API design',                             level: 76 },
     ],
   },
@@ -32,11 +32,11 @@ const CATS: Cat[] = [
   {
     id: 'data', title: 'Data & Infrastructure', icon: '🗄️', accent: 'emerald',
     skills: [
-      { name: 'PostgreSQL — schema design & query optimisation', level: 90, proof: { label: 'ecommerce repo', href: 'https://github.com/yusufdupsc1/ecommerce' } },
-      { name: 'Redis — caching & job queues',                    level: 83, proof: { label: 'ecommerce repo', href: 'https://github.com/yusufdupsc1/ecommerce' } },
+      { name: 'PostgreSQL - schema design & query optimisation', level: 90, proof: { label: 'ecommerce repo', href: 'https://github.com/yusufdupsc1/ecommerce' } },
+      { name: 'Redis - caching & job queues',                    level: 83, proof: { label: 'ecommerce repo', href: 'https://github.com/yusufdupsc1/ecommerce' } },
       { name: 'MongoDB',                                         level: 74 },
       { name: 'Docker & Docker Compose',                         level: 89, proof: { label: 'yusuf-dev CI', href: 'https://github.com/yusufdupsc1/yusuf-dev' } },
-      { name: 'AWS — EC2, S3, RDS, Lambda',                      level: 78 },
+      { name: 'AWS - EC2, S3, RDS, Lambda',                      level: 78 },
     ],
   },
   {
@@ -170,10 +170,10 @@ export default function Expertise() {
 
           {/* ── Content panel ── */}
           <div className="p-3 sm:p-6 lg:p-8">
-            <div className="grid lg:grid-cols-[1fr_1px_280px] gap-6 lg:gap-8">
+            <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-8">
 
-              {/* Left — skill bars */}
-              <div className="space-y-5">
+              {/* Left - skill bars - centered on mobile */}
+              <div className="w-full max-w-2xl mx-auto lg:flex-1 space-y-5">
                 {active.skills.map((s, i) => (
                   <SkillRow
                     key={s.name}
@@ -186,10 +186,10 @@ export default function Expertise() {
               </div>
 
               {/* Divider */}
-              <div className="hidden sm:block bg-white/[0.06]" />
+              <div className="hidden lg:block w-px bg-white/[0.06]" />
 
               {/* Right — proof summary panel */}
-              <div className="flex flex-col gap-5">
+              <div className="w-full max-w-xl mx-auto lg:max-w-[280px] flex flex-col gap-5">
                 {/* Category header */}
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -202,7 +202,7 @@ export default function Expertise() {
                     {active.id === 'payments' && 'Real payment pipelines, SCA/3DS flows, and production webhooks that have processed actual transactions.'}
                     {active.id === 'backend'  && 'Production APIs, CRM systems, and auth flows across Python, Node.js, and PHP ecosystems.'}
                     {active.id === 'data'     && 'Schema design, query tuning, caching strategies, and containerised deployments in production.'}
-                    {active.id === 'frontend' && 'TypeScript-first frontends, automated CI/CD, and geolocation tooling — all linked to real repos.'}
+                    {active.id === 'frontend' && 'TypeScript-first frontends, automated CI/CD, and geolocation tooling - all linked to real repos.'}
                   </p>
                 </div>
 
