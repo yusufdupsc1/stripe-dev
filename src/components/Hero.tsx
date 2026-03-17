@@ -32,6 +32,8 @@ const DEBUG_CARDS = [
   { icon: '🍪', title: 'SAMESITE COOKIES', desc: 'Resolved cross-domain cookie blocking' },
   { icon: '🐛', title: 'ADAPTER BUGS', desc: 'Patched Keycloak adapter incompatibilities' },
   { icon: '✅', title: 'OIDC SUCCESS', desc: 'Full OIDC flow working perfectly' },
+  { icon: '🛡️', title: 'SSO RECOVERY', desc: 'Wagtail + Django + Keycloak flow' },
+  { icon: '📋', title: 'PROTOCOL CHECK', desc: 'STATE, JWKS, STAFF role mapping' },
 ];
 
 export default function Hero() {
