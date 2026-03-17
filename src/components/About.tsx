@@ -26,7 +26,7 @@ export default function About() {
             </h2>
             <div className="space-y-4 text-white/60 leading-relaxed">
               <p>
-                I'm Yusuf — based in Rajshahi, Bangladesh. My GitHub bio says it plainly:{' '}
+                Based in Rajshahi, Bangladesh. GitHub bio says:{' '}
                 <em className="text-white/80 not-italic font-medium">"stripe integration & webhook reliability engineer"</em>.
                 That's not marketing — it's what I do every day.
               </p>

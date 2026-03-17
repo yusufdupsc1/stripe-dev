@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
 import { useInView } from '../hooks/useInView';
+import { PROFILE } from '../data/profile';
 
 type Tab = 'message' | 'hire';
 
@@ -58,7 +59,7 @@ export default function Contact() {
     const svc = SERVICES.find(s => s.id === service)!;
     setPayStatus('loading');
     try {
-      const url = await createCheckoutSession(svc.price, `Hire Yusuf Ali – ${svc.label}`);
+      const url = await createCheckoutSession(svc.price, `Hire ${PROFILE.name} – ${svc.label}`);
       window.location.href = url;
     } catch {
       setPayStatus('error');
@@ -97,7 +98,7 @@ export default function Contact() {
                 <span className="text-2xl">💼</span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">LinkedIn</p>
-                  <p className="text-white/80 group-hover:text-white transition-colors">Yusuf Ali — Backend Engineer</p>
+                  <p className="text-white/80 group-hover:text-white transition-colors">${PROFILE.name} — Backend Engineer</p>
                 </div>
               </a>
               <div className="flex items-center gap-4 p-4 rounded-xl bg-[#0e0e14] border border-white/[0.07]">
