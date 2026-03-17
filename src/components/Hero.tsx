@@ -34,6 +34,10 @@ const DEBUG_CARDS = [
   { icon: '✅', title: 'OIDC SUCCESS', desc: 'Full OIDC flow working perfectly' },
   { icon: '🛡️', title: 'SSO RECOVERY', desc: 'Wagtail + Django + Keycloak flow' },
   { icon: '📋', title: 'PROTOCOL CHECK', desc: 'STATE, JWKS, STAFF role mapping' },
+  { icon: '🔒', title: 'SIGNATURE VERIFY', desc: 'Webhook signature verification' },
+  { icon: '💾', title: 'ATOMIC TX', desc: 'Atomic transactions for data consistency' },
+  { icon: '⚙️', title: 'CLEAN LOGIC', desc: 'Production event handling' },
+  { icon: '📊', title: 'AUDIT TRAIL', desc: 'Complete webhook logging' },
 ];
 
 export default function Hero() {
