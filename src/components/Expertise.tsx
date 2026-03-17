@@ -127,16 +127,16 @@ export default function Expertise() {
         <div className={`rounded-2xl bg-[#0e0e14] border ${a.ring} skill-ring-violet transition-colors duration-500 overflow-hidden`}>
 
           {/* ── Window title bar ── */}
-          <div className="flex items-center gap-2 px-5 py-3 bg-[#0a0a12] border-b border-white/[0.06]">
-            <span className="w-3 h-3 rounded-full bg-red-500/60" />
-            <span className="w-3 h-3 rounded-full bg-yellow-500/60" />
-            <span className="w-3 h-3 rounded-full bg-emerald-500/60" />
-            <span className="flex-1 text-center font-mono text-[11px] text-white/20">skills.proof</span>
+          <div className="flex items-center gap-2 px-3 sm:px-5 py-2 sm:py-3 bg-[#0a0a12] border-b border-white/[0.06]">
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-red-500/60" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-yellow-500/60" />
+            <span className="w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full bg-emerald-500/60" />
+            <span className="flex-1 text-center font-mono text-[10px] sm:text-[11px] text-white/20">skills.proof</span>
             <a
               href="https://github.com/yusufdupsc1"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 text-[10px] font-mono text-white/25 hover:text-violet-400 transition-colors"
+              className="flex items-center gap-1 text-[9px] sm:text-[10px] font-mono text-white/25 hover:text-violet-400 transition-colors"
             >
               <svg viewBox="0 0 24 24" className="w-3 h-3 fill-current"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
               yusufdupsc1
@@ -144,7 +144,7 @@ export default function Expertise() {
           </div>
 
           {/* ── Tab bar ── */}
-          <div className="flex border-b border-white/[0.06] overflow-x-auto scrollbar-none">
+          <div className="flex border-b border-white/[0.06] overflow-x-auto scrollbar-hide">
             {CATS.map(cat => {
               const isActive = cat.id === activeId;
               const ca = ACCENT[cat.accent];
@@ -152,14 +152,14 @@ export default function Expertise() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveId(cat.id)}
-                  className={`relative flex items-center gap-2 px-5 py-3.5 text-xs font-mono font-medium whitespace-nowrap border-b-2 transition-all duration-200 ${
+                  className={`relative flex items-center gap-1.5 sm:gap-2 px-3 sm:px-5 py-2.5 sm:py-3.5 text-[10px] sm:text-xs font-mono font-medium whitespace-nowrap border-b-2 transition-all duration-200 ${
                     isActive
                       ? `${ca.tabActive} border-current`
                       : `text-white/35 border-transparent hover:text-white/60 ${ca.tab}`
                   }`}
                 >
                   <span className="text-sm">{cat.icon}</span>
-                  {cat.title}
+                  <span className="hidden xs:inline">{cat.title}</span>
                   {isActive && (
                     <span className={`ml-1 w-1.5 h-1.5 rounded-full ${ca.dot}`} />
                   )}
@@ -169,8 +169,8 @@ export default function Expertise() {
           </div>
 
           {/* ── Content panel ── */}
-          <div className="p-6 sm:p-8">
-            <div className="grid sm:grid-cols-[1fr_1px_300px] gap-8">
+          <div className="p-3 sm:p-6 lg:p-8">
+            <div className="grid lg:grid-cols-[1fr_1px_280px] gap-6 lg:gap-8">
 
               {/* Left — skill bars */}
               <div className="space-y-5">
