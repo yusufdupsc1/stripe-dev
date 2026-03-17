@@ -113,12 +113,12 @@ export default function Expertise() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* ── Section header ── */}
-        <div className="mb-12 text-center">
-          <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">Proof Board</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+        <div className="mb-8 sm:mb-12 text-center px-2">
+          <p className="text-violet-400 font-mono text-xs sm:text-sm mb-2 sm:mb-3 uppercase tracking-widest">Proof Board</p>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4">
             Skills backed by <span className="text-shimmer">shipped code</span>
           </h2>
-          <p className="text-white/45 max-w-lg mx-auto text-[15px]">
+          <p className="text-white/45 max-w-lg mx-auto text-sm sm:text-[15px] px-4 sm:px-0">
             Every bar links to a real repo or live project. Click any green badge to see the proof.
           </p>
         </div>
