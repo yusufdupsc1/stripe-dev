@@ -1,6 +1,5 @@
 import { useInView } from '../hooks/useInView';
-
-const PROJECTS = [
+import { PROJECTS } from '../data/profile';
   {
     name: 'stripe-dev',
     tagline: 'Stripe integration & webhook reliability platform',

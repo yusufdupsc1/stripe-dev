@@ -1,29 +1,15 @@
 import { useEffect, useRef, useState } from 'react';
+import { PROFILE, STATS, ROLES, TECH_STACK } from '../data/profile';
 
-const ROLES = [
-  'Backend Engineer',
-  'Stripe Integration Expert',
-  'Webhook Reliability Engineer',
-  'API Architect',
-  'Cloud-Native Builder',
-];
-
-const TECH_MARQUEE = [
-  'Python', 'Django', 'Node.js', 'TypeScript', 'PHP', 'Laravel',
-  'PostgreSQL', 'Redis', 'Docker', 'AWS', 'Next.js', 'REST APIs',
-  'Stripe', 'Webhooks', 'CI/CD', 'Linux', 'GraphQL', 'JWT',
-];
-
-// GitHub-style contribution-like activity grid (decorative)
 const ACTIVITY = Array.from({ length: 52 * 7 }, () =>
   Math.random() < 0.35 ? (Math.random() < 0.4 ? 3 : Math.random() < 0.6 ? 2 : 1) : 0
 );
 
 const STAT_PILLS = [
-  { n: '44+', label: 'Repos',    href: 'https://github.com/yusufdupsc1?tab=repositories' },
-  { n: '87',  label: 'Stars',    href: 'https://github.com/yusufdupsc1' },
-  { n: '5+',  label: 'Yrs exp',  href: null },
-  { n: '6',   label: 'Live apps',href: 'https://stripe-dev.vercel.app' },
+  { n: STATS.repos, label: 'Repos', href: `https://github.com/${PROFILE.github}?tab=repositories` },
+  { n: STATS.followers, label: 'Followers', href: `https://github.com/${PROFILE.github}` },
+  { n: STATS.yearsExp, label: 'Yrs exp', href: null },
+  { n: STATS.liveApps, label: 'Live apps', href: PROFILE.linkedin ? `https://${PROFILE.linkedin}` : null },
 ];
 
 export default function Hero() {
@@ -379,7 +365,7 @@ export default function Hero() {
             <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-[#050508] to-transparent z-10 pointer-events-none" />
             <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-[#050508] to-transparent z-10 pointer-events-none" />
             <div className="marquee-track animate-marquee gap-3">
-              {[...TECH_MARQUEE, ...TECH_MARQUEE].map((t, i) => (
+              {[...TECH_STACK, ...TECH_STACK].map((t, i) => (
                 <span
                   key={i}
                   className="mx-1.5 px-4 py-1.5 rounded-full text-xs font-mono bg-white/[0.04] border border-white/[0.07] text-white/45 whitespace-nowrap"

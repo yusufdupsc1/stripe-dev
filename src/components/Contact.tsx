@@ -1,5 +1,6 @@
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
 import { useInView } from '../hooks/useInView';
+import { PROFILE } from '../data/profile';
 
 type Tab = 'message' | 'hire';
 

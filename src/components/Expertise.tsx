@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useInView } from '../hooks/useInView';
+import { PROFILE } from '../data/profile';
 
 /* ─ Data ─────────────────────────────────────────────────────────────── */
 interface Proof  { label: string; href: string; }
