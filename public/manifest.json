@@ -1,0 +1,26 @@
+{
+  "name": "Yusuf Ali – Backend & Payments Engineer",
+  "short_name": "Yusuf Ali",
+  "description": "Senior Backend Engineer specialising in Stripe integrations, webhook reliability, and scalable cloud APIs.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050508",
+  "theme_color": "#7c3aed",
+  "orientation": "any",
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icon-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    }
+  ],
+  "categories": ["developer", "portfolio"]
+}
