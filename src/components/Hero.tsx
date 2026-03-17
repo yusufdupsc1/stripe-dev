@@ -26,18 +26,15 @@ const STAT_PILLS = [
   { n: '8', label: 'Live apps', href: 'https://stripe-dev.vercel.app' },
 ];
 
-// SSO Debug Carousel Cards
+// SSO Debug Carousel Cards - Infinite Animated Carousel
 const DEBUG_CARDS = [
-  { icon: '↩️', title: 'REDIRECT ISSUES', desc: 'Fixed OAuth redirect URI mismatches' },
-  { icon: '🍪', title: 'SAMESITE COOKIES', desc: 'Resolved cross-domain cookie blocking' },
-  { icon: '🐛', title: 'ADAPTER BUGS', desc: 'Patched Keycloak adapter incompatibilities' },
-  { icon: '✅', title: 'OIDC SUCCESS', desc: 'Full OIDC flow working perfectly' },
-  { icon: '🛡️', title: 'SSO RECOVERY', desc: 'Wagtail + Django + Keycloak flow' },
-  { icon: '📋', title: 'PROTOCOL CHECK', desc: 'STATE, JWKS, STAFF role mapping' },
-  { icon: '🔒', title: 'SIGNATURE VERIFY', desc: 'Webhook signature verification' },
-  { icon: '💾', title: 'ATOMIC TX', desc: 'Atomic transactions for data consistency' },
-  { icon: '⚙️', title: 'CLEAN LOGIC', desc: 'Production event handling' },
-  { icon: '📊', title: 'AUDIT TRAIL', desc: 'Complete webhook logging' },
+  { icon: '⏱️', title: '6 Hours Debugging SSO', desc: 'Wagtail + Django + Keycloak' },
+  { icon: '🐛', title: 'The Bug', desc: 'JWT Audience Mismatch', color: 'red' },
+  { icon: '✅', title: 'The Fix', desc: 'Update Keycloak Client → Add Correct Audience', color: 'green' },
+  { icon: '💡', title: 'Lesson', desc: 'Always inspect JWT payload before blaming Django', color: 'yellow' },
+  { icon: '🔧', title: 'Tools that saved me', desc: 'jwt.io, Django Logs, Keycloak Console' },
+  { icon: '🔐', title: 'SSO Workflow', desc: 'Keycloak → JWT → Django → Session Accepted' },
+  { icon: '📂', title: 'Project', desc: 'github.com/yusufdupsc1/sso-platform' },
 ];
 
 export default function Hero() {
@@ -166,31 +163,38 @@ export default function Hero() {
               Available for work · Rajshahi, Bangladesh 🇧🇩
             </div>
 
-            {/* ── Animated Debug Cards Carousel ── */}
-            <div className="animate-fade-up w-full" style={delay(80)}>
+            {/* ── Infinite Animated Carousel ── */}
+            <div className="animate-fade-up w-full overflow-hidden" style={delay(80)}>
               <p className="text-white/30 font-mono text-xs tracking-[.25em] uppercase mb-3">
                 KEYCLOAK SSO FIXED!
               </p>
-              {/* Carousel cards - responsive */}
-              <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 px-1 snap-x scrollbar-hide">
-                {DEBUG_CARDS.map((card, i) => (
-                  <div 
-                    key={i}
-                    className="flex-shrink-0 w-32 sm:w-44 p-2.5 sm:p-3 rounded-lg bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border border-violet-500/20 snap-start hover:border-violet-400/40 transition-all"
-                  >
-                    <div className="text-xl sm:text-2xl mb-1.5">{card.icon}</div>
-                    <h3 className="text-[9px] sm:text-[10px] font-bold text-violet-300 tracking-wider">{card.title}</h3>
-                    <p className="text-[8px] sm:text-[9px] text-white/50 mt-1 leading-tight">{card.desc}</p>
-                  </div>
-                ))}
+              {/* Infinite scrolling carousel */}
+              <div className="relative flex gap-3 overflow-x-hidden py-2">
+                <div className="flex animate-scroll gap-3 min-w-full">
+                  {[...DEBUG_CARDS, ...DEBUG_CARDS, ...DEBUG_CARDS].map((card, i) => (
+                    <div 
+                      key={i}
+                      className={`flex-shrink-0 w-40 sm:w-48 p-3 rounded-xl border backdrop-blur-sm transition-all hover:scale-105 ${
+                        card.color === 'red' ? 'bg-red-500/10 border-red-500/30' :
+                        card.color === 'green' ? 'bg-green-500/10 border-green-500/30' :
+                        card.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30' :
+                        'bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border-violet-500/20'
+                      }`}
+                    >
+                      <div className="text-xl mb-1.5">{card.icon}</div>
+                      <h3 className="text-[10px] font-bold text-white tracking-wider">{card.title}</h3>
+                      <p className="text-[9px] text-white/60 mt-1 leading-tight">{card.desc}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
               <a 
-                href="https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab"
+                href="https://github.com/yusufdupsc1/sso-platform"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-3 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
+                className="inline-flex items-center gap-2 mt-4 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
               >
-                <span className="text-xs sm:text-sm">github.com/yusufdupsc1/wagtail-keycloak-sso-lab</span>
+                <span className="text-xs sm:text-sm">github.com/yusufdupsc1/sso-platform</span>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>
