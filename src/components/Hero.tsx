@@ -32,9 +32,9 @@ const DEBUG_CARDS = [
   { icon: '🐛', title: 'The Bug', desc: 'JWT Audience Mismatch', color: 'red' },
   { icon: '✅', title: 'The Fix', desc: 'Update Keycloak Client → Add Correct Audience', color: 'green' },
   { icon: '💡', title: 'Lesson', desc: 'Always inspect JWT payload before blaming Django', color: 'yellow' },
-  { icon: '🔧', title: 'Tools that saved me', desc: 'jwt.io, Django Logs, Keycloak Console' },
-  { icon: '🔐', title: 'SSO Workflow', desc: 'Keycloak → JWT → Django → Session Accepted' },
-  { icon: '📂', title: 'Project', desc: 'github.com/yusufdupsc1/sso-platform' },
+  { icon: '💳', title: 'ClientFlow Pro', desc: 'Multi-tenant CRM with full Stripe billing', color: 'purple' },
+  { icon: '🛡️', title: 'Tenant Isolation', desc: 'Secure role-based access control', color: 'blue' },
+  { icon: '📊', title: 'Stripe Webhooks', desc: 'Real-time payment event handling', color: 'purple' },
 ];
 
 export default function Hero() {
@@ -178,6 +178,8 @@ export default function Hero() {
                         card.color === 'red' ? 'bg-red-500/10 border-red-500/30' :
                         card.color === 'green' ? 'bg-green-500/10 border-green-500/30' :
                         card.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30' :
+                        card.color === 'purple' ? 'bg-purple-500/15 border-purple-500/40' :
+                        card.color === 'blue' ? 'bg-blue-500/15 border-blue-500/40' :
                         'bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border-violet-500/20'
                       }`}
                     >
@@ -189,7 +191,7 @@ export default function Hero() {
                 </div>
               </div>
               <a 
-                href="https://github.com/yusufdupsc1/sso-platform"
+                href="https://github.com/yusufdupsc1/clientflow-pro"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 mt-4 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
