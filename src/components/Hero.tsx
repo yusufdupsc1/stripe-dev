@@ -143,7 +143,7 @@ export default function Hero() {
       {/* ── Top gradient line ── */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-16 sm:pt-20 lg:pt-24 pb-8 sm:pb-12 w-full overflow-x-hidden">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-6 sm:pb-8 w-full overflow-x-hidden">
 
         {/* ════ Main two-column layout ════ */}
         <div className="grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-14 items-center">
@@ -211,7 +211,7 @@ export default function Hero() {
 
             {/* ── Pitch copy ── */}
             <p
-              className="animate-fade-up text-white/50 text-base sm:text-lg leading-relaxed max-w-xl"
+              className="animate-fade-up text-white/50 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl"
               style={delay(220)}
             >
               I engineer <strong className="text-white/85 font-semibold">production-grade APIs</strong>,
