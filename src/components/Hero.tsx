@@ -143,13 +143,13 @@ export default function Hero() {
       {/* ── Top gradient line ── */}
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-500/50 to-transparent pointer-events-none" />
 
-      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-28 w-full">
+      <div className="relative max-w-6xl mx-auto px-3 sm:px-6 lg:px-8 pt-28 sm:pt-32 pb-16 sm:pb-28 w-full overflow-x-hidden">
 
         {/* ════ Main two-column layout ════ */}
-        <div className="grid lg:grid-cols-[1fr_420px] gap-14 items-center">
+        <div className="grid lg:grid-cols-[1fr_420px] gap-8 lg:gap-14 items-center">
 
           {/* ── LEFT COLUMN ── */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
 
             {/* Status badge — animated */}
             <div
