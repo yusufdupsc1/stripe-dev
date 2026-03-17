@@ -13,18 +13,18 @@ export default function About() {
     <section
       id="about"
       ref={ref}
-      className={`py-24 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+      className={`py-16 sm:py-24 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+      <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
           {/* Left */}
-          <div>
-            <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">About</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+          <div className="px-2 sm:px-0">
+            <p className="text-violet-400 font-mono text-xs sm:text-sm mb-2 sm:mb-3 uppercase tracking-widest">About</p>
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6 leading-tight">
               Not just a developer.<br />
               <span className="text-shimmer">A payments engineer.</span>
             </h2>
-            <div className="space-y-4 text-white/60 leading-relaxed">
+            <div className="space-y-3 sm:space-y-4 text-white/60 leading-relaxed text-sm sm:text-base">
               <p>
                 Based in Rajshahi, Bangladesh. GitHub bio says:{' '}
                 <em className="text-white/80 not-italic font-medium">"stripe integration & webhook reliability engineer"</em>.
@@ -55,31 +55,31 @@ export default function About() {
           </div>
 
           {/* Right – timeline */}
-          <div>
-            <p className="text-violet-400 font-mono text-sm mb-6 uppercase tracking-widest">Journey</p>
-            <ol className="relative border-l border-white/[0.08] space-y-8 ml-3">
+          <div className="px-2 sm:px-0">
+            <p className="text-violet-400 font-mono text-xs sm:text-sm mb-4 sm:mb-6 uppercase tracking-widest">Journey</p>
+            <ol className="relative border-l border-white/[0.08] space-y-6 sm:space-y-8 ml-3">
               {TIMELINE.map((t, i) => (
-                <li key={i} className="ml-6">
+                <li key={i} className="ml-4 sm:ml-6">
                   <span className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border border-violet-500/50 bg-violet-900/40 ring-4 ring-[#050508]">
                     <span className="h-1.5 w-1.5 rounded-full bg-violet-400" />
                   </span>
                   <span className="font-mono text-xs text-violet-400/80">{t.year}</span>
-                  <h3 className="text-white font-semibold mt-0.5">{t.title}</h3>
+                  <h3 className="text-white font-semibold mt-0.5 text-sm sm:text-base">{t.title}</h3>
                   <p className="text-white/40 text-xs mb-1">{t.co}</p>
-                  <p className="text-white/55 text-sm">{t.desc}</p>
+                  <p className="text-white/55 text-xs sm:text-sm">{t.desc}</p>
                 </li>
               ))}
             </ol>
 
             {/* Numbers */}
-            <div className="grid grid-cols-3 gap-4 mt-10">
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 mt-8 sm:mt-10">
               {[
-                { n: '44+', label: 'Repos' },
+                { n: '45', label: 'Repos' },
                 { n: '5+', label: 'Years' },
-                { n: '87', label: 'Stars' },
+                { n: '8', label: 'Live Apps' },
               ].map(s => (
-                <div key={s.label} className="text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
-                  <p className="text-2xl font-bold text-violet-400 font-mono">{s.n}</p>
+                <div key={s.label} className="text-center p-3 sm:p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]">
+                  <p className="text-xl sm:text-2xl font-bold text-violet-400 font-mono">{s.n}</p>
                   <p className="text-xs text-white/40 mt-1">{s.label}</p>
                 </div>
               ))}
