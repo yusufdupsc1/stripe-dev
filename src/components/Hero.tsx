@@ -164,17 +164,17 @@ export default function Hero() {
             </div>
 
             {/* ── Infinite Animated Carousel ── */}
-            <div className="animate-fade-up w-full overflow-hidden" style={delay(80)}>
-              <p className="text-white/30 font-mono text-xs tracking-[.25em] uppercase mb-3">
+              <div className="animate-fade-up w-full overflow-x-hidden" style={delay(80)}>
+              <p className="text-white/30 font-mono text-[10px] sm:text-xs tracking-[.25em] uppercase mb-3">
                 KEYCLOAK SSO FIXED!
               </p>
               {/* Infinite scrolling carousel */}
-              <div className="relative flex gap-3 overflow-x-hidden py-2">
+              <div className="relative flex gap-2 sm:gap-3 overflow-x-auto sm:overflow-hidden py-2 scrollbar-hide">
                 <div className="flex animate-scroll gap-3 min-w-full">
                   {[...DEBUG_CARDS, ...DEBUG_CARDS, ...DEBUG_CARDS].map((card, i) => (
                     <div 
                       key={i}
-                      className={`flex-shrink-0 w-40 sm:w-48 p-3 rounded-xl border backdrop-blur-sm transition-all hover:scale-105 ${
+                      className={`flex-shrink-0 w-36 sm:w-48 p-2.5 sm:p-3 rounded-xl border backdrop-blur-sm transition-all hover:scale-105 ${
                         card.color === 'red' ? 'bg-red-500/10 border-red-500/30' :
                         card.color === 'green' ? 'bg-green-500/10 border-green-500/30' :
                         card.color === 'yellow' ? 'bg-yellow-500/10 border-yellow-500/30' :
@@ -183,9 +183,9 @@ export default function Hero() {
                         'bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border-violet-500/20'
                       }`}
                     >
-                      <div className="text-xl mb-1.5">{card.icon}</div>
-                      <h3 className="text-[10px] font-bold text-white tracking-wider">{card.title}</h3>
-                      <p className="text-[9px] text-white/60 mt-1 leading-tight">{card.desc}</p>
+                      <div className="text-lg sm:text-xl mb-1">{card.icon}</div>
+                      <h3 className="text-[9px] sm:text-[10px] font-bold text-white tracking-wider">{card.title}</h3>
+                      <p className="text-[8px] sm:text-[9px] text-white/60 mt-1 leading-tight">{card.desc}</p>
                     </div>
                   ))}
                 </div>
