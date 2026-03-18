@@ -214,11 +214,7 @@ export default function Hero() {
               className="animate-fade-up text-white/50 text-sm sm:text-base lg:text-lg leading-relaxed max-w-xl"
               style={delay(220)}
             >
-              I engineer <strong className="text-white/85 font-semibold">production-grade APIs</strong>,
-              battle-tested{' '}
-              <strong className="text-violet-400 font-semibold">Stripe payment flows</strong>, and{' '}
-              <strong className="text-white/85 font-semibold">webhook pipelines</strong>{' '}
-              that handle real money — reliably, every time.
+              I engineer production-grade APIs, battle-tested Stripe payment flows, and webhook pipelines that handle real money — reliably, every time.
             </p>
 
             {/* ── Stat pills ── */}
