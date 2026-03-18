@@ -1,104 +1,75 @@
 import { useInView } from '../hooks/useInView';
 
-const TIMELINE = [
-  { year: '2024–now', title: 'Stripe & Payments Specialist', co: 'ali.Inc · Freelance', desc: 'Building Stripe-native payment flows, webhook handlers, retry logic, and idempotent API integrations for SaaS clients worldwide.' },
-  { year: '2022–2024', title: 'Full-Stack Engineer', co: 'Contract / Remote', desc: 'Delivered 40+ production apps with Django REST, Node/Express, and Next.js frontends. Migrated monoliths to Docker + AWS ECS.' },
-  { year: '2019–2022', title: 'PHP/Laravel Developer', co: 'Local startups · BD', desc: 'E-commerce and CMS platforms with Laravel. Introduced automated test suites and CI/CD pipelines that cut deploy time by 70%.' },
-  { year: '2018', title: 'Started coding', co: 'Self-taught', desc: 'First line of code in PHP. Never stopped.' },
-];
-
 export default function About() {
   const { ref, visible } = useInView();
   return (
-      <section
+    <section
       id="about"
       ref={ref}
       className={`py-8 sm:py-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
     >
       <div className="max-w-6xl mx-auto px-3 sm:px-6 lg:px-8">
         
-        {/* Header - Matching Business Card Style */}
-        <div className="text-center mb-10">
-          <p className="text-violet-400 font-mono text-xs sm:text-sm mb-2 uppercase tracking-widest">About</p>
-          <h2 className="text-3xl sm:text-5xl font-bold text-white">
-            YUSUF ALI
-          </h2>
-          <p className="text-violet-400 text-lg sm:text-xl mt-2">Payments Engineer</p>
-          <p className="text-white/50 text-sm mt-1">Rajshahi, Bangladesh</p>
-        </div>
-
-        {/* Workflow Icons */}
-        <div className="flex items-center justify-center gap-4 sm:gap-8 mb-10 flex-wrap">
-          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#635bff]/20 border border-[#635bff]/40">
-            <span className="text-[#635bff] font-bold">◯</span>
-            <span className="text-white/80 text-sm">Stripe</span>
-          </div>
-          <span className="text-white/30">→</span>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-orange-500/20 border border-orange-500/40">
-            <span className="text-orange-400 text-sm font-bold">3DS</span>
-          </div>
-          <span className="text-white/30">→</span>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-green-500/20 border border-green-500/40">
-            <span className="text-green-400 text-sm">Webhook</span>
-          </div>
-          <span className="text-white/30">→</span>
-          <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500/20 border border-emerald-500/40">
-            <span className="text-emerald-400 text-sm">✓</span>
-          </div>
-        </div>
-
-        {/* Main Content - Two Columns */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12">
-          
-          {/* Left Column - Experience */}
-          <div>
-            <h3 className="text-white/60 text-sm uppercase tracking-wider mb-4">What I Build</h3>
-            <ul className="space-y-3">
-              {[
-                { icon: '💳', text: 'Built robust payment pipelines' },
-                { icon: '🔒', text: 'Ensured idempotency & security' },
-                { icon: '❌', text: 'Avoided double charges' },
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-lg">{item.icon}</span>
-                  <span className="text-white/70 text-sm">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-
-            {/* Quote */}
-            <div className="mt-6 p-4 rounded-lg bg-violet-500/10 border border-violet-500/30">
-              <p className="text-violet-300 text-sm italic">
-                "Stripe integration & webhook reliability engineer"
-              </p>
+        {/* Business Card Style */}
+        <div className="max-w-2xl mx-auto">
+          <div className="rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0f0f1a] border border-violet-500/30 p-6 sm:p-10">
+            
+            {/* Name & Title */}
+            <div className="text-center mb-6">
+              <h2 className="text-3xl sm:text-5xl font-bold text-white mb-2">
+                YUSUF ALI
+              </h2>
+              <p className="text-violet-400 text-lg sm:text-xl">Payments Engineer</p>
+              <p className="text-white/50 text-sm mt-1">Rajshahi, Bangladesh</p>
             </div>
-          </div>
 
-          {/* Right Column - Skills */}
-          <div>
-            <h3 className="text-white/60 text-sm uppercase tracking-wider mb-4">Tech Stack</h3>
-            <ul className="space-y-3">
-              {[
-                { icon: '🔌', text: 'REST APIs & Scalable PostgreSQL' },
-                { icon: '🐍', text: 'Python, Node.js & PHP/Laravel' },
-              ].map((item, i) => (
-                <li key={i} className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <span className="text-lg">{item.icon}</span>
-                  <span className="text-white/70 text-sm">{item.text}</span>
-                </li>
-              ))}
-            </ul>
+            {/* Workflow Flow */}
+            <div className="flex items-center justify-center gap-2 sm:gap-4 flex-wrap mb-6">
+              <div className="px-3 py-1.5 rounded-lg bg-[#635bff]/20 border border-[#635bff]/40 text-xs sm:text-sm">
+                <span className="text-[#635bff]">◯</span> Stripe
+              </div>
+              <span className="text-white/30">→</span>
+              <div className="px-3 py-1.5 rounded-lg bg-orange-500/20 border border-orange-500/40 text-xs sm:text-sm text-orange-400">
+                3DS
+              </div>
+              <span className="text-white/30">→</span>
+              <div className="px-3 py-1.5 rounded-lg bg-green-500/20 border border-green-500/40 text-xs sm:text-sm text-green-400">
+                Webhook
+              </div>
+              <span className="text-white/30">→</span>
+              <div className="px-3 py-1.5 rounded-lg bg-emerald-500/20 border border-emerald-500/40 text-xs sm:text-sm text-emerald-400">
+                ✓ Paid
+              </div>
+            </div>
+
+            {/* What I Build */}
+            <div className="grid sm:grid-cols-2 gap-3 mb-6">
+              <div className="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center">
+                <span className="text-xl">💳</span>
+                <p className="text-white/70 text-sm mt-1">Payment Pipelines</p>
+              </div>
+              <div className="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center">
+                <span className="text-xl">🔒</span>
+                <p className="text-white/70 text-sm mt-1">Idempotency</p>
+              </div>
+              <div className="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center">
+                <span className="text-xl">⚡</span>
+                <p className="text-white/70 text-sm mt-1">Retry Logic</p>
+              </div>
+              <div className="p-3 rounded-lg bg-white/[0.04] border border-white/[0.06] text-center">
+                <span className="text-xl">🔌</span>
+                <p className="text-white/70 text-sm mt-1">REST APIs</p>
+              </div>
+            </div>
 
             {/* Slogan */}
-            <div className="mt-6 p-4 rounded-lg bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-white/10">
-              <p className="text-white/80 text-center font-medium">
-                Processing Real Money, Deploying to the Cloud
-              </p>
+            <div className="text-center p-4 rounded-lg bg-gradient-to-r from-violet-500/10 to-cyan-500/10 border border-white/10">
+              <p className="text-white/80">Processing Real Money. Deploying to the Cloud.</p>
             </div>
 
-            {/* GitHub Link */}
+            {/* GitHub */}
             <a 
-              href="https://github.com/yusufdupsc1" 
+              href="https://github.com/yusufdupsc1"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-4 flex items-center justify-center gap-2 p-3 rounded-lg bg-white/[0.05] border border-white/[0.1] hover:bg-white/[0.08] transition-colors"
@@ -108,6 +79,7 @@ export default function About() {
               </svg>
               <span className="text-white/70 text-sm">github.com/yusufdupsc1</span>
             </a>
+
           </div>
         </div>
 
