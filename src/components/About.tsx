@@ -11,7 +11,7 @@ export default function About() {
       <div className="max-w-6xl mx-auto px-2 sm:px-6 lg:px-8">
         
         {/* Business Card Style */}
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-3xl mx-auto">
           <div className="rounded-2xl bg-gradient-to-br from-[#1a1a2e] to-[#0f0f1a] border border-violet-500/30 p-4 sm:p-8 lg:p-10">
             
             {/* Name & Title */}
