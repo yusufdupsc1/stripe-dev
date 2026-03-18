@@ -197,7 +197,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 mt-4 text-xs text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 <span className="text-xs sm:text-sm">github.com/yusufdupsc1/sso-platform</span>
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
               </a>
             </div>
 
@@ -223,7 +223,7 @@ export default function Hero() {
                 const inner = (
                   <>
                     <span className="font-bold text-violet-400 font-mono text-base sm:text-lg leading-none">{s.n}</span>
-                    <span className="text-white/40 text-[10px] sm:text-xs">{s.label}</span>
+                    <span className="text-white/40 text-[10px] sm:text-xs leading-tight">{s.label}</span>
                   </>
                 );
                 return s.href ? (

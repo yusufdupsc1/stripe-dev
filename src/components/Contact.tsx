@@ -147,7 +147,7 @@ export default function Contact() {
               /* ── Contact form ── */
               <form onSubmit={handleMessage} className="space-y-4">
                 <div>
-                  <label className="block text-xs text-white/50 font-mono mb-1.5">Name</label>
+                  <label className="block text-xs text-white/70 font-mono mb-1.5">Name</label>
                   <input
                     type="text"
                     value={name}
@@ -158,7 +158,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-white/50 font-mono mb-1.5">Email</label>
+                  <label className="block text-xs text-white/70 font-mono mb-1.5">Email</label>
                   <input
                     type="email"
                     value={email}
@@ -169,7 +169,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-white/50 font-mono mb-1.5">Message</label>
+                  <label className="block text-xs text-white/70 font-mono mb-1.5">Message</label>
                   <textarea
                     value={message}
                     onChange={e => setMessage(e.target.value)}
