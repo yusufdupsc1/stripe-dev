@@ -50,7 +50,10 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
           line_items: [{
             price_data: {
               currency: (data.currency as string) || 'usd',
-              product_data: { name: data.productName, description: data.description || '' },
+              product_data: { 
+                name: data.productName, 
+                description: data.description || 'Portfolio service payment' 
+              },
               unit_amount: data.amount,
             },
             quantity: data.quantity || 1,
