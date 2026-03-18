@@ -10,7 +10,7 @@ const TIMELINE = [
 export default function About() {
   const { ref, visible } = useInView();
   return (
-    <section
+      <section
       id="about"
       ref={ref}
       className={`py-8 sm:py-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
