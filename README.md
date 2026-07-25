@@ -7,6 +7,15 @@ Rajshahi, Bangladesh 🇧🇩 · Remote OK
 
 ---
 
+## 2026 Focus
+
+- **Primary:** Stripe-native payment flows, webhook reliability, and idempotent integrations
+- **Platforms:** Production clientwork on `clientflow-pro` and `sso-platform`; open-source work on `stripe-dev`
+- **Delivery:** Dockerized deployments on Vercel/serverless and self-hosted nginx stacks
+- **Quality focus:** Retry-safe APIs, SCA/3DS-ready checkout, auth-hardening, schema-safe Postgres changes
+
+---
+
 <!-- SHIPPING:START -->
 - **yusufdupsc1/stripe-dev** — feat: add issue templates and changelog for Sprint 12 `2026-07-25 15:34:05 UTC`
 - **yusufdupsc1/stripe-dev** — feat: add command palette and status widget components, implement project case study page, and include project data `2026-07-25 13:18:27 UTC`
