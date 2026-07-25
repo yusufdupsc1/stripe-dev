@@ -2,12 +2,18 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import fs from 'node:fs';
 import path from 'node:path';
+import { loadEnv } from 'vite';
 
 const GITHUB_USERNAME = 'yusufdupsc1';
 
+function getGitHubToken(): string | undefined {
+  const env = loadEnv('', process.cwd(), '');
+  return env.GITHUB_TOKEN;
+}
+
 async function fetchGitHubStats() {
-  const token = process.env.GITHUB_TOKEN;
-  const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+  const token = getGitHubToken();
+  const headers: Record<string, string> = { Accept: 'application/vnd.github+json', 'User-Agent': 'stripe-dev-build' };
   if (token) headers.Authorization = `Bearer ${token}`;
 
   const [userRes, reposRes] = await Promise.all([
@@ -15,8 +21,14 @@ async function fetchGitHubStats() {
     fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?per_page=100&sort=pushed`, { headers, signal: AbortSignal.timeout(12_000) }),
   ]);
 
-  if (!userRes.ok) throw new Error(`GitHub user API error: ${userRes.status}`);
-  if (!reposRes.ok) throw new Error(`GitHub repos API error: ${reposRes.status}`);
+  if (!userRes.ok) {
+    const body = await userRes.text();
+    throw new Error(`GitHub user API error: ${userRes.status} — ${body}`);
+  }
+  if (!reposRes.ok) {
+    const body = await reposRes.text();
+    throw new Error(`GitHub repos API error: ${reposRes.status} — ${body}`);
+  }
 
   const user = await userRes.json();
   const repos = await reposRes.json();
@@ -42,7 +54,7 @@ function githubStatsPlugin(): Plugin {
     async buildStart() {
       try {
         stats = await fetchGitHubStats();
-        if (!process.env.GITHUB_TOKEN) {
+        if (!getGitHubToken()) {
           console.warn('[github-stats-plugin] No GITHUB_TOKEN set — requests may be rate-limited.');
         }
       } catch (err) {
