@@ -20,3 +20,4 @@ dist-ssr
 # Lighthouse
 .lighthouseci/
 .vercel
+.playwright-mcp/
