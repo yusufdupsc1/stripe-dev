@@ -7,6 +7,16 @@ Rajshahi, Bangladesh 🇧🇩 · Remote OK
 
 ---
 
+<!-- SHIPPING:START -->
+- **yusufdupsc1/stripe-dev** — feat: add issue templates and changelog for Sprint 12 `2026-07-25 15:34:05 UTC`
+- **yusufdupsc1/stripe-dev** — feat: add command palette and status widget components, implement project case study page, and include project data `2026-07-25 13:18:27 UTC`
+- **yusufdupsc1/stripe-dev** — Merge About and Expertise into bento grid with container queries `2026-07-25 11:26:55 UTC`
+- **yusufdupsc1/stripe-dev** — Remove temp browser artifacts `2026-07-25 10:29:48 UTC`
+- **yusufdupsc1/OpenSchoolOS** — fix(api): update database connection settings for SQLite compatibility `2026-07-25 04:11:44 UTC`
+<!-- SHIPPING:END -->
+
+---
+
 ## Stack
 
 | Layer     | Tech                                         |
