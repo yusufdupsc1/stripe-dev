@@ -7,7 +7,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || '', {
 });
 
 function cors(res: VercelResponse) {
-  res.setHeader('Access-Control-Allow-Origin', process.env.NEXT_PUBLIC_APP_URL || '*');
+  res.setHeader('Access-Control-Allow-Origin', process.env.VITE_APP_URL || '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 }
@@ -44,7 +44,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         if (!data.amount || !data.productName) {
           return res.status(400).json({ error: 'amount and productName are required' });
         }
-        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
+        const appUrl = process.env.VITE_APP_URL || 'http://localhost:5173';
         const session = await stripe.checkout.sessions.create({
           mode: 'payment',
           line_items: [{

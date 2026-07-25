@@ -1,0 +1,4 @@
+[     881ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:5174/@vite/client:0
+[     885ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:5174/src/main.tsx:0
+[     898ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:5174/@react-refresh:0
+[    1013ms] [ERROR] Failed to load resource: net::ERR_FAILED @ http://localhost:5174/favicon.ico:0

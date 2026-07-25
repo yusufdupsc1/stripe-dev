@@ -17,6 +17,13 @@
       ]
     },
     {
+      "source": "/github-stats.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, s-maxage=3600, stale-while-revalidate=3600" },
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    },
+    {
       "source": "/(.*)",
       "headers": [
         { "key": "X-Content-Type-Options", "value": "nosniff" },

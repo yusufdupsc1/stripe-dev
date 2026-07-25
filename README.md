@@ -32,7 +32,7 @@ pnpm install
 # 3. Environment
 cp .env.example .env.local
 # → add STRIPE_SECRET_KEY=sk_test_...
-# → add NEXT_PUBLIC_APP_URL=http://localhost:5173
+# → add VITE_APP_URL=http://localhost:5173
 
 # 4. Run
 pnpm dev          # http://localhost:5173
@@ -76,7 +76,7 @@ vercel
 
 # Set environment variables in Vercel dashboard:
 # STRIPE_SECRET_KEY  = sk_test_...
-# NEXT_PUBLIC_APP_URL = https://your-domain.vercel.app
+# VITE_APP_URL       = https://your-domain.vercel.app
 ```
 
 The `vercel.json` already configures:
@@ -107,27 +107,29 @@ The portfolio is a fully installable Progressive Web App:
 
 ```
 /
-├── api/
-│   └── stripe/index.ts        # Vercel serverless Stripe handler
-├── public/
-│   ├── manifest.json          # PWA manifest
-│   ├── sw.js                  # Service worker
-│   └── icon-*.svg             # App icons
 ├── src/
 │   ├── components/
 │   │   ├── Navbar.tsx         # Top nav + mobile bottom dock
-│   │   ├── Hero.tsx           # Typewriter + terminal card
-│   │   ├── About.tsx          # Timeline + real GitHub stats
+│   │   ├── Hero.tsx           # Typewriter + terminal card + live GitHub stats
+│   │   ├── About.tsx          # Timeline + live GitHub stats
 │   │   ├── Expertise.tsx      # Animated skill bars
 │   │   ├── Projects.tsx       # Real GitHub repos
 │   │   ├── Contact.tsx        # Message form + Stripe Checkout
 │   │   └── Footer.tsx
 │   ├── hooks/
 │   │   └── useInView.ts       # Intersection Observer hook
+│   ├── lib/
+│   │   └── github.ts          # GitHub stats fetch + cache helper
 │   ├── App.tsx
 │   ├── main.tsx
 │   ├── index.css              # Design tokens + animations
 │   └── vite-env.d.ts
+├── api/
+│   └── stripe/index.ts        # Vercel serverless Stripe handler
+├── public/
+│   ├── manifest.json          # PWA manifest
+│   ├── sw.js                  # Service worker
+│   └── icon-*.svg             # App icons
 ├── .env.example
 ├── vercel.json
 ├── Dockerfile

@@ -38,4 +38,4 @@ jobs:
         run: pnpm build
         env:
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
-          NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+          VITE_APP_URL: ${{ secrets.VITE_APP_URL }}

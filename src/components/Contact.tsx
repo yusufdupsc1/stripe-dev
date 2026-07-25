@@ -1,17 +1,17 @@
+import { motion, useReducedMotion } from 'framer-motion';
 import { useCallback, useEffect, useState, type FormEvent } from 'react';
-import { useInView } from '../hooks/useInView';
 import { PROFILE } from '../data/profile';
+
 
 type Tab = 'message' | 'hire';
 
-// ── Stripe payment helper ──────────────────────────────────────────────
 async function createCheckoutSession(amount: number, description: string) {
   const res = await fetch('/api/stripe', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       action: 'create-checkout-session',
-      amount,                              // in cents
+      amount,
       productName: description,
       currency: 'usd',
     }),
@@ -28,8 +28,25 @@ const SERVICES = [
   { id: 'consult',label: '1-Hour Consultation',  price: 4900,  display: '$49'  },
 ];
 
+const sectionVariants = {
+  hidden: { opacity: 0, y: 32 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { stiffness: 300, damping: 24 },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { stiffness: 300, damping: 24 },
+  },
+};
+
 export default function Contact() {
-  const { ref, visible } = useInView();
   const [tab, setTab]               = useState<Tab>('message');
   const [name, setName]             = useState('');
   const [email, setEmail]           = useState('');
@@ -38,8 +55,14 @@ export default function Contact() {
   const [status, setStatus]         = useState<'idle' | 'loading' | 'done' | 'error'>('idle');
   const [payStatus, setPayStatus]   = useState<'idle' | 'loading' | 'error'>('idle');
   const [payMsg, setPayMsg]         = useState('');
+  const shouldReduce = useReducedMotion() ?? false;
 
-  // Handle post-Stripe redirect feedback
+  const reducedItemVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.01 } },
+  };
+  const activeItemVariants = shouldReduce ? reducedItemVariants : itemVariants;
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('payment') === 'success') setPayMsg('✅ Payment successful! I\'ll reach out within 24 hours.');
@@ -49,7 +72,6 @@ export default function Contact() {
   const handleMessage = useCallback(async (e: FormEvent) => {
     e.preventDefault();
     setStatus('loading');
-    // Encode as mailto (no server needed for a simple contact form)
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
     window.location.href = `mailto:yusufdupsc1@gmail.com?subject=Portfolio enquiry from ${encodeURIComponent(name)}&body=${body}`;
     setStatus('done');
@@ -67,15 +89,18 @@ export default function Contact() {
   }, [service]);
 
   return (
-    <section
+    <motion.section
       id="contact"
-      ref={ref}
-      className={`py-8 sm:py-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+
+      variants={sectionVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, margin: '-10%' }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left – info */}
-          <div>
+          <motion.div variants={activeItemVariants}>
             <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">Contact</p>
             <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
               Let's build<br />
@@ -124,10 +149,10 @@ export default function Contact() {
                 {payMsg}
               </div>
             )}
-          </div>
+          </motion.div>
 
           {/* Right – form */}
-          <div className="p-6 sm:p-8 rounded-2xl bg-[#0e0e14] border border-white/[0.08]">
+          <motion.div variants={activeItemVariants} className="p-6 sm:p-8 rounded-2xl bg-[#0e0e14] border border-white/[0.08]">
             {/* Tabs */}
             <div className="flex gap-2 mb-6 p-1 rounded-lg bg-white/[0.04] border border-white/[0.06]">
               {(['message', 'hire'] as Tab[]).map(t => (
@@ -238,9 +263,9 @@ export default function Contact() {
                 </button>
               </div>
             )}
-          </div>
+          </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

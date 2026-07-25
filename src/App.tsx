@@ -1,5 +1,6 @@
 import Navbar   from './components/Navbar';
 import Hero     from './components/Hero';
+import WebhookTrace from './components/WebhookTrace';
 import About    from './components/About';
 import Expertise from './components/Expertise';
 import Projects from './components/Projects';
@@ -12,6 +13,7 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <WebhookTrace />
         <About />
         <Expertise />
         <Projects />

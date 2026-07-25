@@ -50,7 +50,7 @@ export default function Navbar() {
           {/* Logo - Terminal Style with Y brand */}
           <button
             onClick={() => scrollTo('home')}
-            className="flex items-center gap-2 group focus-visible:outline-none"
+            className="p-2 flex items-center gap-2 group focus-visible:outline-none"
             aria-label="Go to top"
           >
             <div className="w-9 h-9 rounded-lg bg-[#0d0d12] border border-violet-500/40 flex items-center justify-center overflow-hidden shadow-lg shadow-violet-500/20">
@@ -132,13 +132,13 @@ export default function Navbar() {
                 href="https://github.com/yusufdupsc1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-2.5 rounded-lg border border-white/10 text-white/60 hover:text-white text-center text-sm font-medium transition-colors"
+                className="flex-1 py-3 rounded-lg border border-white/10 text-white/60 hover:text-white text-center text-sm font-medium transition-colors"
               >
                 GitHub
               </a>
               <button
                 onClick={() => scrollTo('contact')}
-                className="flex-1 py-2.5 rounded-lg bg-violet-600 text-white text-sm font-semibold active:scale-95 transition-all"
+                className="flex-1 py-3 rounded-lg bg-violet-600 text-white text-sm font-semibold active:scale-95 transition-all"
               >
                 Hire Me
               </button>
@@ -163,7 +163,7 @@ export default function Navbar() {
                 <li key={id} className="flex-1">
                   <button
                     onClick={() => scrollTo(id)}
-                    className="relative w-full flex flex-col items-center gap-1 py-1.5 rounded-xl transition-all duration-200 active:scale-95"
+                    className="relative w-full flex flex-col items-center gap-1 py-2 rounded-xl transition-all duration-200 active:scale-95 min-h-[44px]"
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {/* Active bg pill */}
