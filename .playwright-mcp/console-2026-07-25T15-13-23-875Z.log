@@ -1,0 +1,21 @@
+[    3540ms] [INFO] %cDownload the React DevTools for a better development experience: https://reactjs.org/link/react-devtools font-weight:bold @ http://localhost:5173/node_modules/.vite/deps/chunk-DUHBU7KY.js?v=e780420e:21548
+[    4433ms] [ERROR] Warning: validateDOMNesting(...): %s cannot appear as a descendant of <%s>.%s <a> a 
+    at a
+    at div
+    at article
+    at MotionDOMComponent (http://localhost:5173/node_modules/.vite/deps/framer-motion.js?v=bb3f3ab7:9366:40)
+    at a
+    at LinkWithRef (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=53c82493:10968:5)
+    at div
+    at MotionDOMComponent (http://localhost:5173/node_modules/.vite/deps/framer-motion.js?v=bb3f3ab7:9366:40)
+    at div
+    at section
+    at MotionDOMComponent (http://localhost:5173/node_modules/.vite/deps/framer-motion.js?v=bb3f3ab7:9366:40)
+    at Projects (http://localhost:5173/src/components/Projects.tsx:138:24)
+    at RenderedRoute (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=53c82493:6667:26)
+    at Routes (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=53c82493:7602:3)
+    at main
+    at div
+    at App (http://localhost:5173/src/App.tsx:32:22)
+    at Router (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=53c82493:7541:13)
+    at BrowserRouter (http://localhost:5173/node_modules/.vite/deps/react-router-dom.js?v=53c82493:10857:3) @ http://localhost:5173/node_modules/.vite/deps/chunk-DUHBU7KY.js?v=e780420e:518
