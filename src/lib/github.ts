@@ -122,7 +122,7 @@ export function useGitHubStats(username = 'yusufdupsc1') {
 
     load();
 
-    const interval = setInterval(load, 1_000);
+    const interval = setInterval(load, 60_000);
 
     return () => {
       cancelled = true;

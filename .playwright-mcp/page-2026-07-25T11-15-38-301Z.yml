@@ -1,0 +1,504 @@
+- generic [ref=f4e3]:
+  - navigation "Main navigation" [ref=f4e4]:
+    - generic [ref=f4e6]:
+      - button "Go to top" [ref=f4e7] [cursor=pointer]:
+        - generic [ref=f4e8]: "Y"
+      - button "Toggle menu" [ref=f4e10] [cursor=pointer]
+    - generic:
+      - generic:
+        - button "Home"
+        - button "About"
+        - button "Skills"
+        - button "Work"
+        - button "Hire"
+        - generic:
+          - link "GitHub":
+            - /url: https://github.com/yusufdupsc1
+          - button "Hire Me"
+  - navigation "Bottom navigation" [ref=f4e13]:
+    - list [ref=f4e16]:
+      - listitem [ref=f4e17]:
+        - button "Home" [ref=f4e18] [cursor=pointer]
+      - listitem [ref=f4e24]:
+        - button "About" [ref=f4e25] [cursor=pointer]
+      - listitem [ref=f4e29]:
+        - button "Skills" [ref=f4e30] [cursor=pointer]
+      - listitem [ref=f4e34]:
+        - button "Work" [ref=f4e35] [cursor=pointer]
+      - listitem [ref=f4e39]:
+        - button "Hire" [ref=f4e40] [cursor=pointer]
+  - main [ref=f4e44]:
+    - generic [ref=f4e46]:
+      - generic [ref=f4e48]:
+        - generic [ref=f4e49]: Available for work · Rajshahi, Bangladesh 🇧🇩
+        - generic [ref=f4e53]:
+          - paragraph [ref=f4e54]: KEYCLOAK SSO FIXED!
+          - generic [ref=f4e55]:
+            - generic [ref=f4e56]:
+              - generic [ref=f4e57]: ⏱️
+              - heading "6 Hours Debugging SSO" [level=3] [ref=f4e58]
+              - paragraph [ref=f4e59]: Wagtail + Django + Keycloak
+            - generic [ref=f4e60]:
+              - generic [ref=f4e61]: 🐛
+              - heading "The Bug" [level=3] [ref=f4e62]
+              - paragraph [ref=f4e63]: JWT Audience Mismatch
+            - generic [ref=f4e64]:
+              - generic [ref=f4e65]: ✅
+              - heading "The Fix" [level=3] [ref=f4e66]
+              - paragraph [ref=f4e67]: Update Keycloak Client → Add Correct Audience
+            - generic [ref=f4e68]:
+              - generic [ref=f4e69]: 💡
+              - heading "Lesson" [level=3] [ref=f4e70]
+              - paragraph [ref=f4e71]: Always inspect JWT payload before blaming Django
+            - generic [ref=f4e72]:
+              - generic [ref=f4e73]: 💳
+              - heading "ClientFlow Pro" [level=3] [ref=f4e74]
+              - paragraph [ref=f4e75]: Multi-tenant CRM with full Stripe billing
+            - generic [ref=f4e76]:
+              - generic [ref=f4e77]: 🛡️
+              - heading "Tenant Isolation" [level=3] [ref=f4e78]
+              - paragraph [ref=f4e79]: Secure role-based access control
+            - generic [ref=f4e80]:
+              - generic [ref=f4e81]: 📊
+              - heading "Stripe Webhooks" [level=3] [ref=f4e82]
+              - paragraph [ref=f4e83]: Real-time payment event handling
+          - link "github.com/yusufdupsc1/sso-platform" [ref=f4e84] [cursor=pointer]:
+            - /url: https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab
+        - paragraph [ref=f4e89]:
+          - generic [ref=f4e90]: ›
+          - text: B
+        - paragraph [ref=f4e92]:
+          - text: I engineer
+          - strong [ref=f4e93]: production-grade APIs
+          - text: ", battle-tested"
+          - strong [ref=f4e94]: Stripe payment flows
+          - text: ", and"
+          - strong [ref=f4e95]: webhook pipelines
+          - text: that handle real money — reliably, every time.
+        - generic [ref=f4e96]:
+          - link "View Projects" [ref=f4e97] [cursor=pointer]:
+            - /url: "#projects"
+          - link "Live Demo ↗" [ref=f4e99] [cursor=pointer]:
+            - /url: https://stripe-dev.vercel.app
+          - link "Hire me →" [ref=f4e100] [cursor=pointer]:
+            - /url: "#contact"
+        - generic [ref=f4e101]:
+          - generic [ref=f4e102]: find me
+          - link "GitHub" [ref=f4e103] [cursor=pointer]:
+            - /url: https://github.com/yusufdupsc1
+          - link "LinkedIn" [ref=f4e106] [cursor=pointer]:
+            - /url: https://linkedin.com/in/yusuf-ali-backend-engineer
+          - link "Twitter/X" [ref=f4e109] [cursor=pointer]:
+            - /url: https://twitter.com/EsrafilSaikot
+          - link "Dev.to" [ref=f4e112] [cursor=pointer]:
+            - /url: https://dev.to/yusufdupsc1
+      - generic [ref=f4e115]:
+        - paragraph [ref=f4e116]: Tech I work with daily
+        - generic [ref=f4e118]:
+          - generic [ref=f4e119]: Python
+          - generic [ref=f4e120]: Django
+          - generic [ref=f4e121]: Node.js
+          - generic [ref=f4e122]: TypeScript
+          - generic [ref=f4e123]: PHP
+          - generic [ref=f4e124]: Laravel
+          - generic [ref=f4e125]: PostgreSQL
+          - generic [ref=f4e126]: Redis
+          - generic [ref=f4e127]: Docker
+          - generic [ref=f4e128]: AWS
+          - generic [ref=f4e129]: Next.js
+          - generic [ref=f4e130]: REST APIs
+          - generic [ref=f4e131]: Stripe
+          - generic [ref=f4e132]: Webhooks
+          - generic [ref=f4e133]: CI/CD
+          - generic [ref=f4e134]: Linux
+          - generic [ref=f4e135]: GraphQL
+          - generic [ref=f4e136]: JWT
+          - generic [ref=f4e137]: Python
+          - generic [ref=f4e138]: Django
+          - generic [ref=f4e139]: Node.js
+          - generic [ref=f4e140]: TypeScript
+          - generic [ref=f4e141]: PHP
+          - generic [ref=f4e142]: Laravel
+          - generic [ref=f4e143]: PostgreSQL
+          - generic [ref=f4e144]: Redis
+          - generic [ref=f4e145]: Docker
+          - generic [ref=f4e146]: AWS
+          - generic [ref=f4e147]: Next.js
+          - generic [ref=f4e148]: REST APIs
+          - generic [ref=f4e149]: Stripe
+          - generic [ref=f4e150]: Webhooks
+          - generic [ref=f4e151]: CI/CD
+          - generic [ref=f4e152]: Linux
+          - generic [ref=f4e153]: GraphQL
+          - generic [ref=f4e154]: JWT
+    - generic [ref=f4e156]:
+      - generic [ref=f4e157]:
+        - paragraph [ref=f4e158]: Webhook Flow
+        - heading "How a webhook survives the internet" [level=2] [ref=f4e159]
+        - paragraph [ref=f4e160]: Every Stripe event passes through these steps before touching your database. Hover or tab to explore.
+      - generic [ref=f4e162]:
+        - button "Stripe" [ref=f4e163] [cursor=pointer]
+        - button "HTTPS POST" [ref=f4e165] [cursor=pointer]
+        - button "Signature Verify" [ref=f4e167] [cursor=pointer]
+        - button "Idempotency" [ref=f4e169] [cursor=pointer]
+        - button "Queue" [ref=f4e171] [cursor=pointer]
+        - button "Handler" [ref=f4e173] [cursor=pointer]
+        - button "Response" [ref=f4e175] [cursor=pointer]
+    - generic [ref=f4e179]:
+      - generic [ref=f4e180]:
+        - paragraph [ref=f4e181]: About
+        - heading "Not just a developer. A payments engineer." [level=2] [ref=f4e182]: Not just a developer.A payments engineer.
+        - generic [ref=f4e183]:
+          - paragraph [ref=f4e184]:
+            - text: "I'm Yusuf — based in Rajshahi, Bangladesh. My GitHub bio says it plainly:"
+            - emphasis [ref=f4e185]: "\"stripe integration & webhook reliability engineer\""
+            - text: .
+          - paragraph [ref=f4e186]: I've built payment pipelines that process real money, handle SCA/3DS flows, survive network failures gracefully, and never double-charge a customer. I understand idempotency keys, Stripe's event model, and webhook signature verification by heart.
+          - paragraph [ref=f4e187]: Beyond payments, I architect clean REST APIs, design PostgreSQL schemas that scale, and containerise workloads for cloud deployment. I work across Python/Django, Node.js/Express, and PHP/Laravel depending on what the job calls for.
+      - generic [ref=f4e188]:
+        - paragraph [ref=f4e189]: Values
+        - generic [ref=f4e190]:
+          - generic [ref=f4e191]:
+            - generic [ref=f4e192]: 🔒
+            - generic [ref=f4e193]: Idempotent APIs
+          - generic [ref=f4e194]:
+            - generic [ref=f4e195]: ⚡
+            - generic [ref=f4e196]: Webhook reliability
+          - generic [ref=f4e197]:
+            - generic [ref=f4e198]: 🧪
+            - generic [ref=f4e199]: Test-first dev
+          - generic [ref=f4e200]:
+            - generic [ref=f4e201]: 📦
+            - generic [ref=f4e202]: Docker & CI/CD
+      - generic [ref=f4e203]:
+        - paragraph [ref=f4e204]: Journey
+        - list [ref=f4e205]:
+          - listitem [ref=f4e206]:
+            - text: 2024–now
+            - heading "Payments & Stripe Specialist" [level=3] [ref=f4e209]
+            - paragraph [ref=f4e210]: ali.Inc · Freelance
+            - paragraph [ref=f4e211]: Building Stripe-native payment flows, webhook handlers, retry logic, and idempotent API integrations for SaaS clients worldwide.
+          - listitem [ref=f4e212]:
+            - text: 2022–2024
+            - heading "Full-Stack Engineer" [level=3] [ref=f4e215]
+            - paragraph [ref=f4e216]: Contract / Remote
+            - paragraph [ref=f4e217]: Delivered 40+ production apps with Django REST, Node/Express, and Next.js frontends. Migrated monoliths to Docker + AWS ECS.
+          - listitem [ref=f4e218]:
+            - text: 2019–2022
+            - heading "PHP/Laravel Developer" [level=3] [ref=f4e221]
+            - paragraph [ref=f4e222]: Local startups · BD
+            - paragraph [ref=f4e223]: E-commerce and CMS platforms with Laravel. Introduced automated test suites and CI/CD pipelines that cut deploy time by 70%.
+          - listitem [ref=f4e224]:
+            - text: "2018"
+            - heading "Started coding" [level=3] [ref=f4e227]
+            - paragraph [ref=f4e228]: Self-taught
+            - paragraph [ref=f4e229]: First line of code in PHP. Never stopped.
+      - generic [ref=f4e230]:
+        - paragraph [ref=f4e231]: Impact
+        - generic [ref=f4e232]:
+          - generic [ref=f4e233]:
+            - paragraph: —
+            - paragraph: Repos
+          - generic [ref=f4e234]:
+            - paragraph: —
+            - paragraph: Followers
+          - generic [ref=f4e235]:
+            - paragraph: —
+            - paragraph: Stars
+      - generic [ref=f4e237]:
+        - generic [ref=f4e238]:
+          - generic [ref=f4e239]: 💳
+          - heading "Payments & Webhooks" [level=3] [ref=f4e240]
+        - generic [ref=f4e241]:
+          - generic [ref=f4e243]:
+            - generic [ref=f4e244]: Stripe API - PaymentIntents, Checkout, Connect
+            - generic [ref=f4e245]: 95%
+          - generic [ref=f4e248]:
+            - generic [ref=f4e249]: Webhook signature verification & retry queues
+            - generic [ref=f4e250]: 95%
+          - generic [ref=f4e253]:
+            - generic [ref=f4e254]: Idempotency keys & error recovery
+            - generic [ref=f4e255]: 92%
+          - generic [ref=f4e258]:
+            - generic [ref=f4e259]: REST API design - OpenAPI / Swagger
+            - generic [ref=f4e260]: 91%
+          - generic [ref=f4e263]:
+            - generic [ref=f4e264]: GraphQL API design
+            - generic [ref=f4e265]: 76%
+      - generic [ref=f4e268]:
+        - generic [ref=f4e269]:
+          - generic [ref=f4e270]: ⚙️
+          - heading "Backend Engineering" [level=3] [ref=f4e271]
+        - generic [ref=f4e272]:
+          - generic [ref=f4e274]:
+            - generic [ref=f4e275]: Python & Django / Django REST Framework
+            - generic [ref=f4e276]: 90%
+          - generic [ref=f4e279]:
+            - generic [ref=f4e280]: Node.js & Express
+            - generic [ref=f4e281]: 88%
+          - generic [ref=f4e284]:
+            - generic [ref=f4e285]: PHP & Laravel
+            - generic [ref=f4e286]: 83%
+          - generic [ref=f4e289]:
+            - generic [ref=f4e290]: JWT / OAuth2 / Session auth
+            - generic [ref=f4e291]: 87%
+          - generic [ref=f4e294]:
+            - generic [ref=f4e295]: WebSockets & Server-Sent Events
+            - generic [ref=f4e296]: 74%
+      - generic [ref=f4e299]:
+        - generic [ref=f4e300]:
+          - generic [ref=f4e301]: 🗄️
+          - heading "Data & Infrastructure" [level=3] [ref=f4e302]
+        - generic [ref=f4e303]:
+          - generic [ref=f4e305]:
+            - generic [ref=f4e306]: PostgreSQL - schema design & query optimisation
+            - generic [ref=f4e307]: 90%
+          - generic [ref=f4e310]:
+            - generic [ref=f4e311]: Redis - caching & job queues
+            - generic [ref=f4e312]: 83%
+          - generic [ref=f4e315]:
+            - generic [ref=f4e316]: MongoDB
+            - generic [ref=f4e317]: 74%
+          - generic [ref=f4e320]:
+            - generic [ref=f4e321]: Docker & Docker Compose
+            - generic [ref=f4e322]: 89%
+          - generic [ref=f4e325]:
+            - generic [ref=f4e326]: AWS - EC2, S3, RDS, Lambda
+            - generic [ref=f4e327]: 78%
+      - generic [ref=f4e330]:
+        - generic [ref=f4e331]:
+          - generic [ref=f4e332]: 🎨
+          - heading "Frontend & Tooling" [level=3] [ref=f4e333]
+        - generic [ref=f4e334]:
+          - generic [ref=f4e336]:
+            - generic [ref=f4e337]: TypeScript & React
+            - generic [ref=f4e338]: 88%
+          - generic [ref=f4e341]:
+            - generic [ref=f4e342]: Next.js
+            - generic [ref=f4e343]: 85%
+          - generic [ref=f4e346]:
+            - generic [ref=f4e347]: Tailwind CSS
+            - generic [ref=f4e348]: 91%
+          - generic [ref=f4e351]:
+            - generic [ref=f4e352]: GitHub Actions / CI/CD
+            - generic [ref=f4e353]: 90%
+          - generic [ref=f4e356]:
+            - generic [ref=f4e357]: HTML / CSS / Geolocation API
+            - generic [ref=f4e358]: 85%
+      - generic [ref=f4e361]:
+        - paragraph [ref=f4e362]: Code evidence
+        - generic [ref=f4e363]:
+          - link "stripe-dev.vercel.app ↗" [ref=f4e364] [cursor=pointer]:
+            - /url: https://stripe-dev.vercel.app
+            - generic [ref=f4e365]: stripe-dev.vercel.app
+            - generic [ref=f4e366]: ↗
+          - link "ecommerce repo ↗" [ref=f4e367] [cursor=pointer]:
+            - /url: https://github.com/yusufdupsc1/ecommerce
+            - generic [ref=f4e368]: ecommerce repo
+            - generic [ref=f4e369]: ↗
+          - link "book_store repo ↗" [ref=f4e370] [cursor=pointer]:
+            - /url: https://github.com/yusufdupsc1/book_store
+            - generic [ref=f4e371]: book_store repo
+            - generic [ref=f4e372]: ↗
+        - generic [ref=f4e373]: 9/20 skills proven
+      - generic [ref=f4e381]: status widget (Sprint 9)
+      - generic [ref=f4e385]:
+        - paragraph [ref=f4e386]: 🌱 Currently deepening
+        - generic [ref=f4e387]:
+          - generic [ref=f4e388]: AWS Solutions Architect
+          - generic [ref=f4e389]: Linux Kernel internals
+          - generic [ref=f4e390]: Three.js / WebGL
+          - generic [ref=f4e391]: Cybersecurity & Networking
+        - generic [ref=f4e392]:
+          - link "All repos ↗" [ref=f4e393] [cursor=pointer]:
+            - /url: https://github.com/yusufdupsc1?tab=repositories
+          - link "Live demo ↗" [ref=f4e394] [cursor=pointer]:
+            - /url: https://stripe-dev.vercel.app
+    - generic [ref=f4e396]:
+      - generic [ref=f4e397]:
+        - paragraph [ref=f4e398]: Projects
+        - heading "Shipped, not mocked" [level=2] [ref=f4e399]
+        - paragraph [ref=f4e400]: Real repositories from my GitHub. Not Lorem Ipsum placeholder projects.
+      - generic [ref=f4e401]:
+        - article [ref=f4e402]:
+          - generic [ref=f4e403]:
+            - generic [ref=f4e404]: 🔒 Payments
+            - generic [ref=f4e405]: pinned
+          - heading "stripe-dev" [level=3] [ref=f4e406]
+          - paragraph [ref=f4e407]: Stripe integration & webhook reliability platform
+          - paragraph [ref=f4e408]: Production-ready Stripe integration with PaymentIntents, Checkout sessions, webhook signature verification, idempotency handling, and retry queues. Deployed live.
+          - generic [ref=f4e409]:
+            - generic [ref=f4e410]: Stripe
+            - generic [ref=f4e411]: TypeScript
+            - generic [ref=f4e412]: Node.js
+            - generic [ref=f4e413]: Webhooks
+            - generic [ref=f4e414]: Vercel
+          - generic [ref=f4e415]:
+            - link "View Code →" [ref=f4e416] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/stripe-dev
+            - link "Live ↗" [ref=f4e417] [cursor=pointer]:
+              - /url: https://stripe-dev.vercel.app
+        - article [ref=f4e418]:
+          - generic [ref=f4e419]:
+            - generic [ref=f4e420]: 💼 SaaS
+            - generic [ref=f4e421]: pinned
+          - heading "clientflow-pro" [level=3] [ref=f4e422]
+          - paragraph [ref=f4e423]: Client & project management SaaS
+          - paragraph [ref=f4e424]: PHP/Laravel CRM for freelancers — client onboarding, project tracking, invoicing, and payment collection. Role-based access control.
+          - generic [ref=f4e425]:
+            - generic [ref=f4e426]: PHP
+            - generic [ref=f4e427]: Laravel
+            - generic [ref=f4e428]: MySQL
+            - generic [ref=f4e429]: Billing
+          - generic [ref=f4e430]:
+            - link "View Code →" [ref=f4e431] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/clientflow-pro
+            - link "Live ↗" [ref=f4e432] [cursor=pointer]:
+              - /url: https://clientflow-pro.onrender.com
+        - article [ref=f4e433]:
+          - generic [ref=f4e434]:
+            - generic [ref=f4e435]: 🔐 SSO
+            - generic [ref=f4e436]: pinned
+          - heading "sso-platform" [level=3] [ref=f4e437]
+          - paragraph [ref=f4e438]: Multi-tenant SSO authentication
+          - paragraph [ref=f4e439]: Production-ready SSO platform with OAuth2, SAML, and multi-tenant support.
+          - generic [ref=f4e440]:
+            - generic [ref=f4e441]: Python
+            - generic [ref=f4e442]: Django
+            - generic [ref=f4e443]: Keycloak
+            - generic [ref=f4e444]: OAuth2
+          - generic [ref=f4e445]:
+            - link "View Code →" [ref=f4e446] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/sso-platform
+            - link "Live ↗" [ref=f4e447] [cursor=pointer]:
+              - /url: https://sso-platform.onrender.com
+        - article [ref=f4e448]:
+          - generic [ref=f4e449]:
+            - generic [ref=f4e450]: 📍 Geo
+            - generic [ref=f4e451]: pinned
+          - heading "bd-gps" [level=3] [ref=f4e452]
+          - paragraph [ref=f4e453]: Bangladesh GPS tracking app
+          - paragraph [ref=f4e454]: Real-time GPS tracking application with map visualisation for Bangladesh locations.
+          - generic [ref=f4e455]:
+            - generic [ref=f4e456]: HTML
+            - generic [ref=f4e457]: Maps
+            - generic [ref=f4e458]: GPS
+            - generic [ref=f4e459]: Geolocation
+          - generic [ref=f4e460]:
+            - link "View Code →" [ref=f4e461] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/bd-gps
+            - link "Live ↗" [ref=f4e462] [cursor=pointer]:
+              - /url: https://bd-gps.vercel.app/en
+        - article [ref=f4e463]:
+          - generic [ref=f4e464]: ⚛️ Fullstack
+          - heading "ali-fullstack-nextjs" [level=3] [ref=f4e466]
+          - paragraph [ref=f4e467]: Full-stack Next.js application
+          - paragraph [ref=f4e468]: Production full-stack Next.js application with authentication, database integration, and modern UI.
+          - generic [ref=f4e469]:
+            - generic [ref=f4e470]: Next.js
+            - generic [ref=f4e471]: TypeScript
+            - generic [ref=f4e472]: PostgreSQL
+            - generic [ref=f4e473]: Auth
+          - generic [ref=f4e474]:
+            - link "View Code →" [ref=f4e475] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/ali-fullstact-nextjs
+            - link "Live ↗" [ref=f4e476] [cursor=pointer]:
+              - /url: https://ali-fullstact-nextjs.vercel.app/
+        - article [ref=f4e477]:
+          - generic [ref=f4e478]: 🏫 EdTech
+          - heading "scholaops1" [level=3] [ref=f4e480]
+          - paragraph [ref=f4e481]: Modern school management
+          - paragraph [ref=f4e482]: Comprehensive school operations platform with student management, fees, and attendance.
+          - generic [ref=f4e483]:
+            - generic [ref=f4e484]: TypeScript
+            - generic [ref=f4e485]: Next.js
+            - generic [ref=f4e486]: PostgreSQL
+          - generic [ref=f4e487]:
+            - link "View Code →" [ref=f4e488] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/schola-ops
+            - link "Live ↗" [ref=f4e489] [cursor=pointer]:
+              - /url: https://scholaops1.vercel.app/
+        - article [ref=f4e490]:
+          - generic [ref=f4e491]: 🐛 Debug
+          - heading "wagtail-keycloak-sso-lab" [level=3] [ref=f4e493]
+          - paragraph [ref=f4e494]: SSO debugging lab
+          - paragraph [ref=f4e495]: Wagtail CMS with Keycloak SSO integration - debugging and troubleshooting lab.
+          - generic [ref=f4e496]:
+            - generic [ref=f4e497]: Python
+            - generic [ref=f4e498]: Django
+            - generic [ref=f4e499]: Keycloak
+            - generic [ref=f4e500]: SSO
+          - generic [ref=f4e501]:
+            - link "View Code →" [ref=f4e502] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab
+            - link "Live ↗" [ref=f4e503] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab
+        - article [ref=f4e504]:
+          - generic [ref=f4e505]: 🎨 Portfolio
+          - heading "ali-3d-portfolio" [level=3] [ref=f4e507]
+          - paragraph [ref=f4e508]: 3D interactive portfolio
+          - paragraph [ref=f4e509]: Interactive 3D portfolio showcase with modern animations and visuals.
+          - generic [ref=f4e510]:
+            - generic [ref=f4e511]: Three.js
+            - generic [ref=f4e512]: React
+            - generic [ref=f4e513]: 3D
+            - generic [ref=f4e514]: Animation
+          - generic [ref=f4e515]:
+            - link "View Code →" [ref=f4e516] [cursor=pointer]:
+              - /url: https://github.com/yusufdupsc1/ali-3d-portfolio
+            - link "Live ↗" [ref=f4e517] [cursor=pointer]:
+              - /url: https://ali-3d-portfolio.vercel.app/
+      - link "See all 44+ repos on GitHub" [ref=f4e519] [cursor=pointer]:
+        - /url: https://github.com/yusufdupsc1?tab=repositories
+    - generic [ref=f4e524]:
+      - generic [ref=f4e525]:
+        - paragraph [ref=f4e526]: Contact
+        - heading "Let's build something real." [level=2] [ref=f4e527]: Let's buildsomething real.
+        - paragraph [ref=f4e528]: Whether you need a Stripe integration that handles edge cases, a backend API built to scale, or a code review — I can help. Response time within 24 hours.
+        - generic [ref=f4e529]:
+          - link "✉️ Email yusufdupsc1@gmail.com" [ref=f4e530] [cursor=pointer]:
+            - /url: mailto:yusufdupsc1@gmail.com
+            - generic [ref=f4e531]: ✉️
+            - generic [ref=f4e532]:
+              - paragraph [ref=f4e533]: Email
+              - paragraph [ref=f4e534]: yusufdupsc1@gmail.com
+          - link "💼 LinkedIn $Yusuf Ali — Backend Engineer" [ref=f4e535] [cursor=pointer]:
+            - /url: https://linkedin.com/in/yusuf-ali-backend-engineer
+            - generic [ref=f4e536]: 💼
+            - generic [ref=f4e537]:
+              - paragraph [ref=f4e538]: LinkedIn
+              - paragraph [ref=f4e539]: $Yusuf Ali — Backend Engineer
+          - generic [ref=f4e540]:
+            - generic [ref=f4e541]: 📍
+            - generic [ref=f4e542]:
+              - paragraph [ref=f4e543]: Location
+              - paragraph [ref=f4e544]: Rajshahi, Bangladesh 🇧🇩 · Remote OK
+        - paragraph [ref=f4e549]: Available for freelance & full-time opportunities
+      - generic [ref=f4e550]:
+        - generic [ref=f4e551]:
+          - button "💬 Send Message" [ref=f4e552] [cursor=pointer]
+          - button "💳 Hire Me (Stripe)" [ref=f4e553] [cursor=pointer]
+        - generic [ref=f4e554]:
+          - generic [ref=f4e555]:
+            - generic [ref=f4e556]: Name
+            - textbox "Your name" [ref=f4e557]
+          - generic [ref=f4e558]:
+            - generic [ref=f4e559]: Email
+            - textbox "your@email.com" [ref=f4e560]
+          - generic [ref=f4e561]:
+            - generic [ref=f4e562]: Message
+            - textbox "Describe your project or ask a question..." [ref=f4e563]
+          - button "Send Message →" [ref=f4e564] [cursor=pointer]
+  - contentinfo [ref=f4e565]:
+    - generic [ref=f4e566]:
+      - generic [ref=f4e567]:
+        - generic [ref=f4e568]: "Y"
+        - generic [ref=f4e570]: Yusuf Ali · Backend & Payments Engineer
+      - generic [ref=f4e571]:
+        - link "GitHub" [ref=f4e572] [cursor=pointer]:
+          - /url: https://github.com/yusufdupsc1
+        - link "LinkedIn" [ref=f4e573] [cursor=pointer]:
+          - /url: https://linkedin.com/in/yusuf-ali-backend-engineer
+        - link "Dev.to" [ref=f4e574] [cursor=pointer]:
+          - /url: https://dev.to/yusufdupsc1
+        - generic [ref=f4e575]: © 2026

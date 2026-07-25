@@ -202,7 +202,7 @@ export default function Hero() {
 
 
             <motion.div variants={activeItemVariants} className="w-full">
-              <p className="text-white/30 font-mono text-xs tracking-[.25em] uppercase mb-3">
+              <p className="text-white/60 font-mono text-xs tracking-[.25em] uppercase mb-3">
                 KEYCLOAK SSO FIXED!
               </p>
               <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 px-1 snap-x scrollbar-hide">
@@ -305,7 +305,7 @@ export default function Hero() {
               <a
                 href="#contact"
                 onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="px-7 py-3.5 rounded-xl border border-white/[0.07] hover:border-white/15 text-white/45 hover:text-white/75 font-semibold text-sm transition-all duration-200 active:scale-95"
+                className="px-7 py-3.5 rounded-xl border border-white/[0.07] hover:border-white/15 text-white/65 hover:text-white/75 font-semibold text-sm transition-all duration-200 active:scale-95"
               >
                 Hire me →
               </a>
@@ -364,7 +364,7 @@ export default function Hero() {
                 <motion.span
                   key={i}
                   variants={activeItemVariants}
-                  className="mx-1.5 px-4 py-1.5 rounded-full text-xs font-mono bg-white/[0.04] border border-white/[0.07] text-white/45 whitespace-nowrap"
+                   className="mx-1.5 px-4 py-1.5 rounded-full text-xs font-mono bg-white/[0.04] border border-white/[0.07] text-white/65 whitespace-nowrap"
                 >
                   {t}
                 </motion.span>

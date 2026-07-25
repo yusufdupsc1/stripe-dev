@@ -8,10 +8,20 @@ const NAV = [
   { id: 'contact',   label: 'Hire',     icon: 'M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z' },
 ];
 
-export default function Navbar() {
+interface NavbarProps {
+  paletteRef?: React.RefObject<{ open: () => void } | null>;
+}
+
+export default function Navbar({ paletteRef }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive]     = useState('home');
   const [open, setOpen]         = useState(false);
+  const [theme, setTheme]       = useState<string>(() => {
+    if (typeof document !== "undefined") {
+      return document.documentElement.getAttribute("data-theme") || "dark";
+    }
+    return "dark";
+  });
 
   useEffect(() => {
     let ticking = false;
@@ -36,6 +46,13 @@ export default function Navbar() {
     setOpen(false);
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   }, []);
+
+  const toggleTheme = useCallback(() => {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    localStorage.setItem("theme", next);
+    setTheme(next);
+  }, [theme]);
 
   return (
     <>
@@ -78,6 +95,20 @@ export default function Navbar() {
 
           {/* Right actions */}
           <div className="hidden md:flex items-center gap-3">
+            <button
+              onClick={() => paletteRef?.current?.open()}
+              className="glass px-3 py-1.5 rounded-md text-xs font-mono text-white/50 hover:text-white transition-colors"
+              aria-label="Open command palette"
+            >
+              ⌘K
+            </button>
+            <button
+              onClick={toggleTheme}
+              className="glass px-3 py-1.5 rounded-md text-xs font-mono text-white/50 hover:text-white transition-colors"
+              aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            >
+              {theme === 'dark' ? '☀️' : '🌙'}
+            </button>
             <a
               href="https://github.com/yusufdupsc1"
               target="_blank"
@@ -179,16 +210,16 @@ export default function Navbar() {
                       strokeWidth={isActive ? 2 : 1.5}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                      className={`relative w-[18px] h-[18px] transition-all duration-200 ${
-                        isActive ? 'text-violet-400 drop-shadow-[0_0_6px_rgba(124,58,237,.8)]' : 'text-white/35'
-                      }`}
+                       className={`relative w-[18px] h-[18px] transition-all duration-200 ${
+                         isActive ? 'text-violet-400 drop-shadow-[0_0_6px_rgba(124,58,237,.8)]' : 'text-white/60'
+                       }`}
                     >
                       <path d={icon} />
                     </svg>
 
                     {/* Label */}
                     <span className={`relative text-[9px] font-semibold tracking-wide transition-colors duration-200 ${
-                      isActive ? 'text-violet-400' : 'text-white/30'
+                      isActive ? 'text-violet-400' : 'text-white/60'
                     }`}>
                       {label}
                     </span>

@@ -1,0 +1,41 @@
+name: Accessibility gate
+
+on:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'index.html'
+  push:
+    branches:
+      - main
+
+jobs:
+  a11y:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - run: pnpm build
+
+      - run: npx serve dist -l 4173 &
+        env:
+          CI: true
+
+      - name: Wait for server
+        run: npx wait-on http://localhost:4173
+
+      - name: Run axe-core a11y audit
+        run: npx axe --exit --load-delay 2000 http://localhost:4173
+        env:
+          CI: true

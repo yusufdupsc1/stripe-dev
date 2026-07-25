@@ -4,11 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta name="theme-color" content="#7c3aed" />
-    <meta name="color-scheme" content="dark" />
     <meta name="description" content="Yusuf Ali — Backend & Payments Engineer. Stripe integration, webhook reliability, Python, Node.js, AWS, Docker. Based in Rajshahi, Bangladesh." />
     <meta name="keywords" content="Yusuf Ali, Backend Engineer, Stripe Developer, Webhook Engineer, Python, Django, Node.js, PHP, Laravel, AWS, Bangladesh" />
     <meta name="author" content="Yusuf Ali" />
     <meta name="robots" content="index, follow" />
+    <script>
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'light' || t === 'dark') {
+          document.documentElement.setAttribute('data-theme', t);
+        }
+      } catch (_) {}
+    </script>
 
     <!-- Open Graph -->
     <meta property="og:title"       content="Yusuf Ali — Backend & Payments Engineer" />

@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useGitHubStats } from '../lib/github';
 import { TIMELINE } from '../data/profile';
+import StatusWidget from './StatusWidget';
 
 const ACCENT: Record<string, { bar: string; label: string; dot: string }> = {
   violet:  { bar: 'from-violet-600 to-violet-400',  label: 'text-violet-400',  dot: 'bg-violet-400' },
@@ -122,7 +123,7 @@ export default function AboutExpertise() {
                   </span>
                   <span className="font-mono text-xs text-violet-400/80">{t.year}</span>
                   <h3 className="text-white font-semibold mt-0.5">{t.title}</h3>
-                  <p className="text-white/40 text-xs mb-1">{t.co}</p>
+                   <p className="text-white/60 text-xs mb-1">{t.co}</p>
                   <p className="text-white/55 text-sm">{t.desc}</p>
                 </li>
               ))}
@@ -139,7 +140,7 @@ export default function AboutExpertise() {
               ].map(s => (
                 <div key={s.label} className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                   <p className="text-xl font-bold text-violet-400 font-mono">{s.n}</p>
-                  <p className="text-[10px] text-white/40 mt-1">{s.label}</p>
+                   <p className="text-[10px] text-white/60 mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -163,7 +164,7 @@ export default function AboutExpertise() {
 
           <div className="bento-area proof">
             <div className="rounded-2xl bg-[#0e0e14] border border-white/[0.07] p-4 sm:p-5 h-full">
-              <p className="text-[10px] font-mono text-white/25 uppercase tracking-widest mb-3">Code evidence</p>
+              <p className="text-[10px] font-mono text-white/55 uppercase tracking-widest mb-3">Code evidence</p>
               <div className="space-y-2">
                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 transition-all">
                   <span className="text-xs font-mono text-white/50">stripe-dev.vercel.app</span>
@@ -179,7 +180,7 @@ export default function AboutExpertise() {
                 </a>
               </div>
               <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                <span className="text-[10px] font-mono text-white/25">9/20 skills proven</span>
+                <span className="text-[10px] font-mono text-white/55">9/20 skills proven</span>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className={`w-1.5 h-1.5 rounded-full ${i < 3 ? 'bg-violet-400' : 'bg-white/10'}`} />
@@ -189,10 +190,10 @@ export default function AboutExpertise() {
             </div>
           </div>
 
-          {/* status widget — reserved for Sprint 9 */}
+          {/* status widget */}
           <div className="bento-area status-widget">
             <div className="rounded-2xl border border-dashed border-white/[0.08] h-full flex items-center justify-center">
-              <span className="text-xs text-white/20 font-mono">status widget (Sprint 9)</span>
+              <StatusWidget />
             </div>
           </div>
 
@@ -207,8 +208,8 @@ export default function AboutExpertise() {
                 ))}
               </div>
               <div className="flex gap-3">
-                <a href="https://github.com/yusufdupsc1?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-[11px] font-mono text-white/35 hover:text-violet-400 transition-colors">All repos ↗</a>
-                <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-[11px] font-mono text-white/35 hover:text-violet-400 transition-colors">Live demo ↗</a>
+                 <a href="https://github.com/yusufdupsc1?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-[11px] font-mono text-white/60 hover:text-violet-400 transition-colors">All repos ↗</a>
+                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-[11px] font-mono text-white/60 hover:text-violet-400 transition-colors">Live demo ↗</a>
               </div>
             </div>
           </div>

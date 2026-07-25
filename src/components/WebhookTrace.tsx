@@ -25,7 +25,7 @@ export default function WebhookTrace() {
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
             How a webhook <span className="text-shimmer">survives</span> the internet
           </h2>
-          <p className="text-white/45 max-w-2xl mx-auto text-[15px]">
+          <p className="text-white/65 max-w-2xl mx-auto text-[15px]">
             Every Stripe event passes through these steps before touching your database. Hover or tab to explore.
           </p>
         </div>

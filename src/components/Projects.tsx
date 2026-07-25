@@ -1,4 +1,7 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import { Link, useNavigate } from 'react-router-dom';
+
+const supportsViewTransition = typeof document !== "undefined" && typeof document.startViewTransition === "function";
 
 const PROJECTS = [
   {
@@ -122,9 +125,19 @@ const itemVariants = {
 
 export default function Projects() {
   const shouldReduce = useReducedMotion() ?? false;
+  const navigate = useNavigate();
 
   const reducedItemVariants = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.01 } } };
   const activeItemVariants = shouldReduce ? reducedItemVariants : itemVariants;
+
+  const handleCardClick = (e: React.MouseEvent<HTMLAnchorElement>, to: string) => {
+    if (supportsViewTransition) {
+      e.preventDefault();
+      document.startViewTransition(() => {
+        navigate(to);
+      });
+    }
+  };
 
   return (
     <motion.section
@@ -152,24 +165,24 @@ export default function Projects() {
           variants={sectionVariants}
         >
           {PROJECTS.map(p => (
-            <motion.article
-              key={p.name}
-              variants={activeItemVariants}
-              whileHover={shouldReduce ? {} : hoverLift}
-              className={`group flex flex-col p-5 rounded-2xl bg-[#0e0e14] border border-white/[0.07] ${COLORS[p.color].border} hover:shadow-lg hover:shadow-black/40`}
-            >
+            <Link key={p.name} to={`/projects/${p.name}`} onClick={(e) => handleCardClick(e, `/projects/${p.name}`)}>
+              <motion.article
+                variants={activeItemVariants}
+                whileHover={shouldReduce ? {} : hoverLift}
+                className={`group flex flex-col p-5 rounded-2xl bg-[#0e0e14] border border-white/[0.07] ${COLORS[p.color].border} hover:shadow-lg hover:shadow-black/40`}
+              >
               <div className="flex items-start justify-between mb-3">
                 <span className={`px-2.5 py-1 rounded-md text-xs font-medium ${COLORS[p.color].badge}`}>
                   {p.badge}
                 </span>
                 {p.featured && (
-                  <span className="text-xs text-white/30 font-mono">pinned</span>
+                  <span className="text-xs text-white/60 font-mono">pinned</span>
                 )}
               </div>
 
               <h3 className="text-white font-semibold text-lg mb-1 font-mono">{p.name}</h3>
               <p className="text-white/50 text-xs mb-2">{p.tagline}</p>
-              <p className="text-white/45 text-sm leading-relaxed flex-1 mb-4">{p.desc}</p>
+               <p className="text-white/65 text-sm leading-relaxed flex-1 mb-4">{p.desc}</p>
 
               <div className="flex flex-wrap gap-1.5 mb-4">
                 {p.tags.map(t => (
@@ -199,7 +212,8 @@ export default function Projects() {
                   </a>
                 )}
               </div>
-            </motion.article>
+              </motion.article>
+            </Link>
           ))}
         </motion.div>
 
