@@ -210,6 +210,51 @@
   to   { stroke-dashoffset: -1026; }
 }
 
+/* Bento grid */
+.bento-wrapper {
+  container-type: inline-size;
+}
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 1rem;
+  grid-template-areas:
+    "about-headline about-headline about-values journey"
+    "about-metrics payments backend data"
+    "frontend proof status-widget learning";
+}
+.bento-area { min-width: 0; }
+.about-headline   { grid-area: about-headline; }
+.about-values     { grid-area: about-values; }
+.journey          { grid-area: journey; }
+.about-metrics    { grid-area: about-metrics; }
+.bento-payments   { grid-area: payments; }
+.bento-backend    { grid-area: backend; }
+.bento-data       { grid-area: data; }
+.bento-frontend   { grid-area: frontend; }
+.proof            { grid-area: proof; }
+.status-widget    { grid-area: status-widget; }
+.learning         { grid-area: learning; }
+
+@container (max-width: 640px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about-headline"
+      "about-values"
+      "journey"
+      "about-metrics"
+      "payments"
+      "backend"
+      "data"
+      "frontend"
+      "proof"
+      "status-widget"
+      "learning";
+  }
+}
+
 @media (prefers-reduced-motion:reduce) {
   *,*::before,*::after { animation-duration:.01ms!important;transition-duration:.01ms!important; }
 }
