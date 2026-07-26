@@ -63,8 +63,8 @@ export default function Shell() {
 
   return (
     <div className="glow-card">
-      <div className="rounded-2xl overflow-hidden bg-[#0a0a14] border border-white/[0.08] shadow-2xl shadow-black/70 scanline">
-        <div className="flex items-center gap-2 px-4 py-3 bg-[#0e0e1a] border-b border-white/[0.06]">
+      <div className="rounded-2xl overflow-hidden bg-[var(--c-neutral-950)] border border-white/[0.08] shadow-2xl shadow-black/70 scanline">
+        <div className="flex items-center gap-2 px-4 py-3 bg-[var(--c-neutral-900)] border-b border-white/[0.06]">
           <span className="w-3 h-3 rounded-full bg-red-500/65" />
           <span className="w-3 h-3 rounded-full bg-yellow-500/65" />
           <span className="w-3 h-3 rounded-full bg-emerald-500/65" />
@@ -78,7 +78,7 @@ export default function Shell() {
           {isInteractive && (
             <form onSubmit={onSubmit} className="flex items-center gap-2 mt-2">
               <span className="text-violet-400 select-none">❯</span>
-              <input ref={inputRef} type="text" value={draft} onChange={e => { setDraft(e.target.value); setHistIdx(-1); }} onKeyDown={onKey} className="flex-1 bg-transparent border-none outline-none text-white/80 caret-violet-400 placeholder-white/20 text-2xs" placeholder="type a command..." autoFocus aria-label="Terminal input" />
+              <input ref={inputRef} type="text" value={draft} onChange={e => { setDraft(e.target.value); setHistIdx(-1); }} onKeyDown={onKey} className="flex-1 bg-transparent border-none outline-none text-white/80 caret-violet-400 placeholder-white/20 text-2xs focus:ring-2 focus:ring-violet-500/30 rounded-sm" placeholder="type a command..." autoFocus aria-label="Terminal input" />
             </form>
           )}
           <div ref={bottomRef} />
@@ -87,7 +87,7 @@ export default function Shell() {
         {!isInteractive && (
           <div className="md:hidden text-center py-6">
             <p className="text-white/40 text-xs font-mono mb-3">Tap to see the live version</p>
-            <button onClick={() => { setIsInteractive(true); inputRef.current?.focus(); }} className="px-4 py-2 rounded-lg bg-violet-600/20 border border-violet-500/30 text-violet-400 text-xs font-mono hover:bg-violet-600/30 transition-all">Open interactive shell →</button>
+            <button onClick={() => { setIsInteractive(true); inputRef.current?.focus(); }} className="px-4 py-2 rounded-lg bg-violet-600/20 border border-violet-500/30 text-violet-400 text-xs font-mono hover:bg-violet-600/30 interact-card min-h-[44px]">Open interactive shell →</button>
           </div>
         )}
       </div>

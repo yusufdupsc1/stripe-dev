@@ -15,7 +15,7 @@ export default function App() {
   const paletteRef = useRef<{ open: () => void }>(null);
 
   return (
-    <div className="bg-[#050508] text-[#e4e4f0] min-h-screen antialiased overflow-x-hidden">
+    <div className="min-h-screen antialiased overflow-x-hidden">
       <Navbar paletteRef={paletteRef} />
       <main>
         <Routes>

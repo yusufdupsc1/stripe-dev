@@ -102,7 +102,7 @@ export default function CommandPalette({ innerRef }: { innerRef?: React.Ref<Comm
           value={query}
           onValueChange={setQuery}
           placeholder="Type a command..."
-          className="w-full bg-transparent px-4 py-3 text-sm text-[#e4e4f0] outline-none placeholder:text-white/25"
+          className="w-full bg-transparent px-4 py-3 text-sm text-[var(--c-text)] outline-none focus:ring-2 focus:ring-violet-500/50 rounded-md placeholder:text-white/25"
         />
         <Command.List className="max-h-80 overflow-y-auto px-2 pb-2">
           <Command.Empty className="py-6 text-center text-sm text-white/30">No results.</Command.Empty>

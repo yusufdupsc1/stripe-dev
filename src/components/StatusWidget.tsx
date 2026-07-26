@@ -51,7 +51,7 @@ export default function StatusWidget() {
   }, []);
 
   const dotColor =
-    status === "healthy" ? "var(--c-proof)" : "#ef4444";
+    status === "healthy" ? "var(--c-proof)" : "var(--c-error)";
 
   const statusLabel =
     status === "healthy" ? "Operational" :

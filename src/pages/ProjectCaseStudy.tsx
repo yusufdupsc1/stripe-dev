@@ -67,34 +67,34 @@ export default function ProjectCaseStudy() {
           <section className="border-l-2 border-cyan-500/30 pl-6">
             <h2 className="text-3xl font-bold text-white mb-4">Architecture</h2>
             <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-measure">{project.architecture}</p>
-            <div className="bg-[#0e0e14] rounded-xl p-6 border border-white/5">
+            <div className="bg-[var(--c-neutral-900)] rounded-xl p-6 border border-white/5">
               <svg viewBox="0 0 600 300" className="w-full h-auto">
                 <defs>
                   <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-                    <polygon points="0 0, 10 3.5, 0 7" fill="#a78bfa" />
+                    <polygon points="0 0, 10 3.5, 0 7" fill="var(--c-violet-400)" />
                   </marker>
                 </defs>
 
-                <rect x="200" y="20" width="200" height="50" rx="8" fill="#1e1e2e" stroke="#a78bfa" strokeWidth="2" />
-                <text x="300" y="50" textAnchor="middle" fill="#e4e4f0" fontSize="14" fontWeight="600">Client</text>
+                <rect x="200" y="20" width="200" height="50" rx="8" fill="#1e1e2e" stroke="var(--c-violet-400)" strokeWidth="2" />
+                <text x="300" y="50" textAnchor="middle" fill="var(--c-text)" style={{ fontSize: 'var(--text-sm)' }} fontWeight="600">Client</text>
 
-                <rect x="200" y="120" width="200" height="50" rx="8" fill="#1e1e2e" stroke="#22d3ee" strokeWidth="2" />
-                <text x="300" y="150" textAnchor="middle" fill="#e4e4f0" fontSize="14" fontWeight="600">API Layer</text>
+                <rect x="200" y="120" width="200" height="50" rx="8" fill="#1e1e2e" stroke="var(--c-cyan-400)" strokeWidth="2" />
+                <text x="300" y="150" textAnchor="middle" fill="var(--c-text)" style={{ fontSize: 'var(--text-sm)' }} fontWeight="600">API Layer</text>
 
                 <rect x="200" y="220" width="200" height="50" rx="8" fill="#1e1e2e" stroke="#34d399" strokeWidth="2" />
-                <text x="300" y="250" textAnchor="middle" fill="#e4e4f0" fontSize="14" fontWeight="600">Database</text>
+                <text x="300" y="250" textAnchor="middle" fill="var(--c-text)" style={{ fontSize: 'var(--text-sm)' }} fontWeight="600">Database</text>
 
-                <line x1="250" y1="70" x2="250" y2="120" stroke="#a78bfa" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                <line x1="350" y1="70" x2="350" y2="120" stroke="#a78bfa" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                <line x1="250" y1="170" x2="250" y2="220" stroke="#22d3ee" strokeWidth="2" markerEnd="url(#arrowhead)" />
-                <line x1="350" y1="170" x2="350" y2="220" stroke="#22d3ee" strokeWidth="2" markerEnd="url(#arrowhead)" />
+                <line x1="250" y1="70" x2="250" y2="120" stroke="var(--c-violet-400)" strokeWidth="2" markerEnd="url(#arrowhead)" />
+                <line x1="350" y1="70" x2="350" y2="120" stroke="var(--c-violet-400)" strokeWidth="2" markerEnd="url(#arrowhead)" />
+                <line x1="250" y1="170" x2="250" y2="220" stroke="var(--c-cyan-400)" strokeWidth="2" markerEnd="url(#arrowhead)" />
+                <line x1="350" y1="170" x2="350" y2="220" stroke="var(--c-cyan-400)" strokeWidth="2" markerEnd="url(#arrowhead)" />
 
                 <rect x="20" y="135" width="100" height="34" rx="6" fill="#1e1e2e" stroke="#fbbf24" strokeWidth="1.5" />
-                <text x="70" y="157" textAnchor="middle" fill="#e4e4f0" fontSize="11">Auth</text>
+                <text x="70" y="157" textAnchor="middle" fill="var(--c-text)" style={{ fontSize: 'var(--text-2xs)' }}>Auth</text>
                 <line x1="120" y1="152" x2="200" y2="152" stroke="#fbbf24" strokeWidth="1.5" markerEnd="url(#arrowhead)" />
 
                 <rect x="480" y="135" width="100" height="34" rx="6" fill="#1e1e2e" stroke="#f472b6" strokeWidth="1.5" />
-                <text x="530" y="157" textAnchor="middle" fill="#e4e4f0" fontSize="11">Cache</text>
+                <text x="530" y="157" textAnchor="middle" fill="var(--c-text)" style={{ fontSize: 'var(--text-2xs)' }}>Cache</text>
                 <line x1="400" y1="152" x2="480" y2="152" stroke="#f472b6" strokeWidth="1.5" markerEnd="url(#arrowhead)" />
               </svg>
             </div>
@@ -128,7 +128,7 @@ export default function ProjectCaseStudy() {
               href={project.live}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 py-3 rounded-lg bg-violet-600/20 border border-violet-500/30 hover:bg-violet-600/30 text-violet-400 text-sm font-medium text-center transition-all"
+              className="flex-1 py-3 rounded-lg bg-violet-600/20 border border-violet-500/30 hover:bg-violet-600/30 text-violet-400 text-sm font-medium text-center interact-card"
             >
               Live ↗
             </a>
@@ -137,7 +137,7 @@ export default function ProjectCaseStudy() {
             href={project.repo}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 py-3 rounded-lg border border-white/[0.08] hover:border-white/20 text-white/50 hover:text-white text-sm font-medium text-center transition-all"
+            className="flex-1 py-3 rounded-lg border border-white/[0.08] hover:border-white/20 text-white/50 hover:text-white text-sm font-medium text-center interact-card"
           >
             View Code →
           </a>

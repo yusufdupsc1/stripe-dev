@@ -57,10 +57,10 @@
   --c-surface:  var(--c-neutral-900);
   --c-surface2: var(--c-neutral-800);
   --c-border:   rgba(255,255,255,0.07);
-  --c-text:     #e4e4f0;
+  --c-text:     #eaeaf8;
   --c-text-muted: var(--c-neutral-400);
   --c-accent:   var(--c-violet-600);
-  --c-accent2:  var(--c-cyan-500);
+  --c-accent2:  var(--c-cyan-700);
   --c-proof:    #22c55e;
   --c-proof-light: #4ade80;
   --c-warning:  #f59e0b;
@@ -72,7 +72,6 @@
   --space-2: 0.5rem;    /* 8px  */
   --space-3: 0.75rem;   /* 12px */
   --space-4: 1rem;      /* 16px */
-  --space-5: 1.25rem;   /* 20px */
   --space-6: 1.5rem;    /* 24px */
   --space-7: 2rem;      /* 32px */
   --space-8: 3rem;      /* 48px */
@@ -80,6 +79,7 @@
   --space-10: 6rem;     /* 96px */
 
   /* One-off sizes used in widgets/carousels */
+  --size-1px: 1px;
   --size-2px: 2px;
   --size-3px: 3px;
   --size-6px: 6px;
@@ -106,11 +106,11 @@
   --c-accent-50: rgba(124,58,237,.5);
   --c-accent-80: rgba(124,58,237,.08);
   --c-accent-10: rgba(124,58,237,.1);
-  --c-accent2-45: rgba(6,182,212,.45);
-  --c-accent2-70: rgba(6,182,212,.7);
-  --c-accent2-12: rgba(6,182,212,.12);
-  --c-accent2-35: rgba(6,182,212,.35);
-  --c-accent2-50: rgba(6,182,212,.5);
+  --c-accent2-45: rgba(14,116,144,.45);
+  --c-accent2-70: rgba(14,116,144,.7);
+  --c-accent2-12: rgba(14,116,144,.12);
+  --c-accent2-35: rgba(14,116,144,.35);
+  --c-accent2-50: rgba(14,116,144,.5);
   --c-proof-40: rgba(34,197,94,.4);
   --c-proof-10: rgba(34,197,94,.1);
   --c-proof-22: rgba(34,197,94,.22);
@@ -119,7 +119,7 @@
   --c-neutral-0-05: rgba(0,0,0,.05);
   --c-neutral-0-10: rgba(0,0,0,.1);
   --c-neutral-0-12: rgba(0,0,0,.12);
-  --c-glass-bg: rgba(14,14,20,.65);
+  --c-glass-bg: rgba(15,23,42,.65);
 
   /* ---------- Type scale (ratio 1.25) ---------- */
   /* Exact ratio verification:
@@ -169,11 +169,18 @@
   --shadow-sm: 0 1px 2px 0 rgba(0,0,0,.05);
   --shadow-base: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
   --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
+  --shadow-glow-none: 0 0 0 0 var(--c-accent-0);
+  --shadow-glow-accent: 0 0 28px 4px var(--c-accent-18);
+  --shadow-glow-accent2-sm: 0 0 8px var(--c-accent2-45);
+  --shadow-glow-accent2-md: 0 0 14px var(--c-accent2-70);
 
   /* ---------- Motion tokens ---------- */
   --duration-fast: 150ms;
   --duration-base: 200ms;
   --duration-slow: 350ms;
+  --duration-pulse: 1s;
+  --duration-shimmer: 3s;
+  --duration-wt: 4s;
   --ease-in: cubic-bezier(.4,0,1,1);
   --ease-out: cubic-bezier(0,0,.2,1);
   --ease-in-out: cubic-bezier(.4,0,.2,1);
@@ -191,7 +198,7 @@
   --c-surface2: #e5e7eb;
   --c-border:   rgba(0,0,0,0.12);
   --c-text:     #111827;
-  --c-text-muted: #6b7280;
+  --c-text-muted: #4b5563;
 
   --c-proof:    #16a34a;
 }
@@ -255,8 +262,8 @@
 @keyframes scan-line  { 0%{top:calc(var(--space-1) * -1)} 100%{top:102%} }
 @keyframes marquee    { from{transform:translateX(0)} to{transform:translateX(-50%)} }
 @keyframes glow-pulse {
-  0%,100% { box-shadow: 0 0 0 0 var(--c-accent-0); }
-  50%     { box-shadow: 0 0 28px 4px var(--c-accent-18); }
+  0%,100% { box-shadow: var(--shadow-glow-none); }
+  50%     { box-shadow: var(--shadow-glow-accent); }
 }
 @keyframes border-glow {
   0%,100% { border-color: var(--c-accent-30); }
@@ -281,8 +288,8 @@
   height: .95em;
   background: var(--c-accent);
   vertical-align: text-bottom;
-  margin-left: 2px;
-  animation: blink 1s step-end infinite;
+  margin-left: var(--size-2px);
+  animation: blink var(--duration-pulse) step-end infinite;
 }
 
 .text-shimmer {
@@ -291,7 +298,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
+  animation: shimmer var(--duration-shimmer) linear infinite;
 }
 
 .glass {
@@ -328,7 +335,7 @@
   content: '';
   position: absolute;
   inset: -1px;
-  border-radius: calc(var(--radius-lg) + 1px);
+  border-radius: calc(var(--radius-lg) + var(--size-1px));
   background: linear-gradient(135deg,var(--c-accent-50),var(--c-accent2-35),var(--c-accent-80));
   z-index: -1;
   opacity: 0;
@@ -353,7 +360,7 @@
   content: '';
   position: absolute;
   inset: calc(var(--size-3px) * -1);
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--c-proof-40);
   animation: pulse-ring var(--duration-slow) var(--ease-out) infinite;
 }
@@ -399,6 +406,8 @@
    WEBHOOK TRACE
    ============================================================ */
 .wt-node-btn {
+  min-width: var(--size-44px);
+  min-height: var(--size-44px);
   position: absolute;
   transform: translate(-50%, -50%);
   background: transparent;
@@ -429,15 +438,15 @@
   display: block;
   width: var(--size-10px);
   height: var(--size-10px);
-  border-radius: 50%;
+  border-radius: var(--radius-full);
   background: var(--c-accent2);
-  box-shadow: 0 0 8px var(--c-accent2-45);
+  box-shadow: var(--shadow-glow-accent2-sm);
   transition: transform var(--duration-fast) var(--ease-out), box-shadow var(--duration-fast) var(--ease-out);
 }
 .wt-node-btn:hover::before,
 .wt-node-btn:focus::before {
   transform: scale(1.3);
-  box-shadow: 0 0 14px var(--c-accent2-70);
+  box-shadow: var(--shadow-glow-accent2-md);
 }
 .wt-tooltip {
   visibility: hidden;
@@ -452,7 +461,7 @@
   visibility: visible;
   opacity: 1;
 }
-.wt-pulse-path { animation: wt-pulse 4s linear infinite; }
+.wt-pulse-path { animation: wt-pulse var(--duration-wt) linear infinite; }
 
 /* ============================================================
    BENTO GRID
@@ -497,6 +506,31 @@
       "status-widget"
       "learning";
   }
+}
+
+/* ============================================================
+    INTERACTION PATTERNS
+    ============================================================ */
+.interact-button {
+  transition: background var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out),
+              transform var(--duration-base) var(--ease-out);
+}
+.interact-card {
+  transition: background var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+.interact-link {
+  transition: color var(--duration-fast) var(--ease-out);
+}
+.interact-nav {
+  transition: background var(--duration-base) var(--ease-out),
+              color var(--duration-base) var(--ease-out);
+}
+.interact-input {
+  transition: border-color var(--duration-base) var(--ease-out),
+              box-shadow var(--duration-base) var(--ease-out);
 }
 
 @media (prefers-reduced-motion:reduce) {

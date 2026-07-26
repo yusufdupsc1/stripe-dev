@@ -106,27 +106,27 @@ export default function Contact() {
               Let's build<br />
               <span className="text-shimmer">something real.</span>
             </h2>
-            <p className="text-white/55 leading-relaxed mb-8">
+            <p className="text-white/55 leading-relaxed mb-8 max-w-measure">
               Whether you need a Stripe integration that handles edge cases, a backend API built to scale, or a code review — I can help. Response time within 24 hours.
             </p>
 
             {/* Contact cards */}
             <div className="space-y-3 mb-8">
-              <a href="mailto:yusufdupsc1@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-[#0e0e14] border border-white/[0.07] hover:border-violet-500/30 transition-all group">
+              <a href="mailto:yusufdupsc1@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-[var(--c-neutral-900)] border border-white/[0.07] hover:border-violet-500/30 interact-card group">
                 <span className="text-2xl">✉️</span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">Email</p>
-                  <p className="text-white/80 group-hover:text-white transition-colors">yusufdupsc1@gmail.com</p>
+                  <p className="text-white/80 group-hover:text-white interact-link">yusufdupsc1@gmail.com</p>
                 </div>
               </a>
-              <a href="https://linkedin.com/in/yusuf-ali-backend-engineer" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-[#0e0e14] border border-white/[0.07] hover:border-violet-500/30 transition-all group">
+              <a href="https://linkedin.com/in/yusuf-ali-backend-engineer" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-[var(--c-neutral-900)] border border-white/[0.07] hover:border-violet-500/30 interact-card group">
                 <span className="text-2xl">💼</span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">LinkedIn</p>
-                  <p className="text-white/80 group-hover:text-white transition-colors">${PROFILE.name} — Backend Engineer</p>
+                  <p className="text-white/80 group-hover:text-white interact-link">${PROFILE.name} — Backend Engineer</p>
                 </div>
               </a>
-              <div className="flex items-center gap-4 p-4 rounded-xl bg-[#0e0e14] border border-white/[0.07]">
+              <div className="flex items-center gap-4 p-4 rounded-xl bg-[var(--c-neutral-900)] border border-white/[0.07]">
                 <span className="text-2xl">📍</span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">Location</p>
@@ -152,14 +152,14 @@ export default function Contact() {
           </motion.div>
 
           {/* Right – form */}
-          <motion.div variants={activeItemVariants} className="p-6 sm:p-8 rounded-2xl bg-[#0e0e14] border border-white/[0.08]">
+          <motion.div variants={activeItemVariants} className="p-6 sm:p-8 rounded-2xl bg-[var(--c-neutral-900)] border border-white/[0.08]">
             {/* Tabs */}
             <div className="flex gap-2 mb-6 p-1 rounded-lg bg-white/[0.04] border border-white/[0.06]">
               {(['message', 'hire'] as Tab[]).map(t => (
                 <button
                   key={t}
                   onClick={() => setTab(t)}
-                  className={`flex-1 py-2 rounded-md text-sm font-medium transition-all ${
+                  className={`flex-1 py-3 rounded-md text-sm font-medium interact-card min-w-[44px] min-h-[44px] ${
                     tab === t ? 'bg-violet-600 text-white shadow' : 'text-white/50 hover:text-white'
                   }`}
                 >
@@ -179,7 +179,7 @@ export default function Contact() {
                     onChange={e => setName(e.target.value)}
                     required
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/30 text-sm focus:outline-none focus:border-violet-500/60 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/30 text-sm focus:outline-none focus:border-violet-500/60 focus:ring-2 focus:ring-violet-500/30 interact-input"
                   />
                 </div>
                 <div>
@@ -190,7 +190,7 @@ export default function Contact() {
                     onChange={e => setEmail(e.target.value)}
                     required
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/30 text-sm focus:outline-none focus:border-violet-500/60 transition-colors"
+                    className="w-full px-4 py-3 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/30 text-sm focus:outline-none focus:border-violet-500/60 focus:ring-2 focus:ring-violet-500/30 interact-input"
                   />
                 </div>
                 <div>
@@ -201,13 +201,13 @@ export default function Contact() {
                     required
                     rows={4}
                     placeholder="Describe your project or ask a question..."
-                    className="w-full px-4 py-3 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/30 text-sm focus:outline-none focus:border-violet-500/60 transition-colors resize-none"
+                    className="w-full px-4 py-3 rounded-lg bg-white/[0.04] border border-white/[0.08] text-white placeholder-white/30 text-sm focus:outline-none focus:border-violet-500/60 focus:ring-2 focus:ring-violet-500/30 interact-input resize-none"
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={status === 'loading'}
-                  className="w-full py-3 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-all active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full py-3 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm interact-card active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {status === 'loading' ? 'Opening email...' : status === 'done' ? '✓ Message sent!' : 'Send Message →'}
                 </button>
@@ -221,7 +221,7 @@ export default function Contact() {
 
                 <div className="space-y-2">
                   {SERVICES.map(s => (
-                    <label key={s.id} className={`flex items-center justify-between p-4 rounded-xl cursor-pointer border transition-all ${
+                    <label key={s.id} className={`flex items-center justify-between p-4 rounded-xl cursor-pointer border interact-card ${
                       service === s.id
                         ? 'bg-violet-600/15 border-violet-500/50 text-white'
                         : 'bg-white/[0.03] border-white/[0.07] text-white/60 hover:border-white/15 hover:text-white/80'
@@ -254,7 +254,7 @@ export default function Contact() {
                 <button
                   onClick={handleHire}
                   disabled={payStatus === 'loading'}
-                  className="w-full py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm transition-all active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2"
+                  className="w-full py-3.5 rounded-lg bg-violet-600 hover:bg-violet-500 text-white font-bold text-sm interact-card active:scale-95 disabled:opacity-50 flex items-center justify-center gap-2"
                 >
                   {payStatus === 'loading'
                     ? <><span className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin" /> Redirecting to Stripe...</>

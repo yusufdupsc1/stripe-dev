@@ -118,7 +118,7 @@ export default function AboutExpertise() {
             <ol className="relative border-l border-white/[0.08] space-y-6 ml-2">
               {TIMELINE.map((t, i) => (
                 <li key={i} className="ml-4">
-                  <span className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border border-violet-500/50 bg-violet-900/40 ring-4 ring-[#050508]">
+                  <span className="absolute -left-[9px] flex h-4 w-4 items-center justify-center rounded-full border border-violet-500/50 bg-violet-900/40 ring-4 ring-[var(--c-neutral-950)]">
                     <span className="h-1.5 w-1.5 rounded-full bg-violet-400" />
                   </span>
                   <span className="font-mono text-xs text-violet-400/80">{t.year}</span>
@@ -148,7 +148,7 @@ export default function AboutExpertise() {
 
           {CATS.map(cat => (
             <div key={cat.id} className={`bento-area bento-category bento-${cat.id}`}>
-              <div className="rounded-2xl bg-[#0e0e14] border border-white/[0.07] p-4 sm:p-5 h-full">
+              <div className="rounded-2xl bg-[var(--c-neutral-900)] border border-white/[0.07] p-4 sm:p-5 h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-xl">{cat.icon}</span>
                   <h3 className={`font-bold text-xl uppercase tracking-wider font-mono ${ACCENT[cat.accent].label}`}>{cat.title}</h3>
@@ -163,18 +163,18 @@ export default function AboutExpertise() {
           ))}
 
           <div className="bento-area proof">
-            <div className="rounded-2xl bg-[#0e0e14] border border-white/[0.07] p-4 sm:p-5 h-full">
+            <div className="rounded-2xl bg-[var(--c-neutral-900)] border border-white/[0.07] p-4 sm:p-5 h-full">
               <p className="text-2xs font-mono text-white/55 uppercase tracking-widest mb-3">Code evidence</p>
               <div className="space-y-2">
-                <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 transition-all">
+                <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 interact-card min-h-[44px] min-w-[44px]">
                   <span className="text-xs font-mono text-white/50">stripe-dev.vercel.app</span>
                   <span className="text-violet-400 text-xs">↗</span>
                 </a>
-                <a href="https://github.com/yusufdupsc1/ecommerce" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 transition-all">
+                <a href="https://github.com/yusufdupsc1/ecommerce" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 interact-card min-h-[44px] min-w-[44px]">
                   <span className="text-xs font-mono text-white/50">ecommerce repo</span>
                   <span className="text-violet-400 text-xs">↗</span>
                 </a>
-                <a href="https://github.com/yusufdupsc1/book_store" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 transition-all">
+                <a href="https://github.com/yusufdupsc1/book_store" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 interact-card min-h-[44px] min-w-[44px]">
                   <span className="text-xs font-mono text-white/50">book_store repo</span>
                   <span className="text-violet-400 text-xs">↗</span>
                 </a>
@@ -208,8 +208,8 @@ export default function AboutExpertise() {
                 ))}
               </div>
               <div className="flex gap-3">
-                 <a href="https://github.com/yusufdupsc1?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-2xs font-mono text-white/60 hover:text-violet-400 transition-colors">All repos ↗</a>
-                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-2xs font-mono text-white/60 hover:text-violet-400 transition-colors">Live demo ↗</a>
+                 <a href="https://github.com/yusufdupsc1?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-2xs font-mono text-white/60 hover:text-violet-400 interact-link min-h-[44px] inline-flex items-center">All repos ↗</a>
+                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-2xs font-mono text-white/60 hover:text-violet-400 interact-link min-h-[44px] inline-flex items-center">Live demo ↗</a>
               </div>
             </div>
           </div>

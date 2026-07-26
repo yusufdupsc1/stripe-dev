@@ -58,19 +58,19 @@ export default function Navbar({ paletteRef }: NavbarProps) {
     <>
       {/* ── Desktop / top bar ── */}
       <nav
-        className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 safe-top ${scrolled ? 'py-3' : 'py-5'}`}
+        className={`fixed top-0 inset-x-0 z-50 transition-all duration-slow ease-out safe-top ${scrolled ? 'py-3' : 'py-5'}`}
         aria-label="Main navigation"
       >
-        <div className={`absolute inset-0 transition-all duration-500 ${scrolled ? 'bg-[#050508]/92 backdrop-blur-xl border-b border-white/[0.06]' : ''}`} />
+        <div className={`absolute inset-0 transition-all duration-slow ease-out ${scrolled ? 'bg-[var(--c-neutral-950)]/92 backdrop-blur-xl border-b border-white/[0.06]' : ''}`} />
 
         <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Logo - Terminal Style with Y brand */}
           <button
             onClick={() => scrollTo('home')}
-            className="p-2 flex items-center gap-2 group focus-visible:outline-none"
+            className="p-2 flex items-center gap-2 group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 rounded-lg min-w-[44px] min-h-[44px]"
             aria-label="Go to top"
           >
-            <div className="w-9 h-9 rounded-lg bg-[#0d0d12] border border-violet-500/40 flex items-center justify-center overflow-hidden shadow-lg shadow-violet-500/20">
+            <div className="w-9 h-9 rounded-lg bg-[var(--c-neutral-900)] border border-violet-500/40 flex items-center justify-center overflow-hidden shadow-lg shadow-violet-500/20">
               <span className="text-lg font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-cyan-400" style={{ fontFamily: "'Brush Script MT', cursive" }}>Y</span>
             </div>
           </button>
@@ -81,7 +81,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
               <li key={id}>
                 <button
                   onClick={() => scrollTo(id)}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-base ease-out ${
                     active === id
                       ? 'bg-violet-600/20 text-violet-300'
                       : 'text-white/50 hover:text-white/90 hover:bg-white/[0.05]'
@@ -97,14 +97,14 @@ export default function Navbar({ paletteRef }: NavbarProps) {
           <div className="hidden md:flex items-center gap-3">
             <button
               onClick={() => paletteRef?.current?.open()}
-              className="glass px-3 py-1.5 rounded-md text-xs font-mono text-white/50 hover:text-white transition-colors"
+              className="glass px-4 py-2 rounded-md text-xs font-mono text-white/50 hover:text-white transition-colors duration-fast ease-out min-h-[44px]"
               aria-label="Open command palette"
             >
               ⌘K
             </button>
             <button
               onClick={toggleTheme}
-              className="glass px-3 py-1.5 rounded-md text-xs font-mono text-white/50 hover:text-white transition-colors"
+              className="glass px-4 py-2 rounded-md text-xs font-mono text-white/50 hover:text-white transition-colors duration-fast ease-out min-h-[44px]"
               aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
             >
               {theme === 'dark' ? '☀️' : '🌙'}
@@ -113,7 +113,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
               href="https://github.com/yusufdupsc1"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white/40 hover:text-white/80 transition-colors"
+              className="text-white/40 hover:text-white/80 transition-colors duration-fast ease-out p-2 min-w-[44px] min-h-[44px]"
               aria-label="GitHub"
             >
               <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current">
@@ -122,7 +122,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
             </a>
             <button
               onClick={() => scrollTo('contact')}
-              className="px-4 py-2 rounded-lg bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-violet-500/30 active:scale-95"
+              className="px-4 py-3 rounded-lg bg-violet-600 hover:bg-violet-500 text-white text-sm font-semibold transition-all duration-base ease-out hover:shadow-lg hover:shadow-violet-500/30 active:scale-95 min-h-[44px]"
             >
               Hire Me
             </button>
@@ -130,7 +130,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
 
           {/* Burger */}
           <button
-            className="md:hidden p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/[0.06] transition-all"
+            className="md:hidden p-2 rounded-lg text-white/60 hover:text-white hover:bg-white/[0.06] transition-all duration-base ease-out min-w-[44px] min-h-[44px]"
             onClick={() => setOpen(v => !v)}
             aria-expanded={open}
             aria-label="Toggle menu"
@@ -145,13 +145,13 @@ export default function Navbar({ paletteRef }: NavbarProps) {
         </div>
 
         {/* Mobile dropdown */}
-        <div className={`md:hidden absolute top-full inset-x-0 transition-all duration-300 origin-top ${open ? 'scale-y-100 opacity-100 pointer-events-auto' : 'scale-y-95 opacity-0 pointer-events-none'}`}>
-          <div className="mx-4 my-2 rounded-xl bg-[#0e0e14]/95 backdrop-blur-xl border border-white/[0.08] overflow-hidden">
+        <div className={`md:hidden absolute top-full inset-x-0 interact-card origin-top ${open ? 'scale-y-100 opacity-100 pointer-events-auto' : 'scale-y-95 opacity-0 pointer-events-none'}`}>
+          <div className="mx-4 my-2 rounded-xl bg-[var(--c-neutral-900)]/95 backdrop-blur-xl border border-white/[0.08] overflow-hidden">
             {NAV.map(({ id, label }) => (
               <button
                 key={id}
                 onClick={() => scrollTo(id)}
-                className={`w-full text-left px-5 py-3.5 text-sm font-medium transition-colors border-b border-white/[0.05] last:border-0 ${
+                className={`w-full text-left px-5 py-3.5 text-sm font-medium interact-link border-b border-white/[0.05] last:border-0 ${
                   active === id ? 'text-violet-400 bg-violet-600/10' : 'text-white/70 hover:text-white hover:bg-white/[0.04]'
                 }`}
               >
@@ -163,13 +163,13 @@ export default function Navbar({ paletteRef }: NavbarProps) {
                 href="https://github.com/yusufdupsc1"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex-1 py-3 rounded-lg border border-white/10 text-white/60 hover:text-white text-center text-sm font-medium transition-colors"
+                className="flex-1 py-3 rounded-lg border border-white/10 text-white/60 hover:text-white text-center text-sm font-medium transition-colors duration-fast ease-out min-h-[44px]"
               >
                 GitHub
               </a>
               <button
                 onClick={() => scrollTo('contact')}
-                className="flex-1 py-3 rounded-lg bg-violet-600 text-white text-sm font-semibold active:scale-95 transition-all"
+                className="flex-1 py-3 rounded-lg bg-violet-600 text-white text-sm font-semibold active:scale-95 transition-all duration-base ease-out min-h-[44px]"
               >
                 Hire Me
               </button>
@@ -181,7 +181,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
       {/* ── Aesthetic mobile bottom dock ── */}
       <nav className="md:hidden fixed bottom-0 inset-x-0 z-50 safe-bottom" aria-label="Bottom navigation">
         {/* Frosted glass bar */}
-        <div className="relative bg-[#0a0a12]/95 backdrop-blur-2xl border-t border-white/[0.07]">
+        <div className="relative bg-[var(--c-neutral-950)]/95 backdrop-blur-2xl border-t border-white/[0.07]">
 
           {/* Top gradient accent line */}
           <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
@@ -194,7 +194,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
                 <li key={id} className="flex-1">
                   <button
                     onClick={() => scrollTo(id)}
-                    className="relative w-full flex flex-col items-center gap-1 py-2 rounded-xl transition-all duration-200 active:scale-95 min-h-[44px]"
+                    className="relative w-full flex flex-col items-center gap-1 py-2 rounded-xl transition-all duration-base ease-out active:scale-95 min-h-[44px]"
                     aria-current={isActive ? 'page' : undefined}
                   >
                     {/* Active bg pill */}
@@ -210,7 +210,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
                       strokeWidth={isActive ? 2 : 1.5}
                       strokeLinecap="round"
                       strokeLinejoin="round"
-                       className={`relative w-[18px] h-[18px] transition-all duration-200 ${
+                       className={`relative w-[var(--size-18px)] h-[var(--size-18px)] transition-all duration-base ease-out ${
                          isActive ? 'text-violet-400 drop-shadow-[0_0_6px_rgba(124,58,237,.8)]' : 'text-white/60'
                        }`}
                     >
@@ -218,7 +218,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
                     </svg>
 
                     {/* Label */}
-                    <span className={`relative text-2xs font-semibold tracking-wide transition-colors duration-200 ${
+                    <span className={`relative text-2xs font-semibold tracking-wide transition-colors duration-base ease-out ${
                       isActive ? 'text-violet-400' : 'text-white/60'
                     }`}>
                       {label}
@@ -226,7 +226,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
 
                     {/* Active dot indicator */}
                     {isActive && (
-                      <span className="absolute -top-px left-1/2 -translate-x-1/2 w-6 h-[2px] rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
+                      <span className="absolute -top-px left-1/2 -translate-x-1/2 w-6 h-[var(--size-2px)] rounded-full bg-gradient-to-r from-violet-500 to-cyan-400" />
                     )}
                   </button>
                 </li>

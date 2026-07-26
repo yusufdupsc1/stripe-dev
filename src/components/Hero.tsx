@@ -19,16 +19,6 @@ const TECH_MARQUEE = [
 ];
 
 
-const DEBUG_CARDS = [
-  { icon: '⏱️', title: '6 Hours Debugging SSO', desc: 'Wagtail + Django + Keycloak' },
-  { icon: '🐛', title: 'The Bug', desc: 'JWT Audience Mismatch', color: 'red' },
-  { icon: '✅', title: 'The Fix', desc: 'Update Keycloak Client → Add Correct Audience', color: 'green' },
-  { icon: '💡', title: 'Lesson', desc: 'Always inspect JWT payload before blaming Django', color: 'yellow' },
-  { icon: '💳', title: 'ClientFlow Pro', desc: 'Multi-tenant CRM with full Stripe billing', color: 'purple' },
-  { icon: '🛡️', title: 'Tenant Isolation', desc: 'Secure role-based access control', color: 'blue' },
-  { icon: '📊', title: 'Stripe Webhooks', desc: 'Real-time payment event handling', color: 'purple' },
-];
-
 const gridVariants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.08, delayChildren: 0.05 } },
@@ -194,9 +184,9 @@ export default function Hero() {
           {/* ── LEFT COLUMN ── */}
           <motion.div className="space-y-8" variants={leftColumnVariants}>
             <motion.h1 variants={activeItemVariants} className="text-4xl font-bold text-white leading-tight">
-              {PROFILE.name}
+              {PROFILE.bio}
             </motion.h1>
-            <p className="text-lg text-white/60 -mt-2">{PROFILE.title}</p>
+            <p className="text-lg text-white/60 -mt-2">{PROFILE.name}</p>
             <motion.div variants={activeItemVariants} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-mono">
               <span className="relative flex h-2 w-2">
                 <span className="status-pulse absolute inline-flex rounded-full h-2 w-2 bg-emerald-400" />
@@ -206,33 +196,6 @@ export default function Hero() {
             </motion.div>
 
 
-            <motion.div variants={activeItemVariants} className="w-full">
-              <p className="text-white/60 font-mono text-xs tracking-[.25em] uppercase mb-3">
-                KEYCLOAK SSO FIXED!
-              </p>
-              <div className="flex gap-2 sm:gap-3 overflow-x-auto pb-2 px-1 snap-x scrollbar-hide">
-                {DEBUG_CARDS.map((card, i) => (
-                  <div
-                    key={i}
-                    className="flex-shrink-0 w-32 sm:w-44 p-2.5 sm:p-3 rounded-lg bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border border-violet-500/20 snap-start hover:border-violet-400/40 transition-all"
-                  >
-                    <div className="text-xl sm:text-2xl mb-1.5">{card.icon}</div>
-                    <div className="text-2xs font-bold text-violet-300 tracking-wider">{card.title}</div>
-                    <p className="text-2xs text-white/50 mt-1 leading-tight">{card.desc}</p>
-                  </div>
-                ))}
-              </div>
-              <a
-                href="https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 mt-4 px-3 py-2.5 rounded-lg text-xs text-cyan-400 hover:text-cyan-300 transition-colors min-h-[44px]"
-              >
-                <span className="text-xs sm:text-sm">github.com/yusufdupsc1/sso-platform</span>
-                <svg className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
-              </a>
-            </motion.div>
-
             <motion.div variants={activeItemVariants}>
               <p className="text-xl sm:text-2xl text-white/55 font-mono min-h-[2rem] flex items-center">
                 <span className="text-cyan-400 mr-2 select-none">›</span>
@@ -241,7 +204,7 @@ export default function Hero() {
             </motion.div>
 
 
-            <motion.p variants={activeItemVariants} className="text-white/50 text-base sm:text-lg leading-relaxed max-w-xl">
+            <motion.p variants={activeItemVariants} className="text-white/50 text-base sm:text-lg leading-relaxed max-w-measure">
               I engineer <strong className="text-white/85 font-semibold">production-grade APIs</strong>,
               battle-tested{' '}
               <strong className="text-violet-400 font-semibold">Stripe payment flows</strong>, and{' '}
@@ -263,7 +226,7 @@ export default function Hero() {
                       target="_blank"
                       rel="noopener noreferrer"
                       variants={activeItemVariants}
-                      className="group relative flex flex-col items-center px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.07] hover:border-violet-500/35 hover:bg-violet-500/6 transition-all duration-200"
+                      className="group relative flex flex-col items-center px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.07] hover:border-violet-500/35 hover:bg-violet-500/6 interact-card"
                       title={label}
                     >
                       <span className="font-bold text-violet-400 font-mono text-lg leading-none">{s.n}</span>
@@ -277,7 +240,7 @@ export default function Hero() {
                 return (
                   <div
                     key={s.label}
-                    className="group relative flex flex-col items-center px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.07] transition-all duration-200"
+                    className="group relative flex flex-col items-center px-4 py-2.5 rounded-xl bg-white/[0.04] border border-white/[0.07] interact-card"
                     title={label}
                   >
                     <span className="font-bold text-violet-400 font-mono text-lg leading-none">{s.n}</span>
@@ -294,25 +257,10 @@ export default function Hero() {
               <a
                 href="#projects"
                 onClick={e => { e.preventDefault(); document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="group relative px-7 py-3.5 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm transition-all duration-200 hover:shadow-xl hover:shadow-violet-500/30 active:scale-95 overflow-hidden"
+                className="group relative px-7 py-4 rounded-xl bg-violet-600 hover:bg-violet-500 text-white font-semibold text-sm interact-button hover:shadow-xl hover:shadow-violet-500/30 active:scale-95 overflow-hidden min-h-[44px]"
               >
                 <span className="relative z-10">View Projects</span>
-                <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              </a>
-              <a
-                href="https://stripe-dev.vercel.app"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-7 py-3.5 rounded-xl border border-violet-500/30 hover:border-violet-400/60 text-violet-400/80 hover:text-violet-300 font-semibold text-sm transition-all duration-200 active:scale-95"
-              >
-                Live Demo ↗
-              </a>
-              <a
-                href="#contact"
-                onClick={e => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}
-                className="px-7 py-3.5 rounded-xl border border-white/[0.07] hover:border-white/15 text-white/65 hover:text-white/75 font-semibold text-sm transition-all duration-200 active:scale-95"
-              >
-                Hire me →
+                <span className="absolute inset-0 bg-gradient-to-r from-violet-600 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-base ease-out" />
               </a>
             </motion.div>
 
@@ -330,7 +278,7 @@ export default function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="text-white/25 hover:text-violet-400 transition-colors duration-200"
+                  className="text-white/25 hover:text-violet-400 interact-link"
                 >
                   <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d={s.d} /></svg>
                 </a>
@@ -356,8 +304,8 @@ export default function Hero() {
             Tech I work with daily
           </motion.p>
           <div className="relative overflow-hidden">
-            <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-[#050508] to-transparent z-10 pointer-events-none" />
-            <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-[#050508] to-transparent z-10 pointer-events-none" />
+            <div className="absolute left-0 inset-y-0 w-24 bg-gradient-to-r from-[var(--c-neutral-950)] to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 inset-y-0 w-24 bg-gradient-to-l from-[var(--c-neutral-950)] to-transparent z-10 pointer-events-none" />
             <motion.div
               className="marquee-track animate-marquee gap-3"
               variants={shouldReduce ? {} : { visible: { transition: { staggerChildren: 0.02 } } }}
