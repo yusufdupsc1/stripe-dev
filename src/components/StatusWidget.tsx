@@ -70,10 +70,10 @@ export default function StatusWidget() {
         />
       </span>
       <div className="flex flex-col leading-tight">
-        <span className="text-[11px] font-mono font-medium text-white/70">
+        <span className="text-2xs font-mono font-medium text-white/70">
           {statusLabel}
         </span>
-        <span className="text-[10px] font-mono text-white/60">
+        <span className="text-2xs font-mono text-white/60">
           {status === "down"
             ? error
             : latency !== null

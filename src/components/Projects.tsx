@@ -152,7 +152,7 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div variants={activeItemVariants} className="mb-14 text-center">
           <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">Projects</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             Shipped, not mocked
           </h2>
           <p className="text-white/50 max-w-xl mx-auto">
@@ -180,7 +180,7 @@ export default function Projects() {
                 )}
               </div>
 
-              <h3 className="text-white font-semibold text-lg mb-1 font-mono">{p.name}</h3>
+              <h3 className="text-white font-semibold text-xl mb-1 font-mono">{p.name}</h3>
               <p className="text-white/50 text-xs mb-2">{p.tagline}</p>
                <p className="text-white/65 text-sm leading-relaxed flex-1 mb-4">{p.desc}</p>
 

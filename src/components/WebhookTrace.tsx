@@ -22,10 +22,10 @@ export default function WebhookTrace() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">Webhook Flow</p>
-          <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4">
+          <h2 className="text-3xl font-bold text-white mb-4">
             How a webhook <span className="text-shimmer">survives</span> the internet
           </h2>
-          <p className="text-white/65 max-w-2xl mx-auto text-[15px]">
+          <p className="text-white/65 max-w-2xl mx-auto text-base">
             Every Stripe event passes through these steps before touching your database. Hover or tab to explore.
           </p>
         </div>

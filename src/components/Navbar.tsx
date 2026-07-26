@@ -218,7 +218,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
                     </svg>
 
                     {/* Label */}
-                    <span className={`relative text-[9px] font-semibold tracking-wide transition-colors duration-200 ${
+                    <span className={`relative text-2xs font-semibold tracking-wide transition-colors duration-200 ${
                       isActive ? 'text-violet-400' : 'text-white/60'
                     }`}>
                       {label}

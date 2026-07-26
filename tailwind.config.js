@@ -54,12 +54,18 @@ export default {
         'in-out': 'var(--ease-in-out)',
       },
       fontSize: {
+        '2xs':  'var(--text-2xs)',
         'xs':   'var(--text-xs)',
         'sm':   'var(--text-xs)',   // alias
         'base': 'var(--text-base)',
         'lg':   'var(--text-lg)',
         'xl':   'var(--text-xl)',
         '2xl':  'var(--text-2xl)',
+        '3xl':  'var(--text-3xl)',
+        '4xl':  'var(--text-4xl)',
+      },
+      maxWidth: {
+        'measure': 'var(--measure)',
       },
       animation: {
         'fade-in':   'fade-in .5s ease both',

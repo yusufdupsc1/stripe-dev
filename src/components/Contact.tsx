@@ -102,7 +102,7 @@ export default function Contact() {
           {/* Left – info */}
           <motion.div variants={activeItemVariants}>
             <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">Contact</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
               Let's build<br />
               <span className="text-shimmer">something real.</span>
             </h2>

@@ -69,16 +69,16 @@ export default function Shell() {
           <span className="w-3 h-3 rounded-full bg-yellow-500/65" />
           <span className="w-3 h-3 rounded-full bg-emerald-500/65" />
           <span className="flex-1 text-center font-mono text-xs text-white/55">yusuf@portfolio:~</span>
-          <span className="text-[10px] font-mono text-violet-400/50 border border-violet-500/20 px-1.5 py-0.5 rounded">sh</span>
+          <span className="text-2xs font-mono text-violet-400/50 border border-violet-500/20 px-1.5 py-0.5 rounded">sh</span>
         </div>
 
-        <div className={`p-4 font-mono text-[12px] leading-[1.7] overflow-y-auto max-h-[320px] ${isInteractive ? '' : 'hidden md:block'}`}>
+        <div className={`p-4 font-mono text-2xs leading-[1.7] overflow-y-auto max-h-[320px] ${isInteractive ? '' : 'hidden md:block'}`}>
           {output.length === 0 && <p className="text-white/55">Type <span className="text-cyan-400">help</span> to see available commands.</p>}
           {output.map((out, i) => formatOutput(out, i))}
           {isInteractive && (
             <form onSubmit={onSubmit} className="flex items-center gap-2 mt-2">
               <span className="text-violet-400 select-none">❯</span>
-              <input ref={inputRef} type="text" value={draft} onChange={e => { setDraft(e.target.value); setHistIdx(-1); }} onKeyDown={onKey} className="flex-1 bg-transparent border-none outline-none text-white/80 caret-violet-400 placeholder-white/20 text-[12px]" placeholder="type a command..." autoFocus aria-label="Terminal input" />
+              <input ref={inputRef} type="text" value={draft} onChange={e => { setDraft(e.target.value); setHistIdx(-1); }} onKeyDown={onKey} className="flex-1 bg-transparent border-none outline-none text-white/80 caret-violet-400 placeholder-white/20 text-2xs" placeholder="type a command..." autoFocus aria-label="Terminal input" />
             </form>
           )}
           <div ref={bottomRef} />

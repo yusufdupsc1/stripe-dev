@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { formatCachedAgo, useGitHubStats } from '../lib/github';
+import { PROFILE } from '../data/profile';
 import Shell from './Shell';
 
 const ROLES = [
@@ -192,6 +193,10 @@ export default function Hero() {
 
           {/* ── LEFT COLUMN ── */}
           <motion.div className="space-y-8" variants={leftColumnVariants}>
+            <motion.h1 variants={activeItemVariants} className="text-4xl font-bold text-white leading-tight">
+              {PROFILE.name}
+            </motion.h1>
+            <p className="text-lg text-white/60 -mt-2">{PROFILE.title}</p>
             <motion.div variants={activeItemVariants} className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-violet-500/25 bg-violet-500/8 text-violet-300 text-xs font-mono">
               <span className="relative flex h-2 w-2">
                 <span className="status-pulse absolute inline-flex rounded-full h-2 w-2 bg-emerald-400" />
@@ -212,8 +217,8 @@ export default function Hero() {
                     className="flex-shrink-0 w-32 sm:w-44 p-2.5 sm:p-3 rounded-lg bg-gradient-to-br from-violet-500/10 to-cyan-500/10 border border-violet-500/20 snap-start hover:border-violet-400/40 transition-all"
                   >
                     <div className="text-xl sm:text-2xl mb-1.5">{card.icon}</div>
-                    <h3 className="text-[9px] sm:text-[10px] font-bold text-violet-300 tracking-wider">{card.title}</h3>
-                    <p className="text-[8px] sm:text-[9px] text-white/50 mt-1 leading-tight">{card.desc}</p>
+                    <div className="text-2xs font-bold text-violet-300 tracking-wider">{card.title}</div>
+                    <p className="text-2xs text-white/50 mt-1 leading-tight">{card.desc}</p>
                   </div>
                 ))}
               </div>
@@ -312,7 +317,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div variants={activeItemVariants} className="flex items-center gap-5 pt-4 border-t border-white/[0.06]">
-              <span className="text-white/25 text-[11px] font-mono">find me</span>
+              <span className="text-white/25 text-2xs font-mono">find me</span>
               {[
                 { href: 'https://github.com/yusufdupsc1',               label: 'GitHub',    d: 'M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.008-.868-.013-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844a9.59 9.59 0 012.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z' },
                 { href: 'https://linkedin.com/in/yusuf-ali-backend-engineer', label: 'LinkedIn', d: 'M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z M4 6a2 2 0 100-4 2 2 0 000 4z' },
@@ -347,7 +352,7 @@ export default function Hero() {
           whileInView="visible"
           viewport={{ once: true, margin: '-10%' }}
         >
-          <motion.p variants={activeItemVariants} className="text-center text-[11px] font-mono text-white/20 uppercase tracking-widest mb-5">
+          <motion.p variants={activeItemVariants} className="text-center text-2xs font-mono text-white/20 uppercase tracking-widest mb-5">
             Tech I work with daily
           </motion.p>
           <div className="relative overflow-hidden">
@@ -376,7 +381,7 @@ export default function Hero() {
         {/* Scroll indicator */}
         <div className="hidden lg:flex justify-center mt-10">
           <div className="flex flex-col items-center gap-1.5 text-white/20">
-            <span className="text-[10px] font-mono uppercase tracking-widest">scroll</span>
+            <span className="text-2xs font-mono uppercase tracking-widest">scroll</span>
             <svg className="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>

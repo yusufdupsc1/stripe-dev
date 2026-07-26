@@ -47,8 +47,8 @@ export default function ProjectCaseStudy() {
 
         <div className="mb-12">
           <span className="text-violet-400 font-mono text-sm uppercase tracking-widest">Case Study</span>
-          <h1 className="text-4xl sm:text-5xl font-bold text-white mt-2 mb-4">{project.title}</h1>
-          <p className="text-white/50 text-lg">{project.tagline}</p>
+           <h1 className="text-4xl font-bold text-white mt-2 mb-4">{project.title}</h1>
+            <p className="text-white/50 text-lg max-w-measure">{project.tagline}</p>
           <div className="flex flex-wrap gap-2 mt-4">
             {project.tags.map((t) => (
               <span key={t} className="px-2.5 py-1 rounded-md text-xs font-mono border border-white/10 text-white/60">
@@ -60,13 +60,13 @@ export default function ProjectCaseStudy() {
 
         <div className="space-y-16">
           <section className="border-l-2 border-violet-500/30 pl-6">
-            <h2 className="text-2xl font-bold text-white mb-4">Problem</h2>
-            <p className="text-white/60 text-lg leading-relaxed">{project.problem}</p>
+            <h2 className="text-3xl font-bold text-white mb-4">Problem</h2>
+            <p className="text-white/60 text-lg leading-relaxed max-w-measure">{project.problem}</p>
           </section>
 
           <section className="border-l-2 border-cyan-500/30 pl-6">
-            <h2 className="text-2xl font-bold text-white mb-4">Architecture</h2>
-            <p className="text-white/60 text-lg leading-relaxed mb-8">{project.architecture}</p>
+            <h2 className="text-3xl font-bold text-white mb-4">Architecture</h2>
+            <p className="text-white/60 text-lg leading-relaxed mb-8 max-w-measure">{project.architecture}</p>
             <div className="bg-[#0e0e14] rounded-xl p-6 border border-white/5">
               <svg viewBox="0 0 600 300" className="w-full h-auto">
                 <defs>
@@ -101,8 +101,8 @@ export default function ProjectCaseStudy() {
           </section>
 
           <section className="border-l-2 border-emerald-500/30 pl-6">
-            <h2 className="text-2xl font-bold text-white mb-4">Decisions</h2>
-            <ul className="space-y-3">
+            <h2 className="text-3xl font-bold text-white mb-4">Decisions</h2>
+            <ul className="space-y-3 max-w-measure">
               {project.decisions.map((d, i) => (
                 <li key={i} className="flex gap-3 text-white/60">
                   <span className="text-emerald-400 mt-1.5">
@@ -117,8 +117,8 @@ export default function ProjectCaseStudy() {
           </section>
 
           <section className="border-l-2 border-amber-500/30 pl-6">
-            <h2 className="text-2xl font-bold text-white mb-4">Result</h2>
-            <p className="text-white/60 text-lg leading-relaxed">{project.result}</p>
+            <h2 className="text-3xl font-bold text-white mb-4">Result</h2>
+            <p className="text-white/60 text-lg leading-relaxed max-w-measure">{project.result}</p>
           </section>
         </div>
 

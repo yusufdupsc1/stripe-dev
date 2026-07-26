@@ -52,7 +52,7 @@ function SkillBar({ name, level, accent, delay }: { name: string; level: number;
       viewport={{ once: true, margin: '-5%' }}
     >
       <div className="flex items-center justify-between gap-2 mb-1.5 min-w-0">
-        <span className="text-xs sm:text-[13px] text-white/65 truncate">{name}</span>
+        <span className="text-xs text-white/65 truncate">{name}</span>
         <span className={`text-xs font-mono tabular-nums shrink-0 ${a.label}`}>{level}%</span>
       </div>
       <div className="h-[5px] bg-white/[0.06] rounded-full overflow-hidden">
@@ -78,11 +78,11 @@ export default function AboutExpertise() {
           <div className="bento-grid">
           <div className="bento-area about-headline">
             <p className="text-violet-400 font-mono text-sm mb-3 uppercase tracking-widest">About</p>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6 leading-tight">
+            <h2 className="text-3xl font-bold text-white mb-6 leading-tight">
               Not just a developer.<br />
               <span className="text-shimmer">A payments engineer.</span>
             </h2>
-            <div className="space-y-4 text-white/60 leading-relaxed">
+            <div className="space-y-4 text-white/60 leading-relaxed max-w-measure">
               <p>
                 I'm Yusuf — based in Rajshahi, Bangladesh. My GitHub bio says it plainly:{' '}
                 <em className="text-white/80 not-italic font-medium">"stripe integration & webhook reliability engineer"</em>.
@@ -122,7 +122,7 @@ export default function AboutExpertise() {
                     <span className="h-1.5 w-1.5 rounded-full bg-violet-400" />
                   </span>
                   <span className="font-mono text-xs text-violet-400/80">{t.year}</span>
-                  <h3 className="text-white font-semibold mt-0.5">{t.title}</h3>
+                   <h3 className="text-2xl text-white font-semibold mt-0.5">{t.title}</h3>
                    <p className="text-white/60 text-xs mb-1">{t.co}</p>
                   <p className="text-white/55 text-sm">{t.desc}</p>
                 </li>
@@ -140,7 +140,7 @@ export default function AboutExpertise() {
               ].map(s => (
                 <div key={s.label} className="text-center p-3 rounded-xl bg-white/[0.03] border border-white/[0.06]">
                   <p className="text-xl font-bold text-violet-400 font-mono">{s.n}</p>
-                   <p className="text-[10px] text-white/60 mt-1">{s.label}</p>
+                   <p className="text-2xs text-white/60 mt-1">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -151,7 +151,7 @@ export default function AboutExpertise() {
               <div className="rounded-2xl bg-[#0e0e14] border border-white/[0.07] p-4 sm:p-5 h-full">
                 <div className="flex items-center gap-2 mb-4">
                   <span className="text-xl">{cat.icon}</span>
-                  <h3 className={`font-bold text-sm uppercase tracking-wider font-mono ${ACCENT[cat.accent].label}`}>{cat.title}</h3>
+                  <h3 className={`font-bold text-xl uppercase tracking-wider font-mono ${ACCENT[cat.accent].label}`}>{cat.title}</h3>
                 </div>
                 <div className="space-y-4">
                   {cat.skills.map((s, i) => (
@@ -164,7 +164,7 @@ export default function AboutExpertise() {
 
           <div className="bento-area proof">
             <div className="rounded-2xl bg-[#0e0e14] border border-white/[0.07] p-4 sm:p-5 h-full">
-              <p className="text-[10px] font-mono text-white/55 uppercase tracking-widest mb-3">Code evidence</p>
+              <p className="text-2xs font-mono text-white/55 uppercase tracking-widest mb-3">Code evidence</p>
               <div className="space-y-2">
                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-2.5 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 transition-all">
                   <span className="text-xs font-mono text-white/50">stripe-dev.vercel.app</span>
@@ -180,7 +180,7 @@ export default function AboutExpertise() {
                 </a>
               </div>
               <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between">
-                <span className="text-[10px] font-mono text-white/55">9/20 skills proven</span>
+                <span className="text-2xs font-mono text-white/55">9/20 skills proven</span>
                 <div className="flex gap-1">
                   {[...Array(5)].map((_, i) => (
                     <div key={i} className={`w-1.5 h-1.5 rounded-full ${i < 3 ? 'bg-violet-400' : 'bg-white/10'}`} />
@@ -208,8 +208,8 @@ export default function AboutExpertise() {
                 ))}
               </div>
               <div className="flex gap-3">
-                 <a href="https://github.com/yusufdupsc1?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-[11px] font-mono text-white/60 hover:text-violet-400 transition-colors">All repos ↗</a>
-                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-[11px] font-mono text-white/60 hover:text-violet-400 transition-colors">Live demo ↗</a>
+                 <a href="https://github.com/yusufdupsc1?tab=repositories" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-2xs font-mono text-white/60 hover:text-violet-400 transition-colors">All repos ↗</a>
+                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="px-3 py-2 rounded-md text-2xs font-mono text-white/60 hover:text-violet-400 transition-colors">Live demo ↗</a>
               </div>
             </div>
           </div>
