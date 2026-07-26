@@ -1,9 +1,30 @@
-# Design Work Rules
+# CI/CD Hardening Rules
 
-1. Never claim something "looks good," "feels premium," "is polished," or "is more trendy now" — these are visual judgments you cannot make without actually seeing the rendered page. State only what you can prove: a computed number, a grep match, a token reference. Anything else is HUMAN VERIFICATION NEEDED.
+The CI/CD pipeline is hardened to ensure no test skips before live deploy.
+All quality gates must pass 100% before any push to production reaches Vercel.
 
-2. Every color, spacing, font-size, radius, shadow, and duration value must trace to a token defined in Sprint D0. If you're about to write a raw hex code, raw px value, or raw ms duration inline, stop — add it to the token system first. Do not improvise a one-off value.
+## Pipeline Structure (`.github/workflows/ci.yml`)
 
-3. Apply exactly what a sprint specifies — do not layer in additional "nice to have" visual flourishes you think would look good. An unrequested addition is a form of skipping the actual instruction.
+Jobs run in strict sequential order via `needs`:
+1. **Lint** — `pnpm lint` (fails on warnings)
+2. **Typecheck** — `pnpm typecheck` (depends on lint)
+3. **Test** — `pnpm test` via vitest (depends on typecheck)
+4. **Accessibility** — axe-core audit on built site (depends on test)
+5. **Build** — `pnpm build` (depends on a11y)
+6. **Deploy** — `vercel-action` to production, only on push to `main` (depends on build, requires `success()`)
 
-4. State explicitly, at the start of each sprint, whether you have a screenshot or browser-preview tool available. If yes, use it before claiming any visually-dependent step is done. If no, say so plainly and hand every visual check back to the human — never describe what a page "would look like."
+The deploy job will **not run** if any previous job fails. There is no `continue-on-error` anywhere.
+
+## Test Infrastructure
+
+- **Framework**: vitest (`src/test/example.test.ts`)
+- **Environment**: jsdom
+- **Setup**: `src/test/setup.ts` (extends `@testing-library/jest-dom`)
+- **Coverage**: `pnpm test:coverage` runs with v8 reporter to `coverage/`
+- **Pre-commit**: hook runs `pnpm test` before every commit
+
+## Quality Gate Scripts
+
+- `pnpm test` — run all tests once
+- `pnpm test:coverage` — run tests with coverage report
+- `pnpm run check` — lint → typecheck → test → build (full quality pipeline)
