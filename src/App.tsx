@@ -17,7 +17,7 @@ export default function App() {
   return (
     <div className="min-h-screen antialiased overflow-x-hidden">
       <Navbar paletteRef={paletteRef} />
-      <main>
+      <main id="main-content">
         <Routes>
           <Route path="/" element={
             <>

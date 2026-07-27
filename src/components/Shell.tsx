@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type FormEvent, type KeyboardEvent } from 'react';
+import { useCallback, useEffect, useRef, useState, type FormEvent, type KeyboardEvent } from 'react';
 import { registerCommands, type CommandOutput } from '../lib/terminalCommands';
 
 const registry = registerCommands();
@@ -9,10 +9,14 @@ function formatOutput(out: CommandOutput, idx: number) {
   return <div key={idx} className={color}>{out.text as string}</div>;
 }
 
-export default function Shell() {
+interface ShellProps {
+  interactive?: boolean;
+}
+
+export default function Shell({ interactive }: ShellProps) {
   const [history, setHistory] = useState<string[]>([]);
   const [output, setOutput] = useState<CommandOutput[]>([]);
-  const [isInteractive, setIsInteractive] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 768);
+  const [isInteractive, setIsInteractive] = useState(() => typeof window !== 'undefined' && window.innerWidth >= 768 && interactive !== false);
   const [histIdx, setHistIdx] = useState(-1);
   const [draft, setDraft] = useState('');
   const inputRef = useRef<HTMLInputElement>(null);
@@ -20,7 +24,7 @@ export default function Shell() {
 
   useEffect(() => { bottomRef.current?.scrollIntoView({ behavior: 'smooth' }); }, [output]);
 
-  const run = (raw: string) => {
+  const run = useCallback((raw: string) => {
     const trimmed = raw.trim();
     if (!trimmed) return;
     setHistory(h => [...h, trimmed]);
@@ -43,11 +47,14 @@ export default function Shell() {
       return;
     }
     setOutput(o => [...o, { type: 'error' as const, text: matches.length ? `Did you mean?\n  ${matches.join('\n  ')}` : `Command not found: ${trimmed}` }]);
-  };
+  }, []);
 
-  const onSubmit = (e: FormEvent) => { e.preventDefault(); if (draft.trim()) run(draft); };
+  const onSubmit = useCallback((e: FormEvent) => {
+    e.preventDefault();
+    if (draft.trim()) run(draft);
+  }, [draft, run]);
 
-  const onKey = (e: KeyboardEvent<HTMLInputElement>) => {
+  const onKey = useCallback((e: KeyboardEvent<HTMLInputElement>) => {
     if (e.key === 'ArrowUp') {
       e.preventDefault();
       const next = history.length === 0 ? 0 : (histIdx <= 0 ? history.length - 1 : histIdx - 1);
@@ -59,7 +66,7 @@ export default function Shell() {
       setHistIdx(next);
       if (history[next]) setDraft(history[next]);
     }
-  };
+  }, [history, histIdx]);
 
   return (
     <div className="glow-card">

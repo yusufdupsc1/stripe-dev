@@ -1,0 +1,171 @@
+/* ============================================================
+   Design Tokens — CSS Custom Properties
+   ============================================================ */
+
+:root {
+  /* Fonts */
+  --font-sans: 'Sora', system-ui, sans-serif;
+  --font-mono: 'DM Mono', 'Fira Code', monospace;
+
+  /* ---------- Neutral scale ---------- */
+  --c-neutral-50:  #f8fafc;
+  --c-neutral-100: #f1f5f9;
+  --c-neutral-200: #e2e8f0;
+  --c-neutral-300: #cbd5e1;
+  --c-neutral-400: #94a3b8;
+  --c-neutral-500: #64748b;
+  --c-neutral-600: #475569;
+  --c-neutral-700: #334155;
+  --c-neutral-800: #1e293b;
+  --c-neutral-900: #0f172a;
+  --c-neutral-950: #020617;
+
+  /* ---------- Violet scale ---------- */
+  --c-violet-50:  #f5f3ff;
+  --c-violet-100: #ede9fe;
+  --c-violet-200: #ddd6fe;
+  --c-violet-300: #c4b5fd;
+  --c-violet-400: #a78bfa;
+  --c-violet-500: #8b5cf6;
+  --c-violet-600: #7c3aed;
+  --c-violet-700: #6d28d9;
+  --c-violet-800: #5b21b6;
+  --c-violet-900: #4c1d95;
+
+  /* ---------- Cyan scale ---------- */
+  --c-cyan-50:  #ecfeff;
+  --c-cyan-100: #cffafe;
+  --c-cyan-200: #a5f3fc;
+  --c-cyan-300: #67e8f9;
+  --c-cyan-400: #22d3ee;
+  --c-cyan-500: #06b6d4;
+  --c-cyan-600: #0891b2;
+  --c-cyan-700: #0e7490;
+  --c-cyan-800: #155e75;
+  --c-cyan-900: #164e63;
+
+  /* ---------- Semantic tokens ---------- */
+  --c-bg:       var(--c-neutral-950);
+  --c-surface:  var(--c-neutral-900);
+  --c-surface2: var(--c-neutral-800);
+  --c-border:   rgba(255,255,255,0.07);
+  --c-text:     #eaeaf8;
+  --c-text-muted: var(--c-neutral-400);
+  --c-accent:   var(--c-violet-600);
+  --c-accent2:  var(--c-cyan-700);
+  --c-proof:    #22c55e;
+  --c-proof-light: #4ade80;
+  --c-warning:  #f59e0b;
+  --c-error:    #ef4444;
+  --c-white:    #ffffff;
+
+  /* ---------- Spacing scale (base 8px, micro 4px) ---------- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-7: 2rem;
+  --space-8: 3rem;
+  --space-9: 4rem;
+  --space-10: 6rem;
+
+  /* One-off sizes used in widgets/carousels */
+  --size-1px: 1px;
+  --size-2px: 2px;
+  --size-3px: 3px;
+  --size-6px: 6px;
+  --size-10px: 10px;
+  --size-11px: 11px;
+  --size-14px: 14px;
+  --size-18px: 18px;
+  --size-20px: 20px;
+  --size-28px: 28px;
+  --size-44px: 44px;
+
+  /* Blur */
+  --blur-14px: 14px;
+
+  /* Opacity/rgba helpers */
+  --c-accent-35: rgba(124,58,237,.35);
+  --c-accent-40: rgba(124,58,237,.4);
+  --c-accent-70: rgba(124,58,237,.7);
+  --c-accent-0: rgba(124,58,237,0);
+  --c-accent-18: rgba(124,58,237,.18);
+  --c-accent-30: rgba(124,58,237,.3);
+  --c-accent-55: rgba(124,58,237,.055);
+  --c-accent-20: rgba(124,58,237,.2);
+  --c-accent-50: rgba(124,58,237,.5);
+  --c-accent-80: rgba(124,58,237,.08);
+  --c-accent-10: rgba(124,58,237,.1);
+  --c-accent2-45: rgba(14,116,144,.45);
+  --c-accent2-70: rgba(14,116,144,.7);
+  --c-accent2-12: rgba(14,116,144,.12);
+  --c-accent2-35: rgba(14,116,144,.35);
+  --c-accent2-50: rgba(14,116,144,.5);
+  --c-proof-40: rgba(34,197,94,.4);
+  --c-proof-10: rgba(34,197,94,.1);
+  --c-proof-22: rgba(34,197,94,.22);
+  --c-proof-20: rgba(34,197,94,.2);
+  --c-proof-45: rgba(34,197,94,.45);
+  --c-neutral-0-05: rgba(0,0,0,.05);
+  --c-neutral-0-10: rgba(0,0,0,.1);
+  --c-neutral-0-12: rgba(0,0,0,.12);
+  --c-glass-bg: rgba(15,23,42,.65);
+
+  /* ---------- Type scale (ratio 1.25) ---------- */
+  --text-2xs:  clamp(0.64rem,  0.64rem   + 0.16vw,  0.8rem);
+  --text-xs:   clamp(0.8rem,   0.8rem    + 0.20vw,  1.0rem);
+  --text-base: clamp(1rem,     1.0rem    + 0.25vw,  1.25rem);
+  --text-lg:   clamp(1.25rem,  1.25rem   + 0.313vw, 1.563rem);
+  --text-xl:   clamp(1.563rem, 1.563rem  + 0.391vw, 1.953rem);
+  --text-2xl:  clamp(1.953rem, 1.953rem  + 0.488vw, 2.441rem);
+  --text-3xl:  clamp(2.441rem, 2.441rem  + 0.610vw, 3.052rem);
+  --text-4xl:  clamp(3.052rem, 3.052rem  + 0.763vw, 3.815rem);
+
+  /* ---------- Reading measure ---------- */
+  --measure: 65ch;
+
+  /* ---------- Radius scale ---------- */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-full: 9999px;
+
+  /* ---------- Shadow / elevation ---------- */
+  --shadow-sm: 0 1px 2px 0 rgba(0,0,0,.05);
+  --shadow-base: 0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1);
+  --shadow-glow-none: 0 0 0 0 var(--c-accent-0);
+  --shadow-glow-accent: 0 0 28px 4px var(--c-accent-18);
+  --shadow-glow-accent2-sm: 0 0 8px var(--c-accent2-45);
+  --shadow-glow-accent2-md: 0 0 14px var(--c-accent2-70);
+
+  /* ---------- Motion tokens ---------- */
+  --duration-fast: 150ms;
+  --duration-base: 200ms;
+  --duration-slow: 350ms;
+  --duration-pulse: 1s;
+  --duration-shimmer: 3s;
+  --duration-wt: 4s;
+  --ease-in: cubic-bezier(.4,0,1,1);
+  --ease-out: cubic-bezier(0,0,.2,1);
+  --ease-in-out: cubic-bezier(.4,0,.2,1);
+}
+
+[data-theme="light"] {
+  --c-neutral-950: #f3f4f6;
+  --c-neutral-900: #ffffff;
+  --c-neutral-800: #e5e7eb;
+  --c-neutral-400: #6b7280;
+  --c-neutral-50:  #f9fafb;
+
+  --c-bg:       #f3f4f6;
+  --c-surface:  #ffffff;
+  --c-surface2: #e5e7eb;
+  --c-border:   rgba(0,0,0,0.12);
+  --c-text:     #111827;
+  --c-text-muted: #4b5563;
+
+  --c-proof:    #16a34a;
+}

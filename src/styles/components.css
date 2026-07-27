@@ -1,0 +1,128 @@
+/* ============================================================
+   COMPONENT CLASSES
+   ============================================================ */
+
+.animate-marquee { animation: marquee var(--duration-slow) linear infinite; animation-timeline: auto; }
+@supports (animation-timeline: scroll()) {
+  .animate-marquee { animation: marquee var(--duration-slow) linear; animation-timeline: scroll(); }
+}
+
+.cursor {
+  display: inline-block;
+  width: var(--space-1);
+  height: .95em;
+  background: var(--c-accent);
+  vertical-align: text-bottom;
+  margin-left: var(--size-2px);
+  animation: blink var(--duration-pulse) step-end infinite;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, var(--c-accent), var(--c-accent2), var(--c-violet-400), var(--c-accent));
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer var(--duration-shimmer) linear infinite;
+}
+
+.glass {
+  background: var(--c-glass-bg);
+  backdrop-filter: blur(var(--blur-14px));
+  -webkit-backdrop-filter: blur(var(--blur-14px));
+  border: 1px solid var(--c-border);
+}
+
+.noise::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity: .04;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Hero-specific additions */
+.hero-grid {
+  background-image:
+    linear-gradient(var(--c-accent-55) 1px, transparent 1px),
+    linear-gradient(90deg, var(--c-accent-55) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.blob-violet { background: radial-gradient(ellipse,var(--c-accent-20) 0%,transparent 70%); }
+.blob-cyan   { background: radial-gradient(ellipse,var(--c-accent2-12) 0%,transparent 70%); }
+
+/* Glowing border terminal card */
+.glow-card { position: relative; border-radius: var(--radius-lg); }
+.glow-card::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: calc(var(--radius-lg) + var(--size-1px));
+  background: linear-gradient(135deg,var(--c-accent-50),var(--c-accent2-35),var(--c-accent-80));
+  z-index: -1;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-out);
+}
+.glow-card:hover::before { opacity: 1; }
+
+/* Scanline */
+.scanline { position: relative; overflow: hidden; }
+.scanline::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: var(--size-3px);
+  background: linear-gradient(transparent,var(--c-accent-10),transparent);
+  animation: scan-line var(--duration-slow) linear infinite;
+  pointer-events: none;
+}
+
+/* Status ping */
+.status-pulse::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--size-3px) * -1);
+  border-radius: var(--radius-full);
+  background: var(--c-proof-40);
+  animation: pulse-ring var(--duration-slow) var(--ease-out) infinite;
+}
+
+/* Proof badge — linked skill evidence */
+.proof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--size-2px) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-2xs);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  background: var(--c-proof-10);
+  border: 1px solid var(--c-proof-22);
+  color: var(--c-proof-light);
+  text-decoration: none;
+  transition: background var(--duration-fast) var(--ease-out), border-color var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+.proof-badge:hover { background: var(--c-proof-20); border-color: var(--c-proof-45); }
+
+/* Skills section card ring animations */
+.skill-ring-violet { animation: border-glow var(--duration-slow) var(--ease-in-out) infinite; }
+
+/* Bottom nav gradient line indicator */
+.nav-active-line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: var(--space-6);
+  height: var(--size-2px);
+  border-radius: var(--size-2px);
+  background: linear-gradient(90deg,var(--c-accent),var(--c-accent2));
+}
+
+.safe-bottom { padding-bottom: env(safe-area-inset-bottom,0px); }
+.safe-top    { padding-top: env(safe-area-inset-top,0px); }

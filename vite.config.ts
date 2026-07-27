@@ -55,9 +55,11 @@ function githubStatsPlugin(): Plugin {
       try {
         stats = await fetchGitHubStats();
         if (!getGitHubToken()) {
+          // eslint-disable-next-line no-console
           console.warn('[github-stats-plugin] No GITHUB_TOKEN set — requests may be rate-limited.');
         }
       } catch (err) {
+        // eslint-disable-next-line no-console
         console.warn(`[github-stats-plugin] Could not fetch GitHub stats at build time: ${err}`);
       }
     },

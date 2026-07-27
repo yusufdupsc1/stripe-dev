@@ -1,6 +1,12 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
-const NAV = [
+interface NavItem {
+  id: string;
+  label: string;
+  icon: string;
+}
+
+const NAV: readonly NavItem[] = [
   { id: 'home',      label: 'Home',     icon: 'M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z M9 22V12h6v10' },
   { id: 'about',     label: 'About',    icon: 'M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2 M12 11a4 4 0 100-8 4 4 0 000 8z' },
   { id: 'expertise', label: 'Skills',   icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
@@ -9,7 +15,7 @@ const NAV = [
 ];
 
 interface NavbarProps {
-  paletteRef?: React.RefObject<{ open: () => void } | null>;
+  paletteRef: React.RefObject<{ open: () => void }>;
 }
 
 export default function Navbar({ paletteRef }: NavbarProps) {
@@ -22,6 +28,8 @@ export default function Navbar({ paletteRef }: NavbarProps) {
     }
     return "dark";
   });
+  const themeRef = useRef(theme);
+  themeRef.current = theme;
 
   useEffect(() => {
     let ticking = false;
@@ -44,15 +52,27 @@ export default function Navbar({ paletteRef }: NavbarProps) {
 
   const scrollTo = useCallback((id: string) => {
     setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    const el = document.getElementById(id);
+    el?.scrollIntoView({ behavior: 'smooth' });
   }, []);
 
   const toggleTheme = useCallback(() => {
-    const next = theme === "dark" ? "light" : "dark";
+    const current = themeRef.current;
+    const next = current === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     localStorage.setItem("theme", next);
     setTheme(next);
-  }, [theme]);
+  }, []);
+
+  useEffect(() => {
+    const onKeyDown = (e: globalThis.KeyboardEvent) => {
+      if (e.key === 'Escape' && open) {
+        setOpen(false);
+      }
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [open]);
 
   return (
     <>
@@ -145,7 +165,7 @@ export default function Navbar({ paletteRef }: NavbarProps) {
         </div>
 
         {/* Mobile dropdown */}
-        <div className={`md:hidden absolute top-full inset-x-0 interact-card origin-top ${open ? 'scale-y-100 opacity-100 pointer-events-auto' : 'scale-y-95 opacity-0 pointer-events-none'}`}>
+        <div className={`mobile-menu md:hidden absolute top-full inset-x-0 interact-card origin-top ${open ? 'scale-y-100 opacity-100 pointer-events-auto' : 'scale-y-95 opacity-0 pointer-events-none'}`}>
           <div className="mx-4 my-2 rounded-xl bg-[var(--c-neutral-900)]/95 backdrop-blur-xl border border-white/[0.08] overflow-hidden">
             {NAV.map(({ id, label }) => (
               <button

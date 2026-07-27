@@ -1,10 +1,10 @@
-import { useEffect, useImperativeHandle, useRef, useState } from "react";
+import { useCallback, useEffect, useImperativeHandle, useRef, useState } from "react";
 import { Command } from "cmdk";
 import { useNavigate } from "react-router-dom";
 
-const EMAIL = "yusufdupsc1@gmail.com";
+const EMAIL = "yusufdupsc1";
 
-const SECTIONS = [
+const SECTIONS: readonly { id: string; label: string }[] = [
   { id: "home", label: "Home" },
   { id: "about", label: "About" },
   { id: "expertise", label: "Skills" },
@@ -16,7 +16,11 @@ export interface CommandPaletteRef {
   open: () => void;
 }
 
-export default function CommandPalette({ innerRef }: { innerRef?: React.Ref<CommandPaletteRef> }) {
+interface CommandPaletteProps {
+  innerRef?: React.Ref<CommandPaletteRef>;
+}
+
+export default function CommandPalette({ innerRef }: CommandPaletteProps) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [theme, setTheme] = useState<string>(() => {
@@ -25,6 +29,8 @@ export default function CommandPalette({ innerRef }: { innerRef?: React.Ref<Comm
     }
     return "dark";
   });
+  const themeRef = useRef(theme);
+  themeRef.current = theme;
   const triggerRef = useRef<HTMLButtonElement | null>(null);
   const navigate = useNavigate();
 
@@ -36,7 +42,7 @@ export default function CommandPalette({ innerRef }: { innerRef?: React.Ref<Comm
   }));
 
   useEffect(() => {
-    const onKeyDown = (e: KeyboardEvent) => {
+    const onKeyDown = (e: globalThis.KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
         e.preventDefault();
         setOpen((v) => !v);
@@ -49,19 +55,20 @@ export default function CommandPalette({ innerRef }: { innerRef?: React.Ref<Comm
     return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
-  const copyEmail = async () => {
+  const copyEmail = useCallback(async () => {
     await navigator.clipboard.writeText(EMAIL);
     setOpen(false);
-  };
+  }, []);
 
-  const toggleTheme = () => {
-    const next = theme === "dark" ? "light" : "dark";
+  const toggleTheme = useCallback(() => {
+    const current = themeRef.current;
+    const next = current === "dark" ? "light" : "dark";
     document.documentElement.setAttribute("data-theme", next);
     setTheme(next);
     setOpen(false);
-  };
+  }, []);
 
-  const run = (value: string) => {
+  const run = useCallback((value: string) => {
     setOpen(false);
     if (value.startsWith("theme:")) {
       toggleTheme();
@@ -84,7 +91,7 @@ export default function CommandPalette({ innerRef }: { innerRef?: React.Ref<Comm
       window.open("https://github.com/yusufdupsc1", "_blank", "noopener,noreferrer");
       return;
     }
-  };
+  }, [copyEmail, toggleTheme, navigate]);
 
   return (
     <Command.Dialog

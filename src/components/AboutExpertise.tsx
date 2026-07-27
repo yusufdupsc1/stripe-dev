@@ -3,14 +3,33 @@ import { useGitHubStats } from '../lib/github';
 import { TIMELINE } from '../data/profile';
 import StatusWidget from './StatusWidget';
 
-const ACCENT: Record<string, { bar: string; label: string; dot: string }> = {
+interface AccentMap {
+  bar: string;
+  label: string;
+  dot: string;
+}
+
+const ACCENT: Record<string, AccentMap> = {
   violet:  { bar: 'from-violet-600 to-violet-400',  label: 'text-violet-400',  dot: 'bg-violet-400' },
   cyan:    { bar: 'from-cyan-600 to-cyan-400',       label: 'text-cyan-400',    dot: 'bg-cyan-400' },
   emerald: { bar: 'from-emerald-600 to-emerald-400', label: 'text-emerald-400', dot: 'bg-emerald-400' },
   amber:   { bar: 'from-amber-500 to-amber-300',     label: 'text-amber-400',   dot: 'bg-amber-400' },
 };
 
-const CATS = [
+interface Skill {
+  name: string;
+  level: number;
+}
+
+interface Category {
+  id: string;
+  title: string;
+  icon: string;
+  accent: string;
+  skills: Skill[];
+}
+
+const CATS: readonly Category[] = [
   { id: 'payments', title: 'Payments & Webhooks', icon: '💳', accent: 'violet', skills: [
     { name: 'Stripe API - PaymentIntents, Checkout, Connect', level: 95 },
     { name: 'Webhook signature verification & retry queues',  level: 95 },
@@ -41,7 +60,14 @@ const CATS = [
   ]},
 ];
 
-function SkillBar({ name, level, accent, delay }: { name: string; level: number; accent: string; delay: number; }) {
+interface SkillBarProps {
+  name: string;
+  level: number;
+  accent: string;
+  delay: number;
+}
+
+function SkillBar({ name, level, accent, delay }: SkillBarProps) {
   const rowDelay = delay / 1000 + 0.08;
   const a = ACCENT[accent];
   return (

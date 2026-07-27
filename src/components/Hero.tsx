@@ -4,7 +4,7 @@ import { formatCachedAgo, useGitHubStats } from '../lib/github';
 import { PROFILE } from '../data/profile';
 import Shell from './Shell';
 
-const ROLES = [
+const ROLES: readonly string[] = [
   'Backend Engineer',
   'Stripe Integration Expert',
   'Webhook Reliability Engineer',
@@ -12,7 +12,7 @@ const ROLES = [
   'Cloud-Native Builder',
 ];
 
-const TECH_MARQUEE = [
+const TECH_MARQUEE: readonly string[] = [
   'Python', 'Django', 'Node.js', 'TypeScript', 'PHP', 'Laravel',
   'PostgreSQL', 'Redis', 'Docker', 'AWS', 'Next.js', 'REST APIs',
   'Stripe', 'Webhooks', 'CI/CD', 'Linux', 'GraphQL', 'JWT',
@@ -87,13 +87,19 @@ export default function Hero() {
     let raf: number;
     let W = 0, H = 0;
 
-    const DOTS = Array.from({ length: 38 }, (_, i) => ({
+    const DOTS = Array.from({ length: 24 }, (_, i) => ({
       x: ((i * 37 + 13) % 100) / 100,
       y: ((i * 71 + 29) % 100) / 100,
       vx: ((i % 5) - 2) * 0.000075,
       vy: ((i % 7) - 3) * 0.000075,
       r: 0.6 + ((i * 13 + 7) % 100) / 100 * 1.5,
     }));
+
+    let visible = true;
+    const observer = new IntersectionObserver(
+      ([entry]) => { visible = entry.isIntersecting; },
+      { threshold: 0 }
+    );
 
     const resize = () => {
       W = canvas.offsetWidth; H = canvas.offsetHeight;
@@ -102,10 +108,11 @@ export default function Hero() {
       ctx.scale(devicePixelRatio, devicePixelRatio);
     };
     resize();
-    const ro = new ResizeObserver(resize);
-    ro.observe(canvas);
+    observer.observe(canvas);
 
     const draw = () => {
+      raf = requestAnimationFrame(draw);
+      if (!visible) return;
       ctx.clearRect(0, 0, W, H);
       DOTS.forEach(d => {
         d.x = (d.x + d.vx + 1) % 1;
@@ -132,10 +139,9 @@ export default function Hero() {
         ctx.fillStyle = 'rgba(124,58,237,.45)';
         ctx.fill();
       });
-      raf = requestAnimationFrame(draw);
     };
     draw();
-    return () => { cancelAnimationFrame(raf); ro.disconnect(); };
+    return () => { cancelAnimationFrame(raf); observer.disconnect(); };
   }, []);
 
   const cachedLabel = stats ? formatCachedAgo(stats) : undefined;

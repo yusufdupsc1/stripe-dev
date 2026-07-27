@@ -12,7 +12,10 @@
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "check": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build",
-    "prepare": "husky"
+    "validate-env": "node scripts/validate-env.cjs",
+    "prepare": "husky",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
   },
   "dependencies": {
     "@vercel/node": "^5.6.15",
@@ -46,6 +49,7 @@
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
     "postcss": "^8.4.35",
+    "prettier": "^3.9.6",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
