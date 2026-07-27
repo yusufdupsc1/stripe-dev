@@ -180,7 +180,7 @@ export default function Hero() {
         {/* ════ Main two-column layout ════ */}
 
         <motion.div
-          className="grid lg:grid-cols-[1fr_420px] gap-14 items-center"
+          className="grid w-full lg:grid-cols-[1fr_420px] gap-14 items-center"
           variants={gridVariants}
           initial="hidden"
           whileInView="visible"

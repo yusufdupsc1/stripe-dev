@@ -1,0 +1,130 @@
+- generic [ref=e30]:
+  - generic [ref=e31]:
+    - generic [ref=e32]:
+      - generic [ref=e33]: Available for work · Rajshahi, Bangladesh 🇧🇩
+      - generic [ref=e37]:
+        - paragraph [ref=e38]: KEYCLOAK SSO FIXED!
+        - generic [ref=e39]:
+          - generic [ref=e40]:
+            - generic [ref=e41]: ⏱️
+            - heading "6 Hours Debugging SSO" [level=3] [ref=e42]
+            - paragraph [ref=e43]: Wagtail + Django + Keycloak
+          - generic [ref=e44]:
+            - generic [ref=e45]: 🐛
+            - heading "The Bug" [level=3] [ref=e46]
+            - paragraph [ref=e47]: JWT Audience Mismatch
+          - generic [ref=e48]:
+            - generic [ref=e49]: ✅
+            - heading "The Fix" [level=3] [ref=e50]
+            - paragraph [ref=e51]: Update Keycloak Client → Add Correct Audience
+          - generic [ref=e52]:
+            - generic [ref=e53]: 💡
+            - heading "Lesson" [level=3] [ref=e54]
+            - paragraph [ref=e55]: Always inspect JWT payload before blaming Django
+          - generic [ref=e56]:
+            - generic [ref=e57]: 💳
+            - heading "ClientFlow Pro" [level=3] [ref=e58]
+            - paragraph [ref=e59]: Multi-tenant CRM with full Stripe billing
+          - generic [ref=e60]:
+            - generic [ref=e61]: 🛡️
+            - heading "Tenant Isolation" [level=3] [ref=e62]
+            - paragraph [ref=e63]: Secure role-based access control
+          - generic [ref=e64]:
+            - generic [ref=e65]: 📊
+            - heading "Stripe Webhooks" [level=3] [ref=e66]
+            - paragraph [ref=e67]: Real-time payment event handling
+        - link "github.com/yusufdupsc1/sso-platform" [ref=e68] [cursor=pointer]:
+          - /url: https://github.com/yusufdupsc1/wagtail-keycloak-sso-lab
+      - paragraph [ref=e73]:
+        - generic [ref=e74]: ›
+        - text: Webhook Reliability E
+      - paragraph [ref=e76]:
+        - text: I engineer
+        - strong [ref=e77]: production-grade APIs
+        - text: ", battle-tested"
+        - strong [ref=e78]: Stripe payment flows
+        - text: ", and"
+        - strong [ref=e79]: webhook pipelines
+        - text: that handle real money — reliably, every time.
+      - generic [ref=e80]:
+        - link "49 Repos" [ref=e601] [cursor=pointer]:
+          - /url: https://github.com/yusufdupsc1?tab=repositories
+          - generic [ref=e602]: "49"
+          - generic [ref=e603]: Repos
+        - link "6 Followers" [ref=e605] [cursor=pointer]:
+          - /url: https://github.com/yusufdupsc1
+          - generic [ref=e606]: "6"
+          - generic [ref=e607]: Followers
+        - generic "cached just now" [ref=e609]:
+          - generic [ref=e610]: "49"
+          - generic [ref=e611]: Stars
+        - generic "cached just now" [ref=e613]:
+          - generic [ref=e614]: "49"
+          - generic [ref=e615]: Commits
+      - generic [ref=e82]:
+        - link "View Projects" [ref=e83] [cursor=pointer]:
+          - /url: "#projects"
+        - link "Live Demo ↗" [ref=e85] [cursor=pointer]:
+          - /url: https://stripe-dev.vercel.app
+        - link "Hire me →" [ref=e86] [cursor=pointer]:
+          - /url: "#contact"
+      - generic [ref=e87]:
+        - generic [ref=e88]: find me
+        - link "GitHub" [ref=e89] [cursor=pointer]:
+          - /url: https://github.com/yusufdupsc1
+        - link "LinkedIn" [ref=e92] [cursor=pointer]:
+          - /url: https://linkedin.com/in/yusuf-ali-backend-engineer
+        - link "Twitter/X" [ref=e95] [cursor=pointer]:
+          - /url: https://twitter.com/EsrafilSaikot
+        - link "Dev.to" [ref=e98] [cursor=pointer]:
+          - /url: https://dev.to/yusufdupsc1
+    - generic [ref=e103]:
+      - generic [ref=e104]:
+        - generic [ref=e108]: yusuf@portfolio:~
+        - generic [ref=e109]: sh
+      - generic [ref=e110]:
+        - paragraph [ref=e111]: Type help to see available commands.
+        - generic [ref=e112]:
+          - generic [ref=e113]: ❯
+          - textbox "Terminal input" [active] [ref=e114]:
+            - /placeholder: type a command...
+  - generic [ref=e115]:
+    - paragraph [ref=e116]: Tech I work with daily
+    - generic [ref=e118]:
+      - generic [ref=e119]: Python
+      - generic [ref=e120]: Django
+      - generic [ref=e121]: Node.js
+      - generic [ref=e122]: TypeScript
+      - generic [ref=e123]: PHP
+      - generic [ref=e124]: Laravel
+      - generic [ref=e125]: PostgreSQL
+      - generic [ref=e126]: Redis
+      - generic [ref=e127]: Docker
+      - generic [ref=e128]: AWS
+      - generic [ref=e129]: Next.js
+      - generic [ref=e130]: REST APIs
+      - generic [ref=e131]: Stripe
+      - generic [ref=e132]: Webhooks
+      - generic [ref=e133]: CI/CD
+      - generic [ref=e134]: Linux
+      - generic [ref=e135]: GraphQL
+      - generic [ref=e136]: JWT
+      - generic [ref=e137]: Python
+      - generic [ref=e138]: Django
+      - generic [ref=e139]: Node.js
+      - generic [ref=e140]: TypeScript
+      - generic [ref=e141]: PHP
+      - generic [ref=e142]: Laravel
+      - generic [ref=e143]: PostgreSQL
+      - generic [ref=e144]: Redis
+      - generic [ref=e145]: Docker
+      - generic [ref=e146]: AWS
+      - generic [ref=e147]: Next.js
+      - generic [ref=e148]: REST APIs
+      - generic [ref=e149]: Stripe
+      - generic [ref=e150]: Webhooks
+      - generic [ref=e151]: CI/CD
+      - generic [ref=e152]: Linux
+      - generic [ref=e153]: GraphQL
+      - generic [ref=e154]: JWT
+  - generic [ref=e155]: scroll
