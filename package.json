@@ -11,6 +11,7 @@
     "typecheck": "tsc --noEmit -p tsconfig.app.json",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
+    "a11y": "tsx src/test/a11y.ts",
     "check": "pnpm run lint && pnpm run typecheck && pnpm run test && pnpm run build",
     "validate-env": "node scripts/validate-env.cjs",
     "prepare": "husky",
@@ -27,7 +28,7 @@
     "stripe": "^17.7.0"
   },
   "devDependencies": {
-    "@axe-core/cli": "^4.12.1",
+    "@axe-core/playwright": "^4.12.1",
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.9.1",
@@ -48,9 +49,11 @@
     "happy-dom": "^20.11.1",
     "husky": "^9.1.7",
     "jsdom": "^29.1.1",
+    "playwright": "^1.62.0",
     "postcss": "^8.4.35",
     "prettier": "^3.9.6",
     "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.1",
     "typescript": "^5.5.3",
     "typescript-eslint": "^8.3.0",
     "vite": "^5.4.2",

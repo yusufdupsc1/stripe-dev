@@ -127,6 +127,9 @@ jobs:
           STRIPE_SECRET_KEY: ${{ secrets.STRIPE_SECRET_KEY }}
           VITE_APP_URL: ${{ secrets.VITE_APP_URL }}
 
+      - name: Install Playwright browsers
+        run: npx playwright install chromium
+
       - name: Serve build
         run: npx serve dist -l 4173 &
         env:
@@ -136,8 +139,9 @@ jobs:
         run: npx wait-on http://localhost:4173
 
       - name: Run axe-core a11y audit
-        run: npx axe --exit --load-delay 2000 http://localhost:4173
+        run: pnpm a11y
         env:
+          A11Y_URL: http://localhost:4173
           CI: true
 
   build:
