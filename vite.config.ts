@@ -63,9 +63,21 @@ function githubStatsPlugin(): Plugin {
     },
 
     generateBundle(opt) {
-      if (!stats) return;
       const outDir = opt.dir || 'dist';
-      fs.writeFileSync(path.join(outDir, 'github-stats.json'), JSON.stringify(stats, null, 2));
+      const outPath = path.join(outDir, 'github-stats.json');
+      if (!stats) {
+        let lastCachedAt = Date.now();
+        try {
+          const existing = fs.readFileSync(outPath, 'utf-8');
+          const parsed = JSON.parse(existing);
+          if (parsed.cachedAt) lastCachedAt = parsed.cachedAt;
+        } catch {
+          // no previous file available
+        }
+        fs.writeFileSync(outPath, JSON.stringify({ stale: true, cachedAt: lastCachedAt }, null, 2));
+        return;
+      }
+      fs.writeFileSync(outPath, JSON.stringify(stats, null, 2));
     },
 
     configureServer(server) {

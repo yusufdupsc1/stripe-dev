@@ -8,64 +8,6 @@ export interface GitHubStats {
   cachedAt: number;
 }
 
-function getHeaders(token?: string): Record<string, string> {
-  const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
-  if (token) headers.Authorization = `Bearer ${token}`;
-  return headers;
-}
-
-async function fetchUser(username: string, headers: Record<string, string>) {
-  const res = await fetch(`https://api.github.com/users/${username}`, { headers, signal: AbortSignal.timeout(12_000) });
-  if (!res.ok) throw new Error(`GitHub user API error: ${res.status}`);
-  return res.json();
-}
-
-async function fetchRepos(username: string, headers: Record<string, string>) {
-  const res = await fetch(`https://api.github.com/users/${username}/repos?per_page=100&sort=pushed`, { headers, signal: AbortSignal.timeout(12_000) });
-  if (!res.ok) throw new Error(`GitHub repos API error: ${res.status}`);
-  return res.json();
-}
-
-export async function fetchGitHubStats(username: string): Promise<GitHubStats> {
-  const token = typeof process !== 'undefined'
-    ? process.env.GITHUB_TOKEN
-    : undefined;
-  const headers = getHeaders(token);
-
-  try {
-    const [user, repos] = await Promise.all([
-      fetchUser(username, headers),
-      fetchRepos(username, headers),
-    ]);
-
-    const stars = (Array.isArray(repos) ? repos : []).reduce<number>(
-      (sum, repo: { stargazers_count?: number }) => sum + (repo.stargazers_count || 0),
-      0
-    );
-
-    const result: GitHubStats = {
-      repos: user.public_repos || 0,
-      followers: user.followers || 0,
-      stars,
-      contributions: user.public_repos || 0,
-      cachedAt: Date.now(),
-    };
-
-    setCachedStats(result);
-    return result;
-  } catch {
-    const cached = getCachedStats();
-    if (cached) return cached;
-    return {
-      repos: 0,
-      followers: 0,
-      stars: 0,
-      contributions: 0,
-      cachedAt: Date.now(),
-    };
-  }
-}
-
 export function getCachedStats(): GitHubStats | null {
   try {
     const raw = localStorage.getItem('github_stats_v2');
@@ -132,5 +74,3 @@ export function useGitHubStats(username = 'yusufdupsc1') {
 
   return { stats, error };
 }
-
-export default fetchGitHubStats;
