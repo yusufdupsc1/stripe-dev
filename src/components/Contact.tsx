@@ -113,21 +113,21 @@ export default function Contact() {
             {/* Contact cards */}
             <div className="space-y-3 mb-8">
               <a href="mailto:yusufdupsc1@gmail.com" className="flex items-center gap-4 p-4 rounded-xl bg-[var(--c-neutral-900)] border border-white/[0.07] hover:border-violet-500/30 interact-card group">
-                <span className="text-2xl">✉️</span>
+                <span className="text-violet-400"><svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">Email</p>
                   <p className="text-white/80 group-hover:text-white interact-link">yusufdupsc1@gmail.com</p>
                 </div>
               </a>
               <a href="https://linkedin.com/in/yusuf-ali-backend-engineer" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 p-4 rounded-xl bg-[var(--c-neutral-900)] border border-white/[0.07] hover:border-violet-500/30 interact-card group">
-                <span className="text-2xl">💼</span>
+                <span className="text-cyan-400"><svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">LinkedIn</p>
-                  <p className="text-white/80 group-hover:text-white interact-link">${PROFILE.name} — Backend Engineer</p>
+                  <p className="text-white/80 group-hover:text-white interact-link">{PROFILE.name} — Backend Engineer</p>
                 </div>
               </a>
               <div className="flex items-center gap-4 p-4 rounded-xl bg-[var(--c-neutral-900)] border border-white/[0.07]">
-                <span className="text-2xl">📍</span>
+                <span className="text-emerald-400"><svg viewBox="0 0 24 24" className="w-[22px] h-[22px]" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
                 <div>
                   <p className="text-xs text-white/40 font-mono">Location</p>
                   <p className="text-white/80">Rajshahi, Bangladesh 🇧🇩 · Remote OK</p>
@@ -163,7 +163,7 @@ export default function Contact() {
                     tab === t ? 'bg-violet-600 text-white shadow' : 'text-white/50 hover:text-white'
                   }`}
                 >
-                  {t === 'message' ? '💬 Send Message' : '💳 Hire Me (Stripe)'}
+                  {t === 'message' ? <><svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> Send Message</> : <><svg viewBox="0 0 24 24" className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Hire Me (Stripe)</>}
                 </button>
               ))}
             </div>
@@ -243,7 +243,7 @@ export default function Contact() {
                 </div>
 
                 <div className="p-3 rounded-lg bg-white/[0.03] border border-white/[0.06] text-xs text-white/40 font-mono flex items-center gap-2">
-                  <span>🔒</span>
+                  <svg viewBox="0 0 24 24" className="w-3 h-3 shrink-0" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
                   Stripe test mode · No real charge · Card: 4242 4242 4242 4242
                 </div>
 

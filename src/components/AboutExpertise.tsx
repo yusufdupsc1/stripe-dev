@@ -24,34 +24,34 @@ interface Skill {
 interface Category {
   id: string;
   title: string;
-  icon: string;
+  icon: React.ReactNode;
   accent: string;
   skills: Skill[];
 }
 
 const CATS: readonly Category[] = [
-  { id: 'payments', title: 'Payments & Webhooks', icon: '💳', accent: 'violet', skills: [
+  { id: 'payments', title: 'Payments & Webhooks', icon: <span className="inline-flex items-center justify-center w-[22px] h-[22px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" x2="22" y1="10" y2="10"/></svg></span>, accent: 'violet', skills: [
     { name: 'Stripe API - PaymentIntents, Checkout, Connect', level: 95 },
     { name: 'Webhook signature verification & retry queues',  level: 95 },
     { name: 'Idempotency keys & error recovery',              level: 92 },
     { name: 'REST API design - OpenAPI / Swagger',            level: 91 },
     { name: 'GraphQL API design',                             level: 76 },
   ]},
-  { id: 'backend', title: 'Backend Engineering', icon: '⚙️', accent: 'cyan', skills: [
+  { id: 'backend', title: 'Backend Engineering', icon: <span className="inline-flex items-center justify-center w-[22px] h-[22px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/></svg></span>, accent: 'cyan', skills: [
     { name: 'Python & Django / Django REST Framework', level: 90 },
     { name: 'Node.js & Express',                       level: 88 },
     { name: 'PHP & Laravel',                           level: 83 },
     { name: 'JWT / OAuth2 / Session auth',             level: 87 },
     { name: 'WebSockets & Server-Sent Events',         level: 74 },
   ]},
-  { id: 'data', title: 'Data & Infrastructure', icon: '🗄️', accent: 'emerald', skills: [
+  { id: 'data', title: 'Data & Infrastructure', icon: <span className="inline-flex items-center justify-center w-[22px] h-[22px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14a9 3 0 0 0 18 0V5"/><path d="M3 12a9 3 0 0 0 18 0"/></svg></span>, accent: 'emerald', skills: [
     { name: 'PostgreSQL - schema design & query optimisation', level: 90 },
     { name: 'Redis - caching & job queues',                    level: 83 },
     { name: 'MongoDB',                                         level: 74 },
     { name: 'Docker & Docker Compose',                         level: 89 },
     { name: 'AWS - EC2, S3, RDS, Lambda',                      level: 78 },
   ]},
-  { id: 'frontend', title: 'Frontend & Tooling', icon: '🎨', accent: 'amber', skills: [
+  { id: 'frontend', title: 'Frontend & Tooling', icon: <span className="inline-flex items-center justify-center w-[22px] h-[22px]"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="10.5" r="2.5"/><circle cx="8.5" cy="7.5" r="2.5"/><circle cx="6.5" cy="12.5" r="2.5"/><path d="M12 22v-6"/><path d="M12 13a5 5 0 0 0-5-5c0-1.5 4-5 9-8 5 3 9 6.5 9 8a5 5 0 0 1-5 5h-3Z"/><path d="M8 15l-2 3"/><path d="M12 13a3 3 0 0 0-3-3c0-1 2-3 6-4 4 1 6 3 6 4a3 3 0 0 1-3 3h-3Z"/></svg></span>, accent: 'amber', skills: [
     { name: 'TypeScript & React',          level: 88 },
     { name: 'Next.js',                     level: 85 },
     { name: 'Tailwind CSS',                level: 91 },
@@ -126,13 +126,13 @@ export default function AboutExpertise() {
             <p className="text-violet-400 font-mono text-xs uppercase tracking-widest mb-3">Values</p>
             <div className="grid grid-cols-2 gap-3">
               {[
-                { icon: '🔒', label: 'Idempotent APIs' },
-                { icon: '⚡', label: 'Webhook reliability' },
-                { icon: '🧪', label: 'Test-first dev' },
-                { icon: '📦', label: 'Docker & CI/CD' },
+                { icon: <svg viewBox="0 0 24 24" className="w-4 h-4 text-emerald-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, label: 'Idempotent APIs' },
+                { icon: <svg viewBox="0 0 24 24" className="w-4 h-4 text-amber-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10"/></svg>, label: 'Webhook reliability' },
+                { icon: <svg viewBox="0 0 24 24" className="w-4 h-4 text-cyan-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 7.5V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-1.5"/><path d="M15 13h4v4h-4z"/><path d="M15 4h4v4h-4z"/></svg>, label: 'Test-first dev' },
+                { icon: <svg viewBox="0 0 24 24" className="w-4 h-4 text-violet-400 shrink-0" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="M3.3 7 12 12l8.7-5"/><path d="M12 22V12"/></svg>, label: 'Docker & CI/CD' },
               ].map(v => (
                 <div key={v.label} className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/[0.06]">
-                  <span>{v.icon}</span>
+                  {v.icon}
                   <span className="text-sm text-white/70 font-medium">{v.label}</span>
                 </div>
               ))}
@@ -176,7 +176,7 @@ export default function AboutExpertise() {
             <div key={cat.id} className={`bento-area bento-category bento-${cat.id}`}>
               <div className="rounded-2xl bg-[var(--c-neutral-900)] border border-white/[0.07] p-4 sm:p-5 h-full">
                 <div className="flex items-center gap-2 mb-4">
-                  <span className="text-xl">{cat.icon}</span>
+                  {cat.icon}
                   <h3 className={`font-bold text-xl uppercase tracking-wider font-mono ${ACCENT[cat.accent].label}`}>{cat.title}</h3>
                 </div>
                 <div className="space-y-4">
@@ -194,15 +194,15 @@ export default function AboutExpertise() {
               <div className="space-y-2">
                 <a href="https://stripe-dev.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 interact-card min-h-[44px] min-w-[44px]">
                   <span className="text-xs font-mono text-white/50">stripe-dev.vercel.app</span>
-                  <span className="text-violet-400 text-xs">↗</span>
+                  <span className="text-violet-400"><svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
                 </a>
                 <a href="https://github.com/yusufdupsc1/ecommerce" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 interact-card min-h-[44px] min-w-[44px]">
                   <span className="text-xs font-mono text-white/50">ecommerce repo</span>
-                  <span className="text-violet-400 text-xs">↗</span>
+                  <span className="text-violet-400"><svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
                 </a>
                 <a href="https://github.com/yusufdupsc1/book_store" target="_blank" rel="noopener noreferrer" className="flex items-center justify-between px-3 py-3 rounded-xl bg-white/[0.03] border border-white/[0.07] hover:border-violet-500/30 interact-card min-h-[44px] min-w-[44px]">
                   <span className="text-xs font-mono text-white/50">book_store repo</span>
-                  <span className="text-violet-400 text-xs">↗</span>
+                  <span className="text-violet-400"><svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span>
                 </a>
               </div>
               <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between">
@@ -225,7 +225,7 @@ export default function AboutExpertise() {
 
           <div className="bento-area learning">
             <div className="rounded-2xl border border-violet-500/15 bg-violet-500/[0.03] p-4 sm:p-5 h-full">
-              <p className="text-violet-400 font-mono text-xs uppercase tracking-widest mb-3">🌱 Currently deepening</p>
+              <p className="text-violet-400 font-mono text-xs uppercase tracking-widest mb-3"><svg viewBox="0 0 24 24" className="w-3.5 h-3.5 inline-block mr-1.5 -mt-0.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M7 20h10"/><path d="M10 20c5.5-2.5.8-6.4 3-10"/><path d="M9.5 9.8c4.1 3.4 7.4 6.5 7.4 6.5s-1.2.8-2.5 1.3c1 1 2.5 1.3 2.5 1.3s-.8-3-3-5.8C8.2 9 8.2 8 8.2 8s-4.8 3.2-5.6 8.2"/><path d="M3.6 11.5c1.3 5 4 9.5 7.4 9.5"/></svg>Currently deepening</p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {['AWS Solutions Architect', 'Linux Kernel internals', 'Three.js / WebGL', 'Cybersecurity & Networking'].map(t => (
                   <span key={t} className="px-3 py-1.5 rounded-full text-xs border border-violet-500/20 text-violet-300/65 bg-violet-500/5 font-mono">
