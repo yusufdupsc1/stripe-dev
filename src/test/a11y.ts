@@ -1,7 +1,7 @@
 import { chromium } from 'playwright';
 
 async function main() {
-  const url = process.env.A11Y_URL || 'http://localhost:4173';
+  const url = process.env.A11Y_URL || 'http://localhost:37403';
   const browser = await chromium.launch();
   const context = await browser.newContext();
   const page = await context.newPage();
