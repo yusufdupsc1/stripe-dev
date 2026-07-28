@@ -28,7 +28,6 @@
     "stripe": "^17.7.0"
   },
   "devDependencies": {
-    "@axe-core/playwright": "^4.12.1",
     "@commitlint/cli": "^21.2.1",
     "@commitlint/config-conventional": "^21.2.0",
     "@eslint/js": "^9.9.1",
