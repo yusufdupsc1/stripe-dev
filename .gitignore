@@ -18,6 +18,9 @@ public/github-stats.json
 *.sln
 *.sw?
 
+# Coverage
+coverage/
+
 # Lighthouse
 .lighthouseci/
 .vercel
