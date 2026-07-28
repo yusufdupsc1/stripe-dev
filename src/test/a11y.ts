@@ -4,7 +4,8 @@ import { AxeBuilder } from '@axe-core/playwright';
 async function main() {
   const url = process.env.A11Y_URL || 'http://localhost:4173';
   const browser = await chromium.launch();
-  const page = await browser.newPage();
+  const context = await browser.newContext();
+  const page = await context.newPage();
 
   await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
   await page.waitForTimeout(2000);
@@ -22,11 +23,13 @@ async function main() {
       if (v.nodes.length > 3) console.error(`  ...and ${v.nodes.length - 3} more node(s)`);
     }
     console.error(`\n`);
+    await context.close();
     await browser.close();
     process.exit(1);
   }
 
   console.log(`  axe passed — ${results.passes.length} check(s) OK, 0 violations\n`);
+  await context.close();
   await browser.close();
 }
 
